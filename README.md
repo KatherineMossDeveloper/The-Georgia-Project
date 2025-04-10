@@ -7,6 +7,9 @@ Study of the cropped images in the OpenCrystalData dataset on Kaggle
 
 This is some body text. Markdown is a simple way to format text for the web. You can use it to create headings, lists, links, and more!
 
+Go to another md file...
+[Go to readmeaux ](docs/readmeaux.md#section-5-methodology)
+
 Example image
 ![Image 1](images/PG.png)
 
