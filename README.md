@@ -3,12 +3,15 @@ Study of the cropped images in the OpenCrystalData dataset on Kaggle
 
 
 # Major Heading
-## Minor Heading
+
 
 This is some body text. Markdown is a simple way to format text for the web. You can use it to create headings, lists, links, and more!
 
 Go to another md file...
-[Go to readmeaux ](docs/readmeaux.md#section-5-methodology)
+[Go to readmeaux](docs/readmeaux.md#section-5-methodology)
+
+Go to another section in this md file...
+[Go to minor heading](minor-heading)
 
 Example image
 ![Image 1](images/PG.png)
@@ -25,6 +28,7 @@ This is some more text with a footnote[^1].
 
 [^1]: This is the footnote content, which can provide more information or a citation.
 
+## Minor Heading
 > The overriding design goal for Markdown's
 > formatting syntax is to make it as readable
 
