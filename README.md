@@ -8,11 +8,10 @@ Study of the cropped images in the OpenCrystalData dataset on Kaggle
 This is some body text. Markdown is a simple way to format text for the web. You can use it to create headings, lists, links, and more!
 
 Example image
-![Example Image](https://via.placeholder.com/150)
-![Nature Image](https://images.unsplash.com/photo-1501594907351-171299ba9260)
+![Image 1](images/PG.png)
 
 Example hyperlink 
-- [Breakdance](https://breakdance.github.io/breakdance/) - HTML
+- [OpenCrystalData](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) - HTML
 
 ### Bulleted List:
 - Item 1
