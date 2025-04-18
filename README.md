@@ -1,13 +1,8 @@
 
 ![Example Image](images/HeroWithTitleSmall.png)
 
-# A study of the cropped images in the OpenCrystalData dataset on Kaggle
-
-
-# Major Heading
-
-
-This is some body text. Markdown is a simple way to format text for the web. You can use it to create headings, lists, links, and more!
+## A study of the cropped images in the OpenCrystalData dataset on Kaggle
+This study is labeling images in the crystallization dataset on Kaggle.
 
 Go to another md file...
 [Go to the ReadmeAux file](docs/ReadmeAux.md)
