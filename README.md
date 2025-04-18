@@ -1,4 +1,5 @@
-# OpenCrystalData-study
+!(images/hero.png)
+# the OpenCrystalData-study
 Study of the cropped images in the OpenCrystalData dataset on Kaggle
 
 
@@ -14,7 +15,7 @@ Go to another section in this md file...
 [Go to Section 5](docs/ReadmeAux.md#section-5-methodology)
 
 Example image
-![Image 1](images/PG.png)
+
 
 Example hyperlink 
 - [OpenCrystalData](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) - HTML
