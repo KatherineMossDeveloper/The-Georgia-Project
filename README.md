@@ -4,7 +4,8 @@
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![Kaggle](https://img.shields.io/badge/Kaggle-Data-teal?logo=kaggle&logoColor=white)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
-
+![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-gold)
 
 This project is about labeling images in a crystallization dataset using a ResNet model trained with Python. 
 
