@@ -7,6 +7,7 @@
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-gold)
 
+![Kmeans](images/Kmeans.png)
 
 ### Contents:
 - [The overview.](#the-overview).
