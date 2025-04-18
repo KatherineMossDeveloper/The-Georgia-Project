@@ -1,6 +1,7 @@
 
 ![Example Image](images/Hero.png)
-# the OpenCrystalData-study
+
+# the georgia project, an OpenCrystalData study
 Study of the cropped images in the OpenCrystalData dataset on Kaggle
 
 
