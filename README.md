@@ -2,7 +2,7 @@
 ![Example Image](images/HeroWithTitleSmall.png)
 
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
-![Kaggle](https://img.shields.io/badge/Kaggle-Data-blue?logo=kaggle&logoColor=white)
+![Kaggle](https://img.shields.io/badge/Kaggle-Data-teal?logo=kaggle&logoColor=white)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
 
 
