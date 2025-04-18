@@ -21,8 +21,7 @@
 - [How to contact me](#how-to-contact-me).
 - [The footnotes.](#the-footnotes).
   
-![HeroSmall](images/HeroSmall.png)
-## The overview. 
+![HeroSmall](images/HeroSmall.png) ## The overview. 
 ![HeroSmall](images/HeroSmall.png)
 ## The paper.
 ![HeroSmall](images/HeroSmall.png)
