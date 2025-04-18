@@ -21,9 +21,13 @@
 - [How to contact me](#how-to-contact-me).
 - [The footnotes.](#the-footnotes).
   
+![HeroSmall](images/HeroSmall.png)
 ## The overview. 
+![HeroSmall](images/HeroSmall.png)
 ## The paper.
+![HeroSmall](images/HeroSmall.png)
 ## The goals.
+![HeroSmall](images/HeroSmall.png)
 ## The development environment. 
 ## The model architecture. 
 ## The data. 
