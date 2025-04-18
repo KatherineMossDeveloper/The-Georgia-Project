@@ -2,15 +2,35 @@
 ![Example Image](images/HeroWithTitleSmall.png)
 
 ## A study of the cropped images in the OpenCrystalData dataset on Kaggle
-This study is about labeling images in a crystallization dataset using a ResNet model trained in Python. 
+This project is about labeling images in a crystallization dataset using a ResNet model trained in Python. 
 
 ### Contents:
 - [The overview.](#the-overview).
-- Item 2
-- Item 3
-
-
+- [The overview.](#the-paper).
+- [The overview.](#the-development-environment-and-hardware).
+- [The overview.](#the-model-architecture).
+- [The overview.](#the-data).
+- [The overview.](#the-results).
+- [The overview.](#the-georgia-code-and-deliverables).
+- [The overview.](#the-license).
+- [The overview.](#how-to-recreate-the-results).
+- [The overview.](#the-license).
+- [The overview.](#how-to-contact-me).
+- [The overview.](#the-footnotes).
+  
 ## The overview. 
+## The paper.
+## The goals.
+## The development environment and hardware. 
+## The model architecture. 
+## The data. 
+## The results. 
+## The georgia code and deliverables. 
+## How to recreate the results.  
+## The license. 
+## How to contact me. 
+## The footnotes. 
+
 
 Go to another md file...
 [Go to the ReadmeAux file](docs/ReadmeAux.md)
