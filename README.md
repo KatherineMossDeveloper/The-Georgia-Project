@@ -7,10 +7,6 @@
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-gold)
 
-This project trains an A.I. model to label images in a crystallization dataset.  You can train the model, or use the weights file included, to label images of your own.  
-![InferenceExamples](images/InferenceExample2.png)
-
-
 ### Contents:
 - [The overview.](#the-overview).
 - [The paper.](#the-paper).
@@ -32,6 +28,9 @@ This project trains an A.I. model to label images in a crystallization dataset. 
 ## The model architecture. 
 ## The data. 
 ## The results. 
+This project trains an A.I. model to label images in a crystallization dataset.  You can train the model, or use the weights file included, to label images of your own.  
+![InferenceExamples](images/InferenceExample2.png)
+
 ## The georgia code and deliverables. 
 ## How to recreate the results.  
 ## The license. 
