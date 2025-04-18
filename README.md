@@ -22,22 +22,22 @@
 - [The footnotes.](#the-footnotes).
 
 
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The overview.
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The paper.
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The goals.
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The development environment. 
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The model architecture. 
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The data. 
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The results. 
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The overview.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The paper.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The goals.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The development environment.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The model architecture.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The data.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The results.  
 
 This project trains an A.I. model to label images in a crystallization dataset.  You can train the model, or use the weights file included, to label images of your own.  
 ![InferenceExamples](images/InferenceExample2.png)
 
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The georgia code and deliverables. 
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The georgia code and deliverables.  
 <img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> How to recreate the results.  
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The license. 
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> How to contact me. 
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The footnotes. 
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The license.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> How to contact me.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The footnotes.  
 
 ![Tara](images/BannerTara.png)
 
