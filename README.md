@@ -8,7 +8,7 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-gold)
 
 This project trains an A.I. model to labeling images in a crystallization dataset.  You can train the model, or use the weights file included to label images of your own.  
-![Tara](images/BannerTara.png)
+![Tara](images/InferenceExample.png)
 
 
 ### Contents:
@@ -37,6 +37,8 @@ This project trains an A.I. model to labeling images in a crystallization datase
 ## The license. 
 ## How to contact me. 
 ## The footnotes. 
+
+![Tara](images/BannerTara.png)
 
 
 Go to another md file...
