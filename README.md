@@ -2,16 +2,21 @@
 ![Example Image](images/HeroWithTitleSmall.png)
 
 ## A study of the cropped images in the OpenCrystalData dataset on Kaggle
-This study is labeling images in the crystallization dataset on Kaggle.
+This study is about labeling images in a crystallization dataset using a ResNet model trained in Python. 
+
+### Contents:
+- [The overview.](#the-overview).
+- Item 2
+- Item 3
+
+
+## The overview. 
 
 Go to another md file...
 [Go to the ReadmeAux file](docs/ReadmeAux.md)
 
 Go to another section in this md file...
 [Go to Section 5](docs/ReadmeAux.md#section-5-methodology)
-
-Example image
-
 
 Example hyperlink 
 - [OpenCrystalData](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) - HTML
