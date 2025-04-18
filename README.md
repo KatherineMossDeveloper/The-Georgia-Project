@@ -7,7 +7,9 @@
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-gold)
 
-This project is about labeling images in a crystallization dataset using a ResNet model trained with Python. 
+This project trains an A.I. model to labeling images in a crystallization dataset.  You can train the model, or us the weights file included to label image of your own.  
+![Example Image](images/ HeroWithTitleSmall.png)
+
 
 ### Contents:
 - [The overview.](#the-overview).
