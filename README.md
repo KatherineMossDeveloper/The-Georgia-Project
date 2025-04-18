@@ -7,19 +7,6 @@
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-gold)
 
-This project trains an A.I. model to label images in a crystallization dataset.  You can train the model, or use the weights file included, to label images of your own.  
-![InferenceExamples](images/InferenceExample.png)
-
-File CAT_TARA.png	 prediction PG confidence 0.5501  
-File CEX (2344).png	 prediction PG confidence 1.0000  
-File CEX (293).png	 prediction PG confidence 1.0000  
-File CEX (3).png	 prediction PG confidence 0.9486  
-File OIP (5).png	 prediction PG confidence 0.5020  
-File PG (5282).png	 prediction CEX confidence 0.0000  
-File PG (567).png	 prediction CEX confidence 0.0023  
-File PG (590).png	 prediction CEX confidence 0.0000  
-File PG (5946).png	 prediction CEX confidence 0.0071  
-
 
 ### Contents:
 - [The overview.](#the-overview).
@@ -108,6 +95,21 @@ I also wrote code to split the data into training, validation, and test sets.  S
 
 ## The results.  
 <img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The results.  
+
+This project trains an A.I. model to label images in a crystallization dataset.  You can train the model, or use the weights file included, to label images of your own.  
+![InferenceExamples](images/InferenceExample.png)
+
+File CAT_TARA.png	 prediction PG confidence 0.5501  
+File CEX (2344).png	 prediction PG confidence 1.0000  
+File CEX (293).png	 prediction PG confidence 1.0000  
+File CEX (3).png	 prediction PG confidence 0.9486  
+File OIP (5).png	 prediction PG confidence 0.5020  
+File PG (5282).png	 prediction CEX confidence 0.0000  
+File PG (567).png	 prediction CEX confidence 0.0023  
+File PG (590).png	 prediction CEX confidence 0.0000  
+File PG (5946).png	 prediction CEX confidence 0.0071  
+
+
 ## The georgia code and deliverables.  
 <img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The georgia code and deliverables.  
 ## How to recreate the results. 
