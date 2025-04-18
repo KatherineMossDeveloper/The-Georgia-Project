@@ -1,5 +1,5 @@
 
-![Example Image](images/HeroWithTitleSmall.png)
+![Hero](images/HeroWithTitleSmall.png)
 
 ![Python](https://img.shields.io/badge/Python-3.8-blue)
 ![Kaggle](https://img.shields.io/badge/Kaggle-Data-teal?logo=kaggle&logoColor=white)
@@ -7,8 +7,8 @@
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-gold)
 
-This project trains an A.I. model to labeling images in a crystallization dataset.  You can train the model, or us the weights file included to label image of your own.  
-![Example Image](images/ HeroWithTitleSmall.png)
+This project trains an A.I. model to labeling images in a crystallization dataset.  You can train the model, or use the weights file included to label images of your own.  
+![Tara](images/BannerTara.png)
 
 
 ### Contents:
