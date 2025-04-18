@@ -21,9 +21,11 @@
 - [How to contact me](#how-to-contact-me).
 - [The footnotes.](#the-footnotes).
 
-
+## The overview
 <img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The overview.  
+## The paper
 <img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The paper.  
+## The goals
 <img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The goals.  
 <img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The development environment.  
 <img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The model architecture.  
