@@ -6,22 +6,22 @@ This project is about labeling images in a crystallization dataset using a ResNe
 
 ### Contents:
 - [The overview.](#the-overview).
-- [The overview.](#the-paper).
-- [The overview.](#the-development-environment-and-hardware).
-- [The overview.](#the-model-architecture).
-- [The overview.](#the-data).
-- [The overview.](#the-results).
-- [The overview.](#the-georgia-code-and-deliverables).
-- [The overview.](#the-license).
-- [The overview.](#how-to-recreate-the-results).
-- [The overview.](#the-license).
-- [The overview.](#how-to-contact-me).
-- [The overview.](#the-footnotes).
+- [The paper.](#the-paper).
+- [The goals.](#the-goals).
+- [The development environment.](#the-development-environment).
+- [The model architecture.](#the-model-architecture).
+- [The data.](#the-data).
+- [The results.](#the-results).
+- [The georgia code and deliverables.](#the-georgia-code-and-deliverables).
+- [ How to recreate the results.](#how-to-recreate-the-results).
+- [The license.](#the-license).
+- [How to contact me](#how-to-contact-me).
+- [The footnotes.](#the-footnotes).
   
 ## The overview. 
 ## The paper.
 ## The goals.
-## The development environment and hardware. 
+## The development environment. 
 ## The model architecture. 
 ## The data. 
 ## The results. 
