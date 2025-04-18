@@ -1,8 +1,12 @@
 
 ![Example Image](images/HeroWithTitleSmall.png)
 
-## A study of the cropped images in the OpenCrystalData dataset on Kaggle
-This project is about labeling images in a crystallization dataset using a ResNet model trained in Python. 
+![Python](https://img.shields.io/badge/Python-3.8-blue)
+![Kaggle](https://img.shields.io/badge/Kaggle-Data-blue?logo=kaggle&logoColor=white)
+![MIT License](https://img.shields.io/badge/License-MIT-green)
+
+
+This project is about labeling images in a crystallization dataset using a ResNet model trained with Python. 
 
 ### Contents:
 - [The overview.](#the-overview).
