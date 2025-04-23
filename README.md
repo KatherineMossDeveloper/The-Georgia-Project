@@ -25,5 +25,24 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
 -The project's detailed documentation is here.  
 [Go to the main doc file](docs/maindoc.md)  
 
-<img src="images/codeoverview.png" alt="code overview" width="402" height="293">
+<img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
+Instructions. 
+   CODE  
+   install a Python IDE (add pycharm link)  
+   clone this repo (add repo link)  
+   install dependencies (add note on which ones)  
+
+   DATA  
+   clone the data  
+   click here for the dataset  
+   
+   TRAINING  
+   edit the directories in GAmain and GAmodel for your pc.  
+   run GAmain to train and analyse.  
+   navigate to the deliverables folder to see results.  
+   click here for the paper abstract to compare results.   
+
+   PLAY TIME  
+   edit the directories in GAinference.  
+   run GAinference.  
 
