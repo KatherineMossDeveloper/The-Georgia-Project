@@ -22,6 +22,5 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
 -The project's detailed documentation is here.  
 [Go to the main doc file](docs/maindoc.md)  
 
-<img src="images/codeoverview.png" alt="code overview" width="337" height="242">
+<img src="images/codeoverview.png" alt="code overview" width="402" height="293">
 
-![Code Overview](images/codeoverview.png)
