@@ -2,7 +2,7 @@
 ![Hero](images/HeroWithTitleSmall.png)
 
 ![Crystallization](https://img.shields.io/badge/domain-Crystallization-white)
-![Python](https://img.shields.io/badge/Python-3.8-purple)
+![Python](https://img.shields.io/badge/Python-3.8-lightblue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-blue)
 ![Kaggle](https://img.shields.io/badge/Kaggle-Data-teal?logo=kaggle&logoColor=white)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
