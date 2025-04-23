@@ -11,5 +11,5 @@
 ![Crystallization](https://img.shields.io/badge/domain-Crystallization-white)
 
 Click here for the detailed documentation.  
-[Go to the main doc file](docs/Maindoc.md)
+[Go to the main doc file](docs/maindoc.md)
 
