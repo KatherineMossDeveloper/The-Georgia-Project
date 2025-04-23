@@ -13,6 +13,7 @@
 I found a research paper about an A.I. model that was trained to do binary classification on images of crystallization. 
 I recreated the results in Python.  My metrics are a bit better and the training is faster.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
 
+## Overview. 
 -The code for this project.  
 Click "Code" on the repo page, then download zip or open with GitHub Desktop.  
 
@@ -27,11 +28,11 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
 
 <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
 
-Instructions.  
+## Instructions.  
    CODE  
-   install a Python IDE (add pycharm link)  
+   install a Python IDE (I used PyCharm, ver. 2023.2.4, Community Edition)  
    clone this repo (add repo link)  
-   install dependencies (add note on which ones)  
+   install dependencies (I used Python 3.8; TensorFlow 2.10.1; TensorFlow addons 0.21.0)
 
    DATA  
    clone the data  
@@ -46,4 +47,17 @@ Instructions.
    PLAY TIME  
    edit the directories in GAinference.  
    run GAinference.  
+
+## Contributions. 
+If you found an issue or would like to submit animprovement to this project, please submit an issue with the issue tab above.  If you would like to submit a PR with a fix, reference the issue you created, please.  
+
+## Known issues. 
+None.  
+
+## Contact info. 
+For more details about this project, feel free to reach out to me. 
+Email Katherinemossdeveloper@gmail.com			
+[LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228)
+
+
 
