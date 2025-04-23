@@ -48,16 +48,16 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
    edit the directories in GAinference.  
    run GAinference.  
 
-## Contributions. 
+## Contributions.  
 If you found an issue or would like to submit animprovement to this project, please submit an issue with the issue tab above.  If you would like to submit a PR with a fix, reference the issue you created, please.  
 
-## Known issues. 
+## Known issues.  
 None.  
 
-## Contact info. 
-For more details about this project, feel free to reach out to me. 
-Email Katherinemossdeveloper@gmail.com			
-[LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228)
+## Contact info.  
+For more details about this project, feel free to reach out to me.  
+Email Katherinemossdeveloper@gmail.com  
+[LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228)  
 
 
 
