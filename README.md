@@ -19,7 +19,7 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
 -The reseach paper is here.  
 [In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
 
--The data is availabe on Kaggle.  
+-The data is available on Kaggle.  
 [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
 
 -The project's detailed documentation is here.  
