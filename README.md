@@ -1,6 +1,7 @@
 
 ![Hero](images/HeroWithTitleSmall.png)
 
+![Crystallization](https://img.shields.io/badge/domain-Crystallization-white)
 ![Python](https://img.shields.io/badge/Python-3.8-purple)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-blue)
 ![Kaggle](https://img.shields.io/badge/Kaggle-Data-teal?logo=kaggle&logoColor=white)
@@ -8,7 +9,7 @@
 ![Binary Classification](https://img.shields.io/badge/task-Binary_Classification-yellowgreen)
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
 ![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
-![Crystallization](https://img.shields.io/badge/domain-Crystallization-white)
+
 
 I found a research paper about an A.I. model that was trained to do binary classification on images of crystallization. 
 I recreated the results in Python.  My metrics are a bit better and the training is faster.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
