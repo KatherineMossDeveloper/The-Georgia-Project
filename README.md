@@ -27,7 +27,7 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
 
 <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
 
-Instructions. 
+Instructions.  
    CODE  
    install a Python IDE (add pycharm link)  
    clone this repo (add repo link)  
