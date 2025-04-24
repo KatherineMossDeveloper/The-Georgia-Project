@@ -1,6 +1,6 @@
 
 ![Hero](images/HeroWithTitleSmall.png)  
-Python code that trains a model to label crystallization images.  
+**Python code that trains a model to label crystallization images.**  
 
 ![Crystallization](https://img.shields.io/badge/domain-Crystallization-white)
 ![Python](https://img.shields.io/badge/Python-3.8-lightblue)
