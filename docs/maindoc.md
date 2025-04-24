@@ -107,10 +107,13 @@ There are 6,860 image files for each of the two classes of crystal images.
 |Test		      |  341 image files |  343 image files|
 |Totals       |6,804 image files |6,860 image files|
 
+The paper remarks that the two image sets have “very distinct visual features.”  Here are some of the CEX images.  Below that are some PG images.  While the CEX images are distinctive, let me suggest here that the PG data varies.  Here are a few examples of what I mean. 
+![Samples](../images/samples_cex.png)  
+![Samples](../images/samples_pg.png)
 
 ## The results.  
 This project trains an A.I. model to label images in a crystallization dataset.  You can train the model, or use the weights file included, to label images of your own.  
-![InferenceExamples](images/InferenceExample.png)
+![InferenceExamples](../images/InferenceExample.png)
 
 File CAT_TARA.png	 prediction PG confidence 0.5501  
 File CEX (2344).png	 prediction PG confidence 1.0000  
@@ -121,6 +124,7 @@ File PG (5282).png	 prediction CEX confidence 0.0000
 File PG (567).png	 prediction CEX confidence 0.0023  
 File PG (590).png	 prediction CEX confidence 0.0000  
 File PG (5946).png	 prediction CEX confidence 0.0071  
+
 
 
 ## The georgia code and deliverables.  
