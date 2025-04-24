@@ -28,11 +28,23 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
 -The project's detailed documentation is here.  
 [Go to the main doc file](docs/maindoc.md)  
 
-## Code overview. 
+## Code overview.  
 <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
 
-## Model comparison. 
-
+## Model comparison.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The model architecture.  
+In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   
+|                         |Salami et al. paper     |my work                |
+|-------------------------|------------------------|-----------------------|
+|model type               |ResNet-18, ResNet-50    |ResNet-101             |
+|optimization method      |SGDM	                  |Keras SGD (momentum .9)|
+|learning rate 			  |1 × 10−4                |1 × 10−1	            |
+|training data            |3200−3600 in each class |(same)                 |
+|train/val./test %        |70/25/5%                |(same)                 |
+|minibatch size 	        |32−64                   |64                     |
+|validation frequency     |10−50                   |1                      |
+|added dropout layers     |(did not comment)       |2                      |
+|trainable ImageNet layers|(did not comment)       |made last 10% trainable|
 
 ## Instructions.  
    CODE  
