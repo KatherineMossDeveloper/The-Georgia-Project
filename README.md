@@ -32,7 +32,7 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
 <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
 
 ## Model comparison.  
-<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The model architecture.  
+<img src="images/HeroSmall.png" alt="Logo" style="vertical-align: right;"> 
 In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   
 |                         |Salami et al. paper     |my work                |
 |-------------------------|------------------------|-----------------------|
