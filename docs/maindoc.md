@@ -1,13 +1,13 @@
 ### Contents:
 <a href="#the-overview">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The overview.
-</a>
+</a>  
 <a href="#the-paper">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The paper.
-</a>
+</a>  
 <a href="#the-goals">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The goals.
-</a>
+</a>  
 
 
 - [The development environment.](#the-development-environment).
