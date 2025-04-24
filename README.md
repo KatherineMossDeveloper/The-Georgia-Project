@@ -14,8 +14,7 @@
 I found a research paper about an A.I. model that was trained to do binary classification on images of crystallization. 
 I recreated the results in Python.  My metrics are a bit better and the training is faster.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
 
-<span style="color: #FF5733;">Overview. </span>
-
+## Overview. 
 -The code for this project.  
 Click "Code" on the repo page, then download zip or open with GitHub Desktop.  
 
@@ -28,7 +27,11 @@ Click "Code" on the repo page, then download zip or open with GitHub Desktop.
 -The project's detailed documentation is here.  
 [Go to the main doc file](docs/maindoc.md)  
 
+## Code overview. 
 <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
+
+## Model comparison. 
+
 
 ## Instructions.  
    CODE  
