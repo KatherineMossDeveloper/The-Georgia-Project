@@ -8,17 +8,33 @@
 <a href="#the-goals">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The goals.
 </a><br>
-
-
-- [The development environment.](#the-development-environment).
-- [The model architecture.](#the-model-architecture).
-- [The data.](#the-data).
-- [The results.](#the-results).
-- [The georgia code and deliverables.](#the-georgia-code-and-deliverables).
-- [ How to recreate the results.](#how-to-recreate-the-results).
-- [The license.](#the-license).
-- [How to contact me](#how-to-contact-me).
-- [The footnotes.](#the-footnotes).
+<a href="#the-development-environment">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The development environment.
+</a><br>
+<a href="#the-model-architecture">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The model architecture.
+</a><br>
+<a href="#the-data">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The data.
+</a><br>
+<a href="#the-results">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The results.
+</a><br>
+<a href="#the-georgia-code-and-deliverables">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The georgia code and deliverables.
+</a><br>
+<a href="#how-to-recreate-the-results">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> How to recreate the results.
+</a><br>
+<a href="#the-license">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The license.
+</a><br>
+<a href="#how-to-contact-me">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> How to contact me.
+</a><br>
+<a href="#the-footnotes">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The footnotes.
+</a><br>
 
 ## The overview
 <img src="../images/HeroSmall.png" alt="Logo" style="vertical-align: left;"> The overview.  
