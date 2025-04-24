@@ -60,29 +60,26 @@ In the table below are the details offered by the published paper, then on the r
    install dependencies (I used Python 3.8; TensorFlow 2.10.1; TensorFlow addons 0.21.0)
 
    DATA  
-   clone the data  
-   click here for the dataset  
+   download and unzip the data  
+   edit the directories in GAmain.py and GAmodel.py for your pc.  
    
    TRAINING  
-   edit the directories in GAmain and GAmodel for your pc.  
    run GAmain to train and analyse.  
    navigate to the deliverables folder to see results.  
-   click here for the paper abstract to compare results.   
-
+   
    PLAY TIME  
    edit the directories in GAinference.  
    run GAinference.  
 
 ## Contributions.  
-If you found an issue or would like to submit animprovement to this project, please submit an issue with the issue tab above.  If you would like to submit a PR with a fix, reference the issue you created, please.  
+If you found an issue or would like to submit an improvement to this project, please click on the issue tab on the project page.  If you would like to submit a PR with a fix, reference the issue you created, please.  
 
 ## Known issues.  
 None.  
 
 ## Contact info.  
-For more details about this project, feel free to reach out to me.  
-Email Katherinemossdeveloper@gmail.com  
-[LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228)  
+For more details about this project, feel free to reach out to me  
+at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
 
 
 
