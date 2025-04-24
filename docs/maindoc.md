@@ -1,5 +1,8 @@
 ### Contents:
-- [Introduction](#introduction) 
+<a href="#the-overview">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The overview.
+</a>
+
 - [The overview.](#the-overview)![icon](../images/HeroSmall.png)
 - [The paper.](#the-paper).
 - [The goals.](#the-goals).
