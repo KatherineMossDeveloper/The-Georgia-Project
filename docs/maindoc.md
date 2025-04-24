@@ -124,14 +124,47 @@ The folder structure is as follows during training, validation, and testing.  PG
     \1  
 
 ## The results.  
+The final code had all F1 scores above 99.7% in 5 epochs or less.  The details of the training runs for this final version are in section D. below.  
+To produce these numbers, I re-ran versions of the code so that I could understand exactly what delivered the best metrics and shortest runtimes for training.  I found that making 10% of the ImageNet layers trainable improved metrics.  I found that adding two Dropout layers improved metrics.  Finally, I found that both of them, together, produced a better model.  
+This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
+Below are the training details.  The words “last good” refers to my base version of the Python code I used, which is version 1 on GitHub.  Each line in the tables below represent a training and test run.  There are four categories, A. through D., with D. being the final version with the best resutls.  If you have any questions, or would like more details, please write me.
+Here are the column names in the tables below and their meanings.  
 
+|variable name     |definition                                                                |
+|------------------|--------------------------------------------------------------------------|
+|run name	         | the unique name given to the run.                                        |
+|run time	         | the time it took to train, then run the results code to get metrics.     | 
+|train acc	       | the training accuracy of the last epoch, reported in the output window.  | 
+|valid acc	       | the validation accuracy of the last epoch, reported in the output window.|   
+|test acc	         | the test accuracy, reported in GAFinalTestResults.txt file.              |   
+|acc delta	       | the validation accuracy minus the training accuracy.                     |   
+|test missed	     | the no. of miss-classified images, reported in the confusion matrix.     |   
+|epochs		         | the number of epochs completed during the training.                      |   
+|learning rate	   | the learning rate used throughout the training.                          |   
+|dropout layers	   | the status of the dropout layers, shown in the GAmodel.py.               |   
+|trainable layers  | the status of the top 10% ImageNet layers, shown in the GAmodel.py.      |   
 
+A note on formatting of floats.  For some of the runs, for example GArun_27, the GAfinal_confusion_matrix.png showed 1 error, which is in the ‘test missed’ column.  Meanwhile, the ‘test acc’ column shows a note about the results of the GAFinalTestResults.txt.  In these runs, the final class-wise breakdown showed 100% in all categories.  This is due to formatting of floats.  I could have changed the call to sklearn.metrics.classification_report, which produces the final class-wise breakdown, so that 4 decimals, or so, were used, but I did not bother to do that.  Also, seeing 100% anywhere in metrics in the machine learning world is, of course, a mark of over-fitting.  I do not believe that we have that problem here.  
 
+Generally, in C. and D. training runs below, the dropout layers made the model run consistently longer.  In the B. training runs, where 10% of the ImageNet weights were being trained, I do not see an improvement over the A. runs.  However, in D., with both dropouts and 10% training of ImageNet weights, I see the best combination.  
+
+A.	The last good version, with no dropouts and no trainable ImageNet layers.  
+ <img src="images/results_a.png" alt="code overview" width="402" height="293">  
+
+B.	The last good version, with no dropouts, but with trainable ImageNet layers.  
+<img src="images/results_b.png" alt="code overview" width="402" height="293">  
+
+C.  Details about the last good version, with dropouts and with no trainable ImageNet layers.
+<img src="images/results_c.png" alt="code overview" width="402" height="293">  
+
+D.  The last good version with dropouts and trainable ImageNet layers:  the porridge that is just right. 
+<img src="images/results_d.png" alt="code overview" width="402" height="293">  
 
 ## The georgia code and deliverables.  
 Sections a. through c. below are notes on the Python code files.  Sections d. through i. are the notes about the deliverables.  
+
 The Georgia code overview.  
- 
+ <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
 
 a.  The code to split up the data.  
 GAsplitDataIntoTrainValidandTest.py	
