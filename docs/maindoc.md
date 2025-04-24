@@ -1,5 +1,6 @@
 ### Contents:
-- [The overview.](#the-overview).
+- [Introduction](#introduction) 
+- [The overview.](#the-overview)![icon](../images/HeroSmall.png)
 - [The paper.](#the-paper).
 - [The goals.](#the-goals).
 - [The development environment.](#the-development-environment).
