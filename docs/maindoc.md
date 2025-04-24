@@ -109,10 +109,55 @@ There are 6,860 image files for each of the two classes of crystal images.
 
 The paper remarks that the two image sets have “very distinct visual features.”  Here are some of the CEX images.  Below that are some PG images.  While the CEX images are distinctive, let me suggest here that the PG data varies.  Here are a few examples of what I mean. 
 ![Samples](../images/samples_cex.png)  
-![Samples](../images/samples_pg.png)
+![Samples](../images/samples_pg.png)  
+
+The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folder, and CEX are put in the “0” folder.  The GAsplitDataIntoTrainValidandTest.py code will set up these folders, and the GAmain.py code file will refer to these locations during training.  You will, of course, need to modify these files to create the folder structure on your computer.   See the “How to recreate the results” section for more.  
+
+…\GAtrainBinary  
+    \0  
+    \1  
+…\GAvalidBinary  
+    \0  
+    \1  
+…\GAtestBinary  
+    \0  
+    \1  
 
 ## The results.  
-This project trains an A.I. model to label images in a crystallization dataset.  You can train the model, or use the weights file included, to label images of your own.  
+
+
+
+
+## The georgia code and deliverables.  
+Sections a. through c. below are notes on the Python code files.  Sections d. through i. are the notes about the deliverables.  
+The Georgia code overview.  
+ 
+
+a.  The code to split up the data.  
+GAsplitDataIntoTrainValidandTest.py	
+This code splits the data into 70% training data, 25% validation data, and 5% test data, because that is the way that it is divided up in the paper.
+
+b.  The training and analysis code. 
+Generally, this next section of code files further preprocesses the data, trains the ResNet-101 model, then reports results.  The model will load the Keras built-in ImageNet weights.  It will train with the hyperparameters in the paper, with exceptions mentioned in “The model” section.  The code is organized into files, or modules, which call each other, in roughly the order here.
+
+GAmain.py        
+This module sets up the folder system and basic variables for the model.  It will then call   GAmodel.py. 
+
+GAmodel.py       
+This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls GAanalyze.py to reports results.
+
+GAcallbacks.py  
+This module creates the callbacks2 that the model will need during training. 
+GAutility.py    
+This module organizes largely unrelated pieces of code in one place.  Its principal use is to create various dataset objects.
+GAanalysis.py    
+Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
+
+c.  The inference code. 
+It is time to play.  After you trained the model, the file GAinference.py can then perform inference on any png file that you give it.  Below are some examples.  When you call the predict function of the model, you get back the percent chance that the image is of phenyglycine.  In other words, the predict call (roughly) answers the question “is this a picture of phenylglycine?”  So, if you put a picture of a cat in your inference folder, it should be tagged as cephalexin, but that was not true in our samples run below. 
+
+As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.*  Note that the weights file is here, as the code expects.  Each weights files is created at the end of the training.  The computers date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files is have a different name than the one shown here.   
+
 ![InferenceExamples](../images/InferenceExample.png)
 
 File CAT_TARA.png	 prediction PG confidence 0.5501  
@@ -125,9 +170,6 @@ File PG (567).png	 prediction CEX confidence 0.0023
 File PG (590).png	 prediction CEX confidence 0.0000  
 File PG (5946).png	 prediction CEX confidence 0.0071  
 
-
-
-## The georgia code and deliverables.  
 
 ## How to recreate the results. 
 
