@@ -2,10 +2,14 @@
 <a href="#the-overview">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The overview.
 </a>
+<a href="#the-paper">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The paper.
+</a>
+<a href="#the-goals">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The goals.
+</a>
 
-- [The overview.](#the-overview)![icon](../images/HeroSmall.png)
-- [The paper.](#the-paper).
-- [The goals.](#the-goals).
+
 - [The development environment.](#the-development-environment).
 - [The model architecture.](#the-model-architecture).
 - [The data.](#the-data).
