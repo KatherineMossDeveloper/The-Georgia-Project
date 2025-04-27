@@ -1,8 +1,6 @@
 <a href="#the-overview">
   <img src="../images/HeroWithTitle.png" alt="PG (590).png" title="PG (590).png">
 </a><br>
-
-![Hero](../images/HeroWithTitle.png)  
 ### Contents:
 <a href="#the-overview">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The overview.
