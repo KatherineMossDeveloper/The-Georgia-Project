@@ -1,3 +1,5 @@
+![Hero](images/HeroWithTitle.png)  
+
 ### Contents:
 <a href="#the-overview">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The overview.
