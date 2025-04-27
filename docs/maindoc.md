@@ -1,13 +1,16 @@
 <a href="#the-overview">
   <img src="../images/HeroWithTitle.png" alt="PG (590).png" title="PG (590).png">
 </a><br>
-### Contents:
+
+
 <a href="#the-overview">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The overview.
 </a><br>
+
 <a href="#the-paper">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The paper.
 </a><br>
+
 <a href="#the-goals">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The goals.
 </a><br>
