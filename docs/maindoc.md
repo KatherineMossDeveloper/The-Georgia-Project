@@ -1,4 +1,4 @@
-![Hero](images/HeroWithTitle.png)  
+![Hero](../images/HeroWithTitle.png)  
 
 ### Contents:
 <a href="#the-overview">
