@@ -1,6 +1,6 @@
 
 ![Hero](images/HeroWithTitleSmall.png)  
-**Python code that trains a model to label crystallization images.**  
+**Python code that trains a model to label crystallization images from OpenCrystalData on Kaggle.**  
 
 ![Crystallization](https://img.shields.io/badge/domain-Crystallization-white)
 ![Python](https://img.shields.io/badge/Python-3.8-lightblue)
@@ -12,8 +12,7 @@
 ![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
 
 
-I found a research paper about an A.I. model that was trained to do binary classification on images of crystallization. 
-I recreated the results in Python.  My metrics are a bit better and the training is faster.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
+I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and the training is faster.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
  
 [Code overview.](#code-overview) • 
 [Model comparison](#model-comparison) • 
