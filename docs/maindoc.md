@@ -64,7 +64,9 @@ Organic Process Research & Development 2021 25 (7), 1670-1679
 DOI: 10.1021/acs.oprd.1c00136  
 
 This paper will be referred to here as “the paper.”  Below is a hyperlink to an abstract of the paper, along with a supplemental file.   The full paper is only available behind paywalls.  I purchased a copy in order to continue my study, so I ethically cannot share my copy with others here.  However, here is the abstract, which is public.  
+
 https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896  
+
 What I can say, without going against the spirit of the pay wall agreement, is that the scientists who wrote the paper trained ResNet models with ImageNet weights on the GA data.  It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  They used both ResNet-18 and ResNet-50.  They used MATLAB 2020b Deep Learning Toolbox and deepNetworkDesigner app.  
 [back to top](#content)   
 
