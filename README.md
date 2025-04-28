@@ -8,8 +8,8 @@
 [![Kaggle Dataset](https://img.shields.io/badge/Kaggle-Dataset-teal?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
 ![Binary Classification](https://img.shields.io/badge/task-Binary_Classification-yellowgreen)
-![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
 ![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
+![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-lightorange)
 
 
 I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and in few epochs.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
