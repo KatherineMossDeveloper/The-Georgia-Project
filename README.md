@@ -68,6 +68,7 @@ In the table below are the details offered by the published paper, then on the r
    PLAY TIME  
    edit the directories in GAinference.  
    run GAinference.  
+[back to top](#code-overview) 
 
 ## Contributions.  
 If you found an issue or would like to submit an improvement to this project, please click on the issue tab on the project page.  If you would like to submit a PR with a fix, reference the issue you created, please.  
@@ -75,7 +76,7 @@ If you found an issue or would like to submit an improvement to this project, pl
 ## Known issues.  
 None.  
 
-## Contact info.                                                                      [back to top](#code-overview) 
+## Contact info.                                                                     
 For more details about this project, feel free to reach out to me  
 at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
 
