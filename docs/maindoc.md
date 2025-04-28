@@ -260,7 +260,7 @@ i.  GAfinal_roc_auc.png, the ROC graph with AUC.
 ## How to recreate the results.  
 These instructions were written for my Windows PC.  The data zip file is over 1 GB, so you will need a drive with some free space on it to work with this data.  There are notes at the top of each code file about the minimum one needs to do to run the code.  
 
-Step 1. download the data.  
+Step 1. download the data.   
 Navigate to the Kaggle website using this hyperlink, create an account (which you can do for free), sign into the site, and press the “Download” button.  Downloading and extraction can take a while, so go get another cup of coffee.  
 
 https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download
@@ -270,7 +270,7 @@ Extract the data from the archive.zip file.  The data structure created during e
  	your_drive_letter_and_folder/archive/cropped/cropped/cex
  	your_drive_letter_and_folder/archive/cropped/cropped/pg
 
-Step 2. spit up the data. 
+Step 2. spit up the data.  
 Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE of your choice.  Edit the folder structure strings for your computer by replacing the phrase “your_drive_letter_and_folder” with your folder location.  If the “destination folders” do not already exist, they will be created.  These folder names are just suggestions, of course.  Read the “to do” list in the top of the file for more information  (Note that I added spaces below, so that the strings would line up and be easier to read here.  In Python, the editor would complain about this spacing.)  
 
 Define source folders.  
@@ -285,7 +285,7 @@ Define destination folders.
  	test_pg_dest  = r"your_drive_letter_and_folder\GAtestBinary\1"  
  	test_cex_dest = r"your_drive_letter_and_folder\GAtestBinary\0"  
 
-Step 3. prepare for training. 
+Step 3. prepare for training.  
 Open the GAmain.py code file.  Change the folder strings to suit your folder layout.  
 
  	deliverables_folder = r"your_drive_letter_and_folder\your_deliverables_folder"  
