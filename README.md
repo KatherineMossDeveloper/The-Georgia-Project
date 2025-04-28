@@ -5,7 +5,7 @@
 ![Crystallization](https://img.shields.io/badge/domain-Crystallization-white)
 ![Python](https://img.shields.io/badge/Python-3.8-lightblue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-blue)
-[![OpenCrystalData](https://img.shields.io/badge/Kaggle-Dataset-teal?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)
+[![](https://img.shields.io/badge/Kaggle-Dataset-teal?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
 ![Binary Classification](https://img.shields.io/badge/task-Binary_Classification-yellowgreen)
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-orange)
