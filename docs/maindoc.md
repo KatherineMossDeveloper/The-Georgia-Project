@@ -120,7 +120,7 @@ There are 6,860 image files for each of the two classes of crystal images.
 |Test		      |  341 image files |  343 image files|
 |Totals       |6,804 image files |6,860 image files|
 
-The paper remarks that the two image sets have “very distinct visual features.”  Here are some of the CEX images.  Below that are some PG images.  While the CEX images are distinctive, let me suggest here that the PG data varies.  Here are a few examples of what I mean. 
+The paper remarks that the two image sets have “very distinct visual features.”  Here are some of the CEX images.  Below that are some PG images.  While the CEX images are distinctive, let me suggest here that the PG data varies.  
 ![Samples](../images/samples_cex.png)  
 ![Samples](../images/samples_pg.png)  
 
@@ -141,7 +141,7 @@ The folder structure is as follows during training, validation, and testing.  PG
 The final code had all F1 scores above 99.7% in 5 epochs or less.  The details of the training runs for this final version are in section D. below.  
 To produce these numbers, I re-ran versions of the code so that I could understand exactly what delivered the best metrics and shortest runtimes for training.  I found that making 10% of the ImageNet layers trainable improved metrics.  I found that adding two Dropout layers improved metrics.  Finally, I found that both of them, together, produced a better model.  
 This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
-Below are the training details.  The words “last good” refers to my base version of the Python code I used, which is version 1 on GitHub.  Each line in the tables below represent a training and test run.  There are four categories, A. through D., with D. being the final version with the best resutls.  If you have any questions, or would like more details, please write me.
+Below are the training details.  The words “last good” refers to my base version of the Python code I used, which is version 1 on GitHub.  Each line in the tables below represents a training and test run.  There are four categories, A. through D., with D. being the final version with the best resutls.  If you have any questions, or would like more details, write to me.
 Here are the column names in the tables below and their meanings.
 
 |variable name     |definition                                                                |
@@ -158,7 +158,7 @@ Here are the column names in the tables below and their meanings.
 |dropout layers	   | the status of the dropout layers, shown in the GAmodel.py.               |   
 |trainable layers  | the status of the top 10% ImageNet layers, shown in the GAmodel.py.      |   
 
-A note on formatting of floats.  For some of the runs, for example GArun_27, the GAfinal_confusion_matrix.png showed 1 error, which is in the ‘test missed’ column.  Meanwhile, the ‘test acc’ column shows a note about the results of the GAFinalTestResults.txt.  In these runs, the final class-wise breakdown showed 100% in all categories.  This is due to formatting of floats.  I could have changed the call to sklearn.metrics.classification_report, which produces the final class-wise breakdown, so that 4 decimals, or so, were used, but I did not bother to do that.  Also, seeing 100% anywhere in metrics in the machine learning world is, of course, a mark of over-fitting.  I do not believe that we have that problem here.  
+Here is a note on formatting of floats.  For some of the runs, for example GArun_27, the GAfinal_confusion_matrix.png showed 1 error, which is in the ‘test missed’ column.  Meanwhile, the ‘test acc’ column shows a note about the results of the GAFinalTestResults.txt.  In these runs, the final class-wise breakdown showed 100% in all categories.  This is due to formatting of floats.  I could have changed the call to sklearn.metrics.classification_report, which produces the final class-wise breakdown, so that 4 decimals, or so, were used, but I did not bother to do that.  Also, seeing 100% anywhere in metrics in the machine learning world is, of course, a mark of over-fitting.  I do not believe that we have that problem here.  
 
 Generally, in C. and D. training runs below, the dropout layers made the model run consistently longer.  In the B. training runs, where 10% of the ImageNet weights were being trained, I do not see an improvement over the A. runs.  However, in D., with both dropouts and 10% training of ImageNet weights, I see the best combination.  
 
@@ -168,7 +168,7 @@ A.	The last good version, with no dropouts and no trainable ImageNet layers.
 B.	The last good version, with no dropouts, but with trainable ImageNet layers.  
 <img src="../images/results_b.png" alt="result group b." width="624" height="209">  
 
-C.  Details about the last good version, with dropouts and with no trainable ImageNet layers.  
+C.  The last good version, with dropouts and with no trainable ImageNet layers.  
 <img src="../images/results_c.png" alt="result group c." width="624" height="209">  
 
 D.  The last good version with dropouts and trainable ImageNet layers:  the porridge that is just right.  
@@ -221,6 +221,7 @@ As an example of an inference run, here is a collection of images, most of which
 |File PG (5946).png	| prediction CEX confidence 0.0071  |
 
 The following notes are about the deliverables created at the end of the training run.  
+
 d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in the ONNX format, for developers working in other environments, like ML.NET.  
 
 GAweights_2025-03-22_16-43-54.h5  
