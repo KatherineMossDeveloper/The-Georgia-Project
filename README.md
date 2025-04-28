@@ -25,7 +25,7 @@ I trained a model to do binary classification on images of crystallization, by r
 -The code for this project.  
 Click "Code" on the repo page, then download the zipped file, or open with GitHub Desktop.  
 
--The reseach paper is here.  
+-The research paper is here.  
 [In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
 
 -The data is available on Kaggle.  
@@ -75,7 +75,7 @@ If you found an issue or would like to submit an improvement to this project, pl
 ## Known issues.  
 None.  
 
-## Contact info.  
+## Contact info.                                                                      [back to top](#code-overview) 
 For more details about this project, feel free to reach out to me  
 at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
 
