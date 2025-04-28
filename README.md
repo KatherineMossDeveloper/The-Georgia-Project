@@ -54,9 +54,9 @@ In the table below are the details offered by the published paper, then on the r
 
 ## Instructions.  
    CODE  
-   install a Python IDE (I used PyCharm, ver. 2023.2.4, Community Edition)  
-   clone this repo (add repo link)  
-   install dependencies (I used Python 3.8; TensorFlow 2.10.1; TensorFlow addons 0.21.0)
+   set up a Python environment (I used PyCharm, ver. 2023.2.4, Community Edition)  
+   click "Code" on the repo page, then download the zipped file, or open with GitHub Desktop.  
+   install dependencies (I used Python 3.8; TensorFlow 2.10.1)
 
    DATA  
    download and unzip the data  
