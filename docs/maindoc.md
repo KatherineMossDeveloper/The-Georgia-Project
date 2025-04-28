@@ -312,7 +312,8 @@ Lastly, there is a code file, GAinference.py, that will perform inference on any
 
 ```python
 image_folder = r'your_drive_letter_and_inference_folder'  
-weights_file = r'your_drive_letter_and_inference_folder\your_weights_file.h5'  
+weights_file = r'your_drive_letter_and_inference_folder\your_weights_file.h5'
+```
 [back to top](#content)  
 
 ## The license.  
