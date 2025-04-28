@@ -11,9 +11,10 @@
 ![Binary Classification](https://img.shields.io/badge/task-Binary_Classification-yellowgreen)
 ![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
 
-I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and in few epochs.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
+I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and completed in fewer epochs.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
 
-[Hyperlinks.](#hyperlinks) • 
+## Content. 
+[Quick start.](#quick-start) • 
 [Code overview.](#code-overview) • 
 [Model comparison](#model-comparison) • 
 [Instructions](#Instructions) • 
@@ -21,8 +22,7 @@ I trained a model to do binary classification on images of crystallization, by r
 [Known issues](#known-issues) • 
 [Contact info](#contact-info)
 
-
-## Hyperlinks. 
+## Quick start. 
 -The code for this project.  
 Click "Code" on the repo page, then download the zipped file, or open with GitHub Desktop.  
 
@@ -80,5 +80,5 @@ None.
 For more details about this project, feel free to reach out to me  
 at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
 
-[back to top](#hyperlinks) 
+[back to top](#content) 
 
