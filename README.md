@@ -23,17 +23,17 @@ I trained a model to do binary classification on images of crystallization, by r
 [Contact info](#contact-info)
 
 ## Quick start. 
+-The project's detailed documentation is here.  
+[Go to the main doc file](docs/maindoc.md)  
+
 -The code for this project.  
 Click "Code" on the repo page, then download the zipped file, or open with GitHub Desktop.  
-
--The research paper is here.  
-[In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
 
 -The data is available on Kaggle.  
 [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
 
--The project's detailed documentation is here.  
-[Go to the main doc file](docs/maindoc.md)  
+-The research paper is here.  
+[In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
 
 ## Code overview.  
 <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
