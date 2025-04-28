@@ -260,6 +260,12 @@ i.  GAfinal_roc_auc.png, the ROC graph with AUC.
 ## How to recreate the results.  
 These instructions were written for my Windows PC.  The data zip file is over 1 GB, so you will need a drive with some free space on it to work with this data.  There are notes at the top of each code file about the minimum one needs to do to run the code.  
 
+1. First, do this.
+2. Then, do that.
+3. After that, perform this action.
+4. Finally, complete the task.
+
+
 1. download the data.  
 Navigate to the Kaggle website using this hyperlink, create an account (which you can do for free), sign into the site, and press the “Download” button.  Downloading and extraction can take a while, so go get another cup of coffee.  
 
