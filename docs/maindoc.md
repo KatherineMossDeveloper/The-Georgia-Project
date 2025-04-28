@@ -244,7 +244,7 @@ f.   Next come the GAFinalTestResults.txt file.  After the training is completed
 [back to top](#content)  
 
 g.  GAmetrics_plot.png, the plot of training accuracy and validation accuracy.  
-
+![Results](../images/results_accuracies.png)  
 
 ## How to recreate the results.  
 [back to top](#content)  
