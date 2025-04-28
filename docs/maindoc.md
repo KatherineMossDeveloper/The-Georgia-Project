@@ -224,17 +224,10 @@ The following notes are about the deliverables created at the end of the trainin
 
 d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in the ONNX format, for developers working in other environments, like ML.NET.  
 
-<code style="font-family: 'Courier New', Courier, monospace;">hello world</code>
-<pre style="font-family: 'Courier New', Courier, monospace;">
-hello world
-</pre>
-
-
-
-<span style="font-family: 'Courier New', Courier, monospace;">
+<pre style="font-family: 'Courier New', Courier, monospace; color: green;">
    GAweights_2025-03-22_16-43-54.h5  
    GAweights_2025-03-22_16-43-54.onnx  
-</span>  
+</pre>
 
 e.  In the ouput window in PyCharm, during training, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average3, and F1-scores.1 
 
