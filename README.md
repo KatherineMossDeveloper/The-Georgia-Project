@@ -12,7 +12,7 @@
 ![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
 
 
-I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and the training is faster.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
+I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and in few epochs.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
  
 [Code overview.](#code-overview) • 
 [Model comparison](#model-comparison) • 
