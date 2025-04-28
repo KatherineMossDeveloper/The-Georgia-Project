@@ -12,7 +12,8 @@
 ![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
 
 I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and in few epochs.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
- 
+
+[The overview.](#the-overview) • 
 [Code overview.](#code-overview) • 
 [Model comparison](#model-comparison) • 
 [Instructions](#Instructions) • 
@@ -42,11 +43,11 @@ In the table below are the details offered by the published paper, then on the r
 |                         |Salami et al. paper     |my work                |
 |-------------------------|------------------------|-----------------------|
 |model type               |ResNet-18, ResNet-50    |ResNet-101             |
-|optimization method      |SGDM	                  |Keras SGD (momentum .9)|
-|learning rate 			  |1 × 10−4                |1 × 10−1	            |
+|optimization method      |SGDM	                   |Keras SGD (momentum .9)|
+|learning rate 		      	  |1 × 10−4                |1 × 10−1	              |
 |training data            |3200−3600 in each class |(same)                 |
 |train/val./test %        |70/25/5%                |(same)                 |
-|minibatch size 	        |32−64                   |64                     |
+|minibatch size           |32−64                   |64                     |
 |validation frequency     |10−50                   |1                      |
 |added dropout layers     |(did not comment)       |2                      |
 |trainable ImageNet layers|(did not comment)       |made last 10% trainable|
@@ -68,7 +69,6 @@ In the table below are the details offered by the published paper, then on the r
    PLAY TIME  
    edit the directories in GAinference.  
    run GAinference.  
-[back to top](#code-overview) 
 
 ## Contributions.  
 If you found an issue or would like to submit an improvement to this project, please click on the issue tab on the project page.  If you would like to submit a PR with a fix, reference the issue you created, please.  
@@ -80,5 +80,5 @@ None.
 For more details about this project, feel free to reach out to me  
 at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
 
-
+[back to top](#the-overview) 
 
