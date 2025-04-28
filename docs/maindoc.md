@@ -33,7 +33,7 @@
 <a href="#the-license">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The license.
 </a><br>
-<a href="#how-to-contact-me">
+<a href="#contact-info">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> How to contact me.
 </a><br>
 <a href="#the-footnotes">
@@ -311,12 +311,13 @@ weights_file = r'your_drive_letter_and_inference_folder\your_weights_file.h5'
 This project is licensed under the MIT License.  See the license.txt file for details.
 [back to top](#content)  
 
-## How to contact me.  
-
+## Contact info.                                                                     
+For more details about this project, feel free to reach out to me  
+at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228).  
 [back to top](#content)  
 
 ## The footnotes.  
-TBD
+TBD  
 [back to top](#content)  
 
 
