@@ -67,7 +67,7 @@ What I can say, without going against the spirit of the pay wall agreement, is t
 [back to top](#content)   
 
 ## The goals
-I wanted to create useful code, documentation, and weights that use the paper’s guidance and its binary dataset of crystallization images.  The code and/or weights that I produce could be useful because they are in a popular technology (Python/TensorFlow/Keras), along with details about the results. 
+I wanted to create useful code, documentation, and weights that use the paper’s guidance and its binary dataset of crystallization images.  The code and/or weights that I produce could be useful because they are in a popular technology (Python/TensorFlow/Keras), along with details about the results.  
 [back to top](#content)   
 
 ## The development environment.
@@ -104,7 +104,7 @@ I added these because I usually do add them when training models.
 4.  made 10% of the ImageNet layers trainable.  See “GAmodel.py.”    
 I made these layers trainable on a lark, not knowing if they would make a difference.  They did.  
 
-I also wrote code to split the data into training, validation, and test sets.  See section a. in “The Georgia code and deliverables.”  I added code that would stop the training based on the F1 scores.1  See “GAcallbacks.py.”
+I also wrote code to split the data into training, validation, and test sets.  See section a. in “The Georgia code and deliverables.”  I added code that would stop the training based on the F1 scores.1  See “GAcallbacks.py.”  
 [back to top](#content)  
 
 ## The data.  
@@ -237,10 +237,10 @@ f.   Next come the GAFinalTestResults.txt file.  After the training is completed
 |             |          |        |          |         |  
 |    accuracy |          |        |    1.00  |    684  |
 |   macro avg |    1.00  |   1.00 |    1.00  |    684  |
-|weighted avg |    1.00  |   1.00 |    1.00  |    684  |
+|weighted avg |    1.00  |   1.00 |    1.00  |    684  |  
 [back to top](#content)  
 
-## How to recreate the results. 
+## How to recreate the results.  
 [back to top](#content)  
 
 ## The license.  
