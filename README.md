@@ -13,7 +13,7 @@
 
 I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and in few epochs.  My code is written in Python using Tensorflow, ResNet101 and ImageNet weights.  The metrics are presented in a ROC/AUC graph, a confusion matrix, class-wise test results, etc.  
 
-[The overview.](#the-overview) • 
+[Hyperlinks.](#hyperlinks) • 
 [Code overview.](#code-overview) • 
 [Model comparison](#model-comparison) • 
 [Instructions](#Instructions) • 
@@ -22,7 +22,7 @@ I trained a model to do binary classification on images of crystallization, by r
 [Contact info](#contact-info)
 
 
-## Overview. 
+## Hyperlinks. 
 -The code for this project.  
 Click "Code" on the repo page, then download the zipped file, or open with GitHub Desktop.  
 
@@ -80,5 +80,5 @@ None.
 For more details about this project, feel free to reach out to me  
 at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
 
-[back to top](#the-overview) 
+[back to top](#hyperlinks) 
 
