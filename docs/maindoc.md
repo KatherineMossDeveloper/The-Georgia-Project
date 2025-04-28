@@ -223,10 +223,11 @@ As an example of an inference run, here is a collection of images, most of which
 The following notes are about the deliverables created at the end of the training run.  
 
 d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in the ONNX format, for developers working in other environments, like ML.NET.  
-\```python
-GAweights_2025-03-22_16-43-54.h5  
-GAweights_2025-03-22_16-43-54.onnx  
-\```python
+<span style="font-family: 'Courier New', Courier, monospace;">
+   GAweights_2025-03-22_16-43-54.h5  
+   GAweights_2025-03-22_16-43-54.onnx  
+</span>  
+
 e.  In the ouput window in PyCharm, during training, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average3, and F1-scores.1 
 
 Epoch 3 - Class-Wise Metrics:
