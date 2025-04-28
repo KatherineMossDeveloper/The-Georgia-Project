@@ -2,7 +2,7 @@
   <img src="../images/HeroWithTitle.png" alt="PG (590).png" title="PG (590).png">
 </a><br>
 
-
+## Content.
 <a href="#the-overview">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The overview.
 </a><br>
@@ -53,6 +53,7 @@ The dataset I found was collected using Mettler-Toledo, LLC, (MT) instrumentatio
 I chose crystallization in images because I think it is an important area of A.I.  Other corners of the A.I. world, like LLM’s, video creation, and robotics, are in the news more these days, but the detection and categorization of crystallization in images is important because it is used in the food processing, drug discovery, quality control in manufacturing, etc.  It would be good to have more developers and data scientists interested in this part of A.I.  
 
 This study is about the crystallization dataset on Kaggle.  However, in this documentation, to make things easer, I will refer to the dataset as the “GA data,” and this project as the “Georgia Project,” since all of the authors were at the School of Chemical & Biomolecular Engineering, Georgia Institute of Technology in Atlanta, GA, which happens to be my husband’s alma mater.  
+[back to top](#content)   
 
 ## The paper
 The dataset references a paper, 
@@ -63,14 +64,17 @@ DOI: 10.1021/acs.oprd.1c00136
 This paper will be referred to here as “the paper.”  Below is a hyperlink to an abstract of the paper, along with a supplemental file.   The full paper is only available behind paywalls.  I purchased a copy in order to continue my study, so I ethically cannot share my copy with others here.  However, here is the abstract, which is public. 
 https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896
 What I can say, without going against the spirit of the pay wall agreement, is that the scientists who wrote the paper trained ResNet models with ImageNet weights on the GA data.  It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  They used both ResNet-18 and ResNet-50.  They used MATLAB 2020b Deep Learning Toolbox and deepNetworkDesigner app.  
+[back to top](#content)   
 
 ## The goals
 I wanted to create useful code, documentation, and weights that use the paper’s guidance and its binary dataset of crystallization images.  The code and/or weights that I produce could be useful because they are in a popular technology (Python/TensorFlow/Keras), along with details about the results. 
+[back to top](#content)   
 
 ## The development environment.
 The paper does not mention whether the MATLAB work done is publicly available.  Therefore, I tried to recreate their work with my code, which is written in Python with TensorFlow (Python 3.8; TensorFlow 2.10.1; TensorFlow addons 0.21.0).  I used PyCharm (ver. 2023.2.4, Community Edition) as the IDE.  See sections a., b., and c. of “The Georgia code and deliverables” for more.   
 
 For hardware, I used a Quadro P1000 GPU, using CUDA version 12.2, with 4 GB of memory.  I did not see in the paper what hardware was used in the study.  
+[back to top](#content)   
 
 ## The model.  
 In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   
@@ -101,6 +105,7 @@ I added these because I usually do add them when training models.
 I made these layers trainable on a lark, not knowing if they would make a difference.  They did.  
 
 I also wrote code to split the data into training, validation, and test sets.  See section a. in “The Georgia code and deliverables.”  I added code that would stop the training based on the F1 scores.1  See “GAcallbacks.py.”
+[back to top](#content)  
 
 ## The data.  
 There are 6,860 image files for each of the two classes of crystal images.  
@@ -126,13 +131,14 @@ The folder structure is as follows during training, validation, and testing.  PG
 …\GAtestBinary  
     \0  
     \1  
+[back to top](#content)  
 
 ## The results.  
 The final code had all F1 scores above 99.7% in 5 epochs or less.  The details of the training runs for this final version are in section D. below.  
 To produce these numbers, I re-ran versions of the code so that I could understand exactly what delivered the best metrics and shortest runtimes for training.  I found that making 10% of the ImageNet layers trainable improved metrics.  I found that adding two Dropout layers improved metrics.  Finally, I found that both of them, together, produced a better model.  
 This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
 Below are the training details.  The words “last good” refers to my base version of the Python code I used, which is version 1 on GitHub.  Each line in the tables below represent a training and test run.  There are four categories, A. through D., with D. being the final version with the best resutls.  If you have any questions, or would like more details, please write me.
-Here are the column names in the tables below and their meanings.  
+Here are the column names in the tables below and their meanings.
 
 |variable name     |definition                                                                |
 |------------------|--------------------------------------------------------------------------|
@@ -163,6 +169,7 @@ C.  Details about the last good version, with dropouts and with no trainable Ima
 
 D.  The last good version with dropouts and trainable ImageNet layers:  the porridge that is just right.  
 <img src="../images/results_d.png" alt="result group d." width="624" height="209">  
+[back to top](#content)  
 
 ## The georgia code and deliverables.  
 Sections a. through c. below are notes on the Python code files.  Sections d. through i. are the notes about the deliverables.  
@@ -225,21 +232,26 @@ f.   Next come the GAFinalTestResults.txt file.  After the training is completed
             
 |             |precision | recall | f1-score |  support|
 |-------------|----------|--------|----------|---------|
-|
 |          PG |    0.99  |   1.00 |    1.00  |     341 |
 |         CEX |    1.00  |   0.99 |    1.00  |     343 |
 |             |          |        |          |         |  
 |    accuracy |          |        |    1.00  |    684  |
 |   macro avg |    1.00  |   1.00 |    1.00  |    684  |
 |weighted avg |    1.00  |   1.00 |    1.00  |    684  |
+[back to top](#content)  
 
 ## How to recreate the results. 
+[back to top](#content)  
 
 ## The license.  
+[back to top](#content)  
 
 ## How to contact me.  
+[back to top](#content)  
 
 ## The footnotes.  
+[back to top](#content)  
+
 
 
 
