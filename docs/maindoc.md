@@ -56,11 +56,12 @@ This study is about the crystallization dataset on Kaggle.  However, in this doc
 [back to top](#content)   
 
 ## The paper
-The dataset references a paper, 
+The dataset references a paper,  
 In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.  
 Hossein Salami, Matthew A. McDonald, Andreas S. Bommarius, Ronald W. Rousseau, and Martha A. Grover
 Organic Process Research & Development 2021 25 (7), 1670-1679
-DOI: 10.1021/acs.oprd.1c00136
+DOI: 10.1021/acs.oprd.1c00136  
+
 This paper will be referred to here as “the paper.”  Below is a hyperlink to an abstract of the paper, along with a supplemental file.   The full paper is only available behind paywalls.  I purchased a copy in order to continue my study, so I ethically cannot share my copy with others here.  However, here is the abstract, which is public. 
 https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896
 What I can say, without going against the spirit of the pay wall agreement, is that the scientists who wrote the paper trained ResNet models with ImageNet weights on the GA data.  It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  They used both ResNet-18 and ResNet-50.  They used MATLAB 2020b Deep Learning Toolbox and deepNetworkDesigner app.  
@@ -204,15 +205,17 @@ As an example of an inference run, here is a collection of images, most of which
 
 ![InferenceExamples](../images/InferenceExample.png)
 
-File CAT_TARA.png	 prediction PG confidence 0.5501  
-File CEX (2344).png	 prediction PG confidence 1.0000  
-File CEX (293).png	 prediction PG confidence 1.0000  
-File CEX (3).png	 prediction PG confidence 0.9486  
-File OIP (5).png	 prediction PG confidence 0.5020  
-File PG (5282).png	 prediction CEX confidence 0.0000  
-File PG (567).png	 prediction CEX confidence 0.0023  
-File PG (590).png	 prediction CEX confidence 0.0000  
-File PG (5946).png	 prediction CEX confidence 0.0071  
+|image              |prediction                         |
+|-------------------|-----------------------------------|
+|File CAT_TARA.png  | prediction PG confidence 0.5501   |
+|File CEX (2344).png| prediction PG confidence 1.0000   |
+|File CEX (293).png	| prediction PG confidence 1.0000   |
+|File CEX (3).png	  | prediction PG confidence 0.9486   |
+|File OIP (5).png	  | prediction PG confidence 0.5020   |
+|File PG (5282).png	| prediction CEX confidence 0.0000  |
+|File PG (567).png	| prediction CEX confidence 0.0023  |
+|File PG (590).png	| prediction CEX confidence 0.0000  |
+|File PG (5946).png	| prediction CEX confidence 0.0071  |
 
 The following notes are about the deliverables created at the end of the training run.  
 d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in the ONNX format, for developers working in other environments, like ML.NET.  
@@ -239,6 +242,9 @@ f.   Next come the GAFinalTestResults.txt file.  After the training is completed
 |   macro avg |    1.00  |   1.00 |    1.00  |    684  |
 |weighted avg |    1.00  |   1.00 |    1.00  |    684  |  
 [back to top](#content)  
+
+g.  GAmetrics_plot.png, the plot of training accuracy and validation accuracy.  
+
 
 ## How to recreate the results.  
 [back to top](#content)  
