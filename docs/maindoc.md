@@ -1,5 +1,5 @@
 <a href="#the-overview">
-  <img src="../images/HeroWithTitle.png" alt="PG (590).png" title="PG (590).png">
+  <img src="../images/HeroWithTitle.png" alt="PG (590).png" title="PG (590).png"; width: 499px; height: 218px;>
 </a><br>
 
 ## Content.
