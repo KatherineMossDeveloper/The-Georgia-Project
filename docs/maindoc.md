@@ -20,7 +20,7 @@
 </a><br>
 <a href="#the-data">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The data.
-</a><br>  `
+</a><br>  
 <a href="#the-results">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The results.
 </a><br>
@@ -270,38 +270,40 @@ Navigate to the Kaggle website using this hyperlink, create an account (which yo
 https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download
 
 Extract the data from the archive.zip file.  The data structure created during extraction for the cropped image files is like this…
-```python
- 	your_drive_letter_and_folder/archive/cropped/cropped/cex
- 	your_drive_letter_and_folder/archive/cropped/cropped/pg
+<pre style="font-family: 'Courier New', Courier, monospace;">
+   your_drive_letter_and_folder/archive/cropped/cropped/cex
+   your_drive_letter_and_folder/archive/cropped/cropped/pg
+</pre>
 
 Step 2. spit up the data.  
 Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE of your choice.  Edit the folder structure strings for your computer by replacing the phrase “your_drive_letter_and_folder” with your folder location.  If the “destination folders” do not already exist, they will be created.  These folder names are just suggestions, of course.  Read the “to do” list in the top of the file for more information  (Note that I added spaces below, so that the strings would line up and be easier to read here.  In Python, the editor would complain about this spacing.)  
 
 Define source folders.  
-\```python
- 	source_pg = r"your_drive_letter_and_folder\archive\cropped\cropped\pg"
- 	source_cex= r"your_drive_letter_and_folder\archive\cropped\cropped\cex"
-\```
+<pre style="font-family: 'Courier New', Courier, monospace;">
+   source_pg = r"your_drive_letter_and_folder\archive\cropped\cropped\pg"
+   source_cex= r"your_drive_letter_and_folder\archive\cropped\cropped\cex"
+</pre>  
+
 Define destination folders.  
-\```python
- 	train_pg_dest = r"your_drive_letter_and_folder\GAtrainBinary\1"  
- 	train_cex_dest= r"your_drive_letter_and_folder\GAtrainBinary\0"  
- 	valid_pg_dest = r"your_drive_letter_and_folder\GAvalidBinary\1"  
- 	valid_cex_dest= r"your_drive_letter_and_folder\GAvalidBinary\0"  
- 	test_pg_dest  = r"your_drive_letter_and_folder\GAtestBinary\1"  
- 	test_cex_dest = r"your_drive_letter_and_folder\GAtestBinary\0"  
-\```
+<pre style="font-family: 'Courier New', Courier, monospace;">
+ 	 train_pg_dest = r"your_drive_letter_and_folder\GAtrainBinary\1"  
+ 	 train_cex_dest= r"your_drive_letter_and_folder\GAtrainBinary\0"  
+ 	 valid_pg_dest = r"your_drive_letter_and_folder\GAvalidBinary\1"  
+ 	 valid_cex_dest= r"your_drive_letter_and_folder\GAvalidBinary\0"  
+ 	 test_pg_dest  = r"your_drive_letter_and_folder\GAtestBinary\1"  
+ 	 test_cex_dest = r"your_drive_letter_and_folder\GAtestBinary\0"  
+</pre>    
 
 Step 3. prepare for training.  
 Open the GAmain.py code file.  Change the folder strings to suit your folder layout.  
-\```python
- 	deliverables_folder = r"your_drive_letter_and_folder\your_deliverables_folder"  
-\```
-\```python
- 	train_directory = r"your_drive_letter_and_folder\GATrainBinary"   
- 	val_directory   = r"your_drive_letter_and_folder\GAValidBinary"  
- 	test_directory  = r"your_drive_letter_and_folder\GATestBinary"  
-\```
+<pre style="font-family: 'Courier New', Courier, monospace;">
+ 	 deliverables_folder = r"your_drive_letter_and_folder\your_deliverables_folder"  
+</pre>    
+<pre style="font-family: 'Courier New', Courier, monospace;">
+ 	 train_directory = r"your_drive_letter_and_folder\GATrainBinary"   
+ 	 val_directory   = r"your_drive_letter_and_folder\GAValidBinary"  
+ 	 test_directory  = r"your_drive_letter_and_folder\GATestBinary"  
+</pre>    
 Note that the source_pg and source_cex are pointing to the location that the extracted zip file created.  Also note that the train_directory is pointing to the same location as the train_pg_dest and train_cex_dest are.  The same is true of val_directory and test_directory.  
 
 Setting up debugging folders and data. 
@@ -316,10 +318,10 @@ All files generated will be in your deliverables folder that you designated in t
 6. play with it.  
 Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  To use this file, open it and change the file directory to a directory of images on your computer.  In the same folder, place the GAweights….h5 weights file from your deliverables folder after training.  Edit the folder string below to suit your file structure.  See the “to do” section at the top of the file for more details.  
 
-\```python
-image_folder = r'your_drive_letter_and_inference_folder'  
-weights_file = r'your_drive_letter_and_inference_folder\your_weights_file.h5'
-\```
+<pre style="font-family: 'Courier New', Courier, monospace;">
+   image_folder = r'your_drive_letter_and_inference_folder'  
+   weights_file = r'your_drive_letter_and_inference_folder\your_weights_file.h5'
+</pre>  
 [back to top](#content)  
 
 ## The license.  
@@ -334,7 +336,3 @@ at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/k
 ## The footnotes.  
 TBD  
 [back to top](#content)  
-
-
-
-
