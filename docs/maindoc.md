@@ -245,7 +245,6 @@ f.   Next come the GAFinalTestResults.txt file.  After the training is completed
 |-------------|----------|--------|----------|---------|
 |          PG |    0.99  |   1.00 |    1.00  |     341 |
 |         CEX |    1.00  |   0.99 |    1.00  |     343 |
-|             |          |        |          |         |  
 |    accuracy |          |        |    1.00  |    684  |
 |   macro avg |    1.00  |   1.00 |    1.00  |    684  |
 |weighted avg |    1.00  |   1.00 |    1.00  |    684  |  
