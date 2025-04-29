@@ -224,18 +224,20 @@ The following notes are about the deliverables created at the end of the trainin
 
 d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in the ONNX format, for developers working in other environments, like ML.NET.  
 
-<pre style="font-family: 'Courier New', Courier, monospace; color: 'green';">
+<pre style="font-family: 'Courier New', Courier, monospace;">
    GAweights_2025-03-22_16-43-54.h5  
    GAweights_2025-03-22_16-43-54.onnx  
 </pre>
 
 e.  In the ouput window in PyCharm, during training, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average3, and F1-scores.1 
 
-Epoch 3 - Class-Wise Metrics:
-PG -  Precision: 0.9988, Recall: 0.9982, F1-Score: 0.9985
-CEX - Precision: 0.9982, Recall: 0.9988, F1-Score: 0.9985
-macro avg - Precision: 0.9985, Recall: 0.9985, F1-Score: 0.9985
-weighted avg - Precision: 0.9985, Recall: 0.9985, F1-Score: 0.9985
+<pre style="font-family: 'Courier New', Courier, monospace;">
+   Epoch 3 - Class-Wise Metrics:
+   PG -  Precision: 0.9988, Recall: 0.9982, F1-Score: 0.9985
+   CEX - Precision: 0.9982, Recall: 0.9988, F1-Score: 0.9985
+   macro avg - Precision: 0.9985, Recall: 0.9985, F1-Score: 0.9985
+   weighted avg - Precision: 0.9985, Recall: 0.9985, F1-Score: 0.9985
+</pre>
 
 f.   Next come the GAFinalTestResults.txt file.  After the training is completed, the model attempts to distinguish images in the two classes from each other.  The word “support” here tells us how many files the model used to determine the precision, recall, and F1 scores.   
             
