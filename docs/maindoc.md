@@ -20,7 +20,7 @@
 </a><br>
 <a href="#the-data">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The data.
-</a><br>
+</a><br>  `
 <a href="#the-results">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The results.
 </a><br>
@@ -224,7 +224,7 @@ The following notes are about the deliverables created at the end of the trainin
 
 d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in the ONNX format, for developers working in other environments, like ML.NET.  
 
-<pre style="font-family: 'Courier New', Courier, monospace; color: green;">
+<pre style="font-family: 'Courier New', Courier, monospace; color: 'green';">
    GAweights_2025-03-22_16-43-54.h5  
    GAweights_2025-03-22_16-43-54.onnx  
 </pre>
