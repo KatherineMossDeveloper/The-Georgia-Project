@@ -307,15 +307,15 @@ Open the GAmain.py code file.  Change the folder strings to suit your folder lay
 Note that the source_pg and source_cex are pointing to the location that the extracted zip file created.  Also note that the train_directory is pointing to the same location as the train_pg_dest and train_cex_dest are.  The same is true of val_directory and test_directory.  
 
 Setting up debugging folders and data. 
-Sometimes when debugging, it is nice to have a way to run a short “rehearsal” training.  If you want that, in the GAmain.py code, set the variable really_training = False.  Then edit the folders for debugging to point to an abbreviated version of the files.  To fill up the train, validation, and test image file folders for debugging, I copied about 10% of the files from the “real” training folders.  The epochs variable is set to 3, again so that the run is short.  Note that your metrics will probably look bad when you run your debugging sub-set of the data because the model will not have time to train on the data, nor enough data to train with.  Debugging in this way is for testing things like a new result file, not model performance.  
+Sometimes when debugging, it is nice to have a way to run a short “rehearsal” training.  If you want that, in the GAmain.py code, set the variable really_training = False.  Then edit the folders for debugging to point to an abbreviated version of the files.  To fill up the train, validation, and test image file folders for debugging, I copied about 10% of the files from the “real” training folders.  The epochs variable is set to 3, again so that the run is short.  Note that your metrics will probably look bad when you run your debugging sub-set of the data because the model will not have time to train on the data, nor enough data to train with.  Debugging in this way is for testing things like a new result file, not model performance. 
 
-4. train.  
+Step 4. train.  
 To train the model, start the GAmain.py file.  You can watch progress in the output window of PyCharm.  
 
-5. view results.  
+Step 5. view results.  
 All files generated will be in your deliverables folder that you designated in the GAmain.py code file.  
 
-6. play with it.  
+Step 6. play with it.  
 Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  To use this file, open it and change the file directory to a directory of images on your computer.  In the same folder, place the GAweights….h5 weights file from your deliverables folder after training.  Edit the folder string below to suit your file structure.  See the “to do” section at the top of the file for more details.  
 
 <pre style="font-family: 'Courier New', Courier, monospace;">
