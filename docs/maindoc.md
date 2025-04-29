@@ -286,12 +286,12 @@ Define source folders.
 
 Define destination folders.  
 <pre style="font-family: 'Courier New', Courier, monospace;">
- 	 train_pg_dest = r"your_drive_letter_and_folder\GAtrainBinary\1"  
- 	 train_cex_dest= r"your_drive_letter_and_folder\GAtrainBinary\0"  
- 	 valid_pg_dest = r"your_drive_letter_and_folder\GAvalidBinary\1"  
- 	 valid_cex_dest= r"your_drive_letter_and_folder\GAvalidBinary\0"  
- 	 test_pg_dest  = r"your_drive_letter_and_folder\GAtestBinary\1"  
- 	 test_cex_dest = r"your_drive_letter_and_folder\GAtestBinary\0"  
+ 	 train_pg_dest = r"your_drive_letter_and_folder\GAtrainBinary\1"
+ 	 train_cex_dest= r"your_drive_letter_and_folder\GAtrainBinary\0"
+ 	 valid_pg_dest = r"your_drive_letter_and_folder\GAvalidBinary\1"
+ 	 valid_cex_dest= r"your_drive_letter_and_folder\GAvalidBinary\0"
+ 	 test_pg_dest  = r"your_drive_letter_and_folder\GAtestBinary\1"
+ 	 test_cex_dest = r"your_drive_letter_and_folder\GAtestBinary\0"
 </pre>    
 
 Step 3. prepare for training.  
@@ -300,9 +300,9 @@ Open the GAmain.py code file.  Change the folder strings to suit your folder lay
  	 deliverables_folder = r"your_drive_letter_and_folder\your_deliverables_folder"  
 </pre>    
 <pre style="font-family: 'Courier New', Courier, monospace;">
- 	 train_directory = r"your_drive_letter_and_folder\GATrainBinary"   
- 	 val_directory   = r"your_drive_letter_and_folder\GAValidBinary"  
- 	 test_directory  = r"your_drive_letter_and_folder\GATestBinary"  
+ 	 train_directory = r"your_drive_letter_and_folder\GATrainBinary"
+ 	 val_directory   = r"your_drive_letter_and_folder\GAValidBinary"
+ 	 test_directory  = r"your_drive_letter_and_folder\GATestBinary"
 </pre>    
 Note that the source_pg and source_cex are pointing to the location that the extracted zip file created.  Also note that the train_directory is pointing to the same location as the train_pg_dest and train_cex_dest are.  The same is true of val_directory and test_directory.  
 
