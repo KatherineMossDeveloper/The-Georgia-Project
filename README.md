@@ -1,6 +1,4 @@
-
 ![Hero](images/HeroPolaroids.png)  
-
 
 ## Content. 
 [Quick start.](#quick-start) • 
