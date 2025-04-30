@@ -1,18 +1,6 @@
 
-![Hero](images/HeroWithTitleSmall.png)  
+![Hero](images/HeroPolaroids.png)  
 
-![Crystallization](https://img.shields.io/badge/domain-Crystallization-white)
-![Python](https://img.shields.io/badge/Python-3.8-lightblue)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10.1-blue)
-[![Kaggle Dataset](https://img.shields.io/badge/Kaggle-Dataset-teal?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization)
-![MIT License](https://img.shields.io/badge/License-MIT-green)
-![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-lightorange)
-![Binary Classification](https://img.shields.io/badge/task-Binary_Classification-yellowgreen)
-![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
-
-**Python code that trains a model to label crystallization images from OpenCrystalData on Kaggle.**  
-
-I trained a model to do binary classification on images of crystallization, by recreating the results in a research paper.  My metrics are a bit better and training completed in fewer epochs.  Two adjustments to the model architecture pushed the metrics up about 1%.  See the detailed documentation for more.  
 
 ## Content. 
 [Quick start.](#quick-start) • 
