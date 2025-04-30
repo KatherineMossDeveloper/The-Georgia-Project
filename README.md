@@ -71,14 +71,14 @@ In the table below are the details offered by the published paper, then on the r
 |trainable ImageNet layers|(did not comment)       |made last 10% trainable|
 
 ## Contributions.  
-If you found an issue or would like to submit an improvement to this project, please click on the issue tab on the project page.  If you would like to submit a PR with a fix, reference the issue you created, please.  
+If you found an issue or would like to make a suggestion for an improvement to the code or documentation, please click on the issue tab on the project page and leave me a note.  If you like this project, leave a star.  
 
 ## Known issues.  
 None.  
 
 ## Contact info.                                                                     
 For more details about this project, feel free to reach out to me  
-at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
+at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  My time zone is EST in the U.S.
 
 [back to top](#content) 
 
