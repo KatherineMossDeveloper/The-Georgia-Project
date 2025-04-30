@@ -1,4 +1,4 @@
-![Hero](images/HeroPolaroidsSmall.png)  
+![Hero](...images/HeroPolaroidsSmall.png)  
 
 ## Content.
 <a href="#the-overview">
