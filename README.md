@@ -77,8 +77,7 @@ If you found an issue or would like to make a suggestion for an improvement to t
 None.  
 
 ## Contact info.                                                                     
-For more details about this project, feel free to reach out to me  
-at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  My time zone is EST in the U.S.
+For more details about this project, feel free to reach out to me at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  My time zone is EST in the U.S.
 
 [back to top](#content) 
 
