@@ -8,6 +8,8 @@
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-lightorange)
 ![Binary Classification](https://img.shields.io/badge/task-Binary_Classification-yellowgreen)
 ![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
+![Version](https://img.shields.io/github/v/release/KatherineMossDeveloper/the-georgia-project-gold)
+
 
 ## Content. 
 [Quick start.](#quick-start) • 
