@@ -21,25 +21,25 @@
 [Contact info](#contact-info)
 
 ## Quick start. 
-Set up the code for this project.  
+1. Set up the code for this project.  
    click "Code" on the repo page, then download the zipped file, or open with GitHub Desktop.  
    set up a Python environment (I used PyCharm, ver. 2023.2.4, Community Edition)  
    install dependencies (I used Python 3.8; TensorFlow 2.10.1)  
 
-Get the data from Kaggle.  
+2. Get the data from Kaggle.  
    download and unzip the data  
 [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
    edit the directories in GAmain.py and GAmodel.py for your pc, per instructions in these files.  
 
-Set up the data.  
+3. Set up the data.  
    follow instructions in GAmain to do that data splitting.  
    run GAmain.  
    
-Run the training.  
+4. Run the training.  
    follow instructions in GAmodel to do training.  
    run GAmodel.  
 
-Play time.  
+5. Play time.  
    follow instructions in GAinference to do inference on some files.  
    run GAinference.  
 
