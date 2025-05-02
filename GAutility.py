@@ -10,7 +10,6 @@
 # get_validation_data       # prepare the validation data.
 # get_test_data             # prepare the test data.
 # print_model_details       # print the number of trainable and non-trainable layers.
-# save_model_to_disk        # create h5 and onnx versions of the model.
 # get_color                 # returns normalized RGB values for plots.
 #
 # To do.
@@ -137,7 +136,6 @@ def get_test_data(test_dir):
     return test_generator
 
 
-# classes.
 # print the number of trainable and non-trainable layers.
 def print_model_details(model):
     # Count the number of trainable layers
