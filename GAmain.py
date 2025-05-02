@@ -23,7 +23,7 @@
 # To do.
 # Edit the deliverables_folder for your computer.
 # If debugging, set really_training to False, edit the debugging folders for your computer, and
-# create datasets that are small subset of the complete dataset.
+# create datasets that are small subsets of the complete dataset.
 # #############################################################################################
 from datetime import datetime
 from GAutility import print_elapsed_time
