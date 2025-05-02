@@ -32,16 +32,16 @@
    edit the directories in GAmain.py and GAmodel.py for your pc, per instructions in these files.  
 
 3. Set up the data.  
-   follow instructions in GAmain to do that data splitting.  
-   run GAmain.  
+   follow instructions in GAmain.py to split the data up for training. 
+   run GAmain.py.  
    
 4. Run the training.  
-   follow instructions in GAmodel to do training.  
-   run GAmodel.  
+   follow instructions in GAmodel.py to do training.  
+   run GAmodel.py.  
 
 5. Play time.  
-   follow instructions in GAinference to do inference on some files.  
-   run GAinference.  
+   follow instructions in GAinference.py to do inference on some files.  
+   run GAinference.py.  
 
 For more detail, read the Georgia Project's documentation.  
 [Go to the main doc file](docs/maindoc.md)    
