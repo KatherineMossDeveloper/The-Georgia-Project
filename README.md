@@ -27,7 +27,7 @@
    install dependencies (I used Python 3.8; TensorFlow 2.10.1)  
 
 2. Get the data from Kaggle.  
-   download and unzip the data  
+   download and unzip the data...  
 [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
    edit the directories in GAmain.py and GAmodel.py for your pc, per instructions in these files.  
 
