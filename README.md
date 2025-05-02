@@ -35,7 +35,7 @@
    run GAmain.py.  
    
 4. Play time.  
-   follow instructions in GAinference.py to do inference on some files.
+   follow instructions in GAinference.py to do inference on some files.  
    to make it easy, use the inference folder above.  
    run GAinference.py.  
 
