@@ -24,30 +24,30 @@
 Set up the code for this project.  
    click "Code" on the repo page, then download the zipped file, or open with GitHub Desktop.  
    set up a Python environment (I used PyCharm, ver. 2023.2.4, Community Edition)  
-   install dependencies (I used Python 3.8; TensorFlow 2.10.1)
+   install dependencies (I used Python 3.8; TensorFlow 2.10.1)  
 
 Get the data from Kaggle.  
    download and unzip the data  
 [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
-   edit the directories in GAmain.py and GAmodel.py for your pc, per instructions in these files.
+   edit the directories in GAmain.py and GAmodel.py for your pc, per instructions in these files.  
 
-Set up the data. 
-   follow instructions in GAmain to do that data splitting. 
-   run GAmain. 
+Set up the data.  
+   follow instructions in GAmain to do that data splitting.  
+   run GAmain.  
    
-Run the training. 
-   follow instructions in GAmodel to do training. 
-   run GAmodel.
+Run the training.  
+   follow instructions in GAmodel to do training.  
+   run GAmodel.  
 
-Play time. 
-   follow instructions in GAinference to do inference on some files.
+Play time.  
+   follow instructions in GAinference to do inference on some files.  
    run GAinference.  
 
 For more detail, read the Georgia Project's documentation is here.  
-[Go to the main doc file](docs/maindoc.md)  
+[Go to the main doc file](docs/maindoc.md)    
 
-For more background, read the research paper.
-[In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
+For more background, read the research paper.  
+[In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)   
 
 ## Code overview.  
 <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
