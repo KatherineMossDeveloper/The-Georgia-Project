@@ -8,6 +8,9 @@
 #     https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896
 #
 # To do.
+# The folder structure will be setup as CEX (0) vs PG (1), so that it matches the logic
+# later in the GAinference.py code.
+#
 # The folder designations below should be changed to suit your computer folder structure.
 # If the folders you designate do not exist, they will be created.
 # #############################################################################################

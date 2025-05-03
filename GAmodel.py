@@ -108,7 +108,6 @@ class ModelTrainer:
         learning = self.learning_rate
 
         sgd_optimizer = tf.keras.optimizers.SGD(learning_rate=learning, momentum=0.9, nesterov=False)
-        # was used for study 16, did not know it:  sgd_optimizer = tf.keras.optimizers.SGD(learning_rate=0.01, momentum=0.9, nesterov=False)
 
         # note that validation accuracy ("val_accuracy") is automatically tracked by Keras.
         model.compile(optimizer=sgd_optimizer, loss='binary_crossentropy', metrics=['accuracy'])
