@@ -76,6 +76,8 @@ I wanted to create useful code, documentation, and weights that use the paper’
 The paper does not mention whether the MATLAB work done is publicly available.  Therefore, I tried to recreate their work with my code, which is written in Python with TensorFlow (Python 3.8; TensorFlow 2.10.1; TensorFlow addons 0.21.0).  I used PyCharm (ver. 2023.2.4, Community Edition) as the IDE.  See sections a., b., and c. of “The Georgia code and deliverables” for more.   
 
 For hardware, I used a Quadro P1000 GPU, using CUDA version 12.2, with 4 GB of memory.  I did not see in the paper what hardware was used in the study.  
+
+You can also run the code on the CPU.  See GAmain.py for details.  I did final testing with the CPU, so that if you don't have a GPU, or if the memory on your GPU is not enough for a project like this, you can still recreate my results.  This project is for everyone.
 [back to top](#content)   
 
 ## The model.  
