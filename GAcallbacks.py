@@ -20,7 +20,7 @@ from tensorflow.keras import backend as keras_backend
 
 standard_early_stopping = EarlyStopping(
     monitor='val_loss',  # Metric to monitor
-    patience=10,         # Number of epochs with no improvement after which training will stop
+    patience=50,         # Number of epochs with no improvement after which training will stop
     min_delta=0.001,     # Minimum change to qualify as an improvement
     restore_best_weights=True,  # Restore model weights from the epoch with the best value of the monitored metric
     verbose=1            # Print messages when stopping

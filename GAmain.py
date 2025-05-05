@@ -32,7 +32,7 @@ from GAmodel import ModelTrainer
 prefix = "GA"                # prefixed letters for the deliverables file to identify them.
 name = "GA_study_ver_1"      # the identifying title of graphs, etc.
 deliverables_folder = r"X:\MLresearch\CrystalStudy\Project_GA\GAdeliverables"
-use_cpu = False              # Set this to False if running on the GPU
+use_cpu = True               # Set this to False if running on the GPU
 really_training = True       # Set this to False if debugging.
 
 if really_training:

@@ -152,4 +152,3 @@ def print_model_details(model):
 def get_color(r, g, b):
     normalized_rgb = (r / 255, g / 255, b / 255)  # Normalized RGB values
     return normalized_rgb
-

@@ -8,8 +8,8 @@
 # create an inference folder on your computer.
 # edit the image_folder and weights_file strings to point to your folder.
 # Add some images to this folder.
-# Save the weights file created during your training of the Georgia project to this folder, or 
-#      use the weights...h5 file provided in the GitHub Geogia Project.  
+# Save the weights file created during your training of the Georgia project to this folder, or
+#      use the weights...h5 file provided in the GitHub Geogia Project.
 # #############################################################################################
 
 import os

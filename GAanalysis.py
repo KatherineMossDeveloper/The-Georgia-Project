@@ -204,10 +204,8 @@ def roc_auc(model, test_gen):
 def confusion(model, test_gen):
     # Generates a confusion matrix at the end of training.
     # Args:
+    #                 model
     #                 test_generator (ImageDataGenerator): Test data generator.
-    #                 class_names (list): List of class names.
-    #                 save_path (str, optional): Path to save the confusion matrix plot.
-    # Runs once at the end of training to generate the confusion matrix."""
     print("\nGenerating Final Confusion Matrix...")
 
     # Get true labels and predictions
