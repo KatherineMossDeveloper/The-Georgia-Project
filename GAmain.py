@@ -1,5 +1,5 @@
 # The Georgia project.
-# GAmain.  Version 1.
+# GAmain.py
 #
 # This code trains a model on the data from the paper,
 #
@@ -30,24 +30,24 @@ from GAutility import print_elapsed_time
 from GAmodel import ModelTrainer
 
 prefix = "GA"                # prefixed letters for the deliverables file to identify them.
-name = "GA_study_ver_1"      # the identifying title of graphs, etc.
-deliverables_folder = r"X:\MLresearch\CrystalStudy\Project_GA\GAdeliverables"
+name = "GA_study"            # the identifying title of graphs, etc.
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
+deliverables_folder = folder_prefix + r"\GAdeliverables"  # result files after training will be here. 
 use_cpu = True               # Set this to False if running on the GPU
 really_training = True       # Set this to False if debugging.
 
 if really_training:
     # we are training.  Edit these folder when training.
     epochs = 100  # the early stopping functions will stop us before we get here.
-    train_directory = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAtrainBinary'
-    val_directory = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAvalidBinary'
-    test_directory = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAtestBinary'
+    train_directory = folder_prefix + \GAtrainBinary'
+    val_directory = folder_prefix + \GAvalidBinary'
+    test_directory = folder_prefix + \GAtestBinary'
 else:
     # we are debugging.  Edit these folders when debugging; create datasets that are small subset of the 'real' data.
     epochs = 3
-    train_directory = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAtrainBinaryDEBUG'
-    val_directory = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAvalidBinaryDEBUG'
-    test_directory = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAtestBinaryDEBUG'
-
+    train_directory = folder_prefix + \GAtrainBinaryDEBUG'
+    val_directory = folder_prefix + \GAvalidBinaryDEBUG'
+    test_directory = folder_prefix + \GAtestBinaryDEBUG'
 
 # set up parameters for the Model_train class that we may want to change.
 batch_size = 64
