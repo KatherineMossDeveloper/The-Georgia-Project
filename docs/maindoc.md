@@ -336,11 +336,11 @@ Step 6. view results.
 All files generated will be in your deliverables folder that you designated in the GAmain.py code file.  
 
 Step 7. play with it.  
-Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  To use this file, open it and change the file directory to a directory of images on your computer.  In the same folder, place the GAweights….h5 weights file from your deliverables folder after training.  Edit the folder string below to suit your file structure.  See the “to do” section at the top of the file for more details.  
+Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  Open the code up and change the file directory to the "\inference" folder in the Georiga project on you computer.  This folder contains a few images from the project, a few stray images, and a GAweights.h5 file.  Edit the folder string in GAinference.py to match the file structure on your computer.  See the “to do” section at the top of the file for more details.  Run GAinference.py.  The labeling and confidence factors will appear in the output window. 
 
 <pre style="font-family: 'Courier New', Courier, monospace;">
    image_folder = r'your_drive_letter_and_inference_folder'  
-   weights_file = r'your_drive_letter_and_inference_folder\your_weights_file.h5'
+   weights_file = r'your_drive_letter_and_inference_folder\inference\GAinference.h5'
 </pre>  
 [back to top](#content)  
 
