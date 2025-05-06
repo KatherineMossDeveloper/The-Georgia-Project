@@ -278,25 +278,7 @@ Step 2. down the code.
 Navigate to the Georgia Project top level page on Github and click the green "<> Code" button.  Then click "Download ZIP".  Extract the small zip file.  If you are using PyCharm, like I am, set up a place for the code there. 
 
 Step 3. spit up the data.  
-Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Below is a copy of the folders that need to be edited.  Use the strings below as a guide and simply replace the "your_drive_letter_and_folder" with your folder structure.  The "source folders" should point to the place where you extracted the data earlier.  The code will take that data and split it up in the "destination folders." Read the “to do” list at the top of the file for more information.  Run the GAsplitDataIntoTrainValidandTest.py code file.  (Note that I added spaces below, so that the strings would line up and be easier to read here.  In Python, the editor would complain about this spacing.)  
-
-Define source folders.  
-<pre style="font-family: 'Courier New', Courier, monospace;">
-   source_pg = r"your_drive_letter_and_folder\archive\cropped\cropped\pg"
-   source_cex= r"your_drive_letter_and_folder\archive\cropped\cropped\cex"
-</pre>  
-
-Define destination folders.  
-<pre style="font-family: 'Courier New', Courier, monospace;">
-   train_pg_dest = r"your_drive_letter_and_folder\GAtrainBinary\1"
-   train_cex_dest= r"your_drive_letter_and_folder\GAtrainBinary\0"
-   valid_pg_dest = r"your_drive_letter_and_folder\GAvalidBinary\1"
-   valid_cex_dest= r"your_drive_letter_and_folder\GAvalidBinary\0"
-   test_pg_dest  = r"your_drive_letter_and_folder\GAtestBinary\1"
-   test_cex_dest = r"your_drive_letter_and_folder\GAtestBinary\0"
-</pre>    
-
-At the end, you should see messages that look something like this.
+Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Edit "folder_prefix" to the location where you extracted the data earlier.  The code will take that data and split it up in the "destination folders." Read the “to do” list at the top of the file for more information.  Then run the GAsplitDataIntoTrainValidandTest.py code file.  At the end of the run, you should see messages that look something like this.
 
 <pre style="font-family: 'Courier New', Courier, monospace;">
    Moved 4802 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtrainBinary\1
@@ -309,19 +291,7 @@ At the end, you should see messages that look something like this.
 </pre>    
 
 Step 4. prepare for training.  
-Open the GAmain.py code file.  Change the folder strings to suit your folder layout.  
-
-<pre style="font-family: 'Courier New', Courier, monospace;">
-   deliverables_folder = r"your_drive_letter_and_folder\your_deliverables_folder"  
-</pre>    
-
-<pre style="font-family: 'Courier New', Courier, monospace;">
-   train_directory = r"your_drive_letter_and_folder\GATrainBinary"
-   val_directory   = r"your_drive_letter_and_folder\GAValidBinary"
-   test_directory  = r"your_drive_letter_and_folder\GATestBinary"
-</pre>    
-
-Note that the train_directory is pointing to the same location as the train_pg_dest and train_cex_dest are.  The same is true of val_directory and test_directory.  
+Open the GAmain.py code file.  Edit "folder_prefix" to the location where you extracted the data earlier. 
 
 Setting up the CPU/GPU.  
 The "use_cpu" variable is set to true by default, so that if you do not have a GPU, or if you do not have a lot of memory on you GPU, the training will still complete.  If you set this variable to false, you will be using your GPU.  I do not have access to a variety of computers, so results may vary.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training, hence the variable.  
@@ -336,12 +306,8 @@ Step 6. view results.
 All files generated will be in your deliverables folder that you designated in the GAmain.py code file.  
 
 Step 7. play with it.  
-Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  Open the code up and change the file directory to the "\inference" folder in the Georiga project on you computer.  This folder contains a few images from the project, a few stray images, and a GAweights.h5 file.  Edit the folder string in GAinference.py to match the file structure on your computer.  See the “to do” section at the top of the file for more details.  Run GAinference.py.  The labeling and confidence factors will appear in the output window. 
+Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  Edit "folder_prefix" to the location where you extracted the code earlier.  This folder contains a few images from the project, a few stray images, and a GAweights.h5 file.  See the “to do” section at the top of the file for more details.  Run GAinference.py.  The labeling and confidence factors will appear in the output window. 
 
-<pre style="font-family: 'Courier New', Courier, monospace;">
-   image_folder = r'your_drive_letter_and_inference_folder'  
-   weights_file = r'your_drive_letter_and_inference_folder\inference\GAinference.h5'
-</pre>  
 [back to top](#content)  
 
 ## The license.  
