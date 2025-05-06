@@ -1,5 +1,5 @@
 # The Georgia project.
-# GAutility.py   version 1
+# GAutility.py 
 #
 # This file contains various functions and classes code for the project.
 #
