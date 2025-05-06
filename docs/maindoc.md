@@ -261,10 +261,10 @@ i.  GAfinal_roc_auc.png, the ROC graph with AUC.
 [back to top](#content)  
 
 ## How to recreate the results.  
-These instructions were written for my Windows PC.  The data zip file is over 1 GB, so you will need a drive with some free space on it to work with this data.  There are notes at the top of each code file about the minimum one needs to do to run the code.  
+These instructions were written for my Windows PC.  The data zip file is over 1 GB, so you will need a drive with some free space on it to work with this data.  There are notes at the top of each code file about the minimum one needs to do in order to run the code.  Basically, just edit the folder strings to match your pc folder system. 
 
 Step 1. download the data.   
-Navigate to the Kaggle website using this hyperlink, create an account (which you can do for free), sign into the site, and press the “Download” button.  Downloading and extraction can take a while, so go get another cup of coffee.  
+Navigate to the Kaggle website using this hyperlink, create an account (which you can do for free), sign into the site, and press the “Download” button.  Downloading, and especially extraction, can take a while, so go get another cup of coffee.  
 
 https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download
 
@@ -274,8 +274,11 @@ Extract the data from the archive.zip file.  The data structure created during e
    your_drive_letter_and_folder/archive/cropped/cropped/pg
 </pre>
 
-Step 2. spit up the data.  
-Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE of your choice.  Edit the folder structure strings for your computer by replacing the phrase “your_drive_letter_and_folder” with your folder location.  If the “destination folders” do not already exist, they will be created.  These folder names are just suggestions, of course.  Read the “to do” list in the top of the file for more information  (Note that I added spaces below, so that the strings would line up and be easier to read here.  In Python, the editor would complain about this spacing.)  
+Step 2. down the code. 
+Navigate to the Georgia Project top level page on Github and click the green "<> Code" button.  Then click "Download ZIP".  Extract the small zip file.  If you are using PyCharm, like I am, set up a place for the code there. 
+
+Step 3. spit up the data.  
+Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Below is copy of the folders that need to be edited.  Use the strings below as a guide and simply replace the "your_drive_letter_and_folder" with your folder structure.  The "source folders" should point to the place where you extracted the data earlier.  The code will take that data and split it up in the "destination folders." Read the “to do” list at the top of the file for more information.  Run the GAsplitDataIntoTrainValidandTest.py code file.  (Note that I added spaces below, so that the strings would line up and be easier to read here.  In Python, the editor would complain about this spacing.)  
 
 Define source folders.  
 <pre style="font-family: 'Courier New', Courier, monospace;">
@@ -293,28 +296,46 @@ Define destination folders.
    test_cex_dest = r"your_drive_letter_and_folder\GAtestBinary\0"
 </pre>    
 
-Step 3. prepare for training.  
+At the end, you should see these messages something like this.
+
+<pre style="font-family: 'Courier New', Courier, monospace;">
+   Moved 4802 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtrainBinary\1
+   Moved 1715 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAvalidBinary\1
+   Moved 343 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtestBinary\1
+   Moved 4762 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtrainBinary\0
+   Moved 1701 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAvalidBinary\0
+   Moved 341 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtestBinary\0
+   Data split into Train (70%), Validation (25%), and Test (5%)
+</pre>    
+
+Step 4. prepare for training.  
 Open the GAmain.py code file.  Change the folder strings to suit your folder layout.  
+
 <pre style="font-family: 'Courier New', Courier, monospace;">
    deliverables_folder = r"your_drive_letter_and_folder\your_deliverables_folder"  
 </pre>    
+
 <pre style="font-family: 'Courier New', Courier, monospace;">
    train_directory = r"your_drive_letter_and_folder\GATrainBinary"
    val_directory   = r"your_drive_letter_and_folder\GAValidBinary"
    test_directory  = r"your_drive_letter_and_folder\GATestBinary"
 </pre>    
-Note that the source_pg and source_cex are pointing to the location that the extracted zip file created.  Also note that the train_directory is pointing to the same location as the train_pg_dest and train_cex_dest are.  The same is true of val_directory and test_directory.  
+
+Note that the train_directory is pointing to the same location as the train_pg_dest and train_cex_dest are.  The same is true of val_directory and test_directory.  
+
+Setting up the CPU/GPU. 
+The "use_cpu" variable is set to true by default, so that if you do not have a GPU, or if you do not have a lot of memory on you GPU, the training will still complete.  If you set this variable to false, you will be using your GPU.  I do not have access to a variety of computers, so results may vary.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training, hence the variable.  
 
 Setting up debugging folders and data. 
-Sometimes when debugging, it is nice to have a way to run a short “rehearsal” training.  If you want that, in the GAmain.py code, set the variable really_training = False.  Then edit the folders for debugging to point to an abbreviated version of the files.  To fill up the train, validation, and test image file folders for debugging, I copied about 10% of the files from the “real” training folders.  The epochs variable is set to 3, again so that the run is short.  Note that your metrics will probably look bad when you run your debugging sub-set of the data because the model will not have time to train on the data, nor enough data to train with.  Debugging in this way is for testing things like a new result file, not model performance. 
+Sometimes when debugging, it is nice to have a way to run a short “rehearsal” training.  If you want that, in the GAmain.py code, set the variable really_training = False.  Then edit the folders for debugging to point to an abbreviated version of the files.  To fill up the train, validation, and test image file folders for debugging, I copied about 10% of the files from the “real” training folders.  The epochs variable is set to 3, again so that the run is short.  Note that your metrics will look bad when you run your debugging sub-set of the data because the model will not have time to train on the data, nor enough data to train with.  Debugging in this way is for testing things like a new result file, not model performance. 
 
-Step 4. train.  
+Step 5. train.  
 To train the model, start the GAmain.py file.  You can watch progress in the output window of PyCharm.  
 
-Step 5. view results.  
+Step 6. view results.  
 All files generated will be in your deliverables folder that you designated in the GAmain.py code file.  
 
-Step 6. play with it.  
+Step 7. play with it.  
 Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  To use this file, open it and change the file directory to a directory of images on your computer.  In the same folder, place the GAweights….h5 weights file from your deliverables folder after training.  Edit the folder string below to suit your file structure.  See the “to do” section at the top of the file for more details.  
 
 <pre style="font-family: 'Courier New', Courier, monospace;">
