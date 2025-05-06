@@ -22,20 +22,22 @@
 
 ## Quick start. 
 1. Set up the code for this project.  
-   click "Code" on the repo page, then download the zipped file, or open with GitHub Desktop.  
-   set up a Python environment (I used PyCharm, ver. 2023.2.4, Community Edition)  
-   install dependencies (I used Python 3.8; TensorFlow 2.10.1)  
+   click here for a zip file:  [Download the source code (ZIP)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.zip)
+   click here for a tar file:  [Download the source code (TAR)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.tar.gz)
+   set up a Python environment (I used PyCharm, ver. 2023.2.4, Community Edition), if you don't already have one.   
+   install dependencies (I used Python 3.8; TensorFlow 2.10.1), as needed.   
 
-2. Get the data from Kaggle.  
+3. Get the data from Kaggle.  
    download and unzip the data...[OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
    follow instructions for editing folders in GAsplitDataIntoTrainValidandTest.py to split up the data.  
 
-3. Run the training.  
+4. Run the training.  
    follow instructions for editing folders in GAmain.py to run training.  
    run GAmain.py.  
    
-4. Play time.  
-   follow instructions in GAinference.py to do inference on some files.  
+5. Play time.
+   follow instructions in GAinference.py to do inference on some images files, or use the ones provided in the projects \inference folder.  
+   Use the weights file you created above during training or pull this one down (~250 MG):  [Download the weights file (`GAweights.h5`)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5)
    run GAinference.py.  
 
 For more detail, read the Georgia Project's documentation.  
