@@ -22,10 +22,10 @@
 
 ## Quick start. 
 1. Set up the code for this project.  
-   click here for a zip file:  [Download the source code (ZIP)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.zip)
-   click here for a tar file:  [Download the source code (TAR)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.tar.gz)
-   set up a Python environment (I used PyCharm, ver. 2023.2.4, Community Edition), if you don't already have one.   
-   install dependencies (I used Python 3.8; TensorFlow 2.10.1), as needed.   
+   click here for a zip file:  [Download the source code (ZIP)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.zip)  
+   click here for a tar file:  [Download the source code (TAR)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.tar.gz)  
+   set up a Python environment (I used PyCharm, ver. 2023.2.4, Community Edition), if you don't already have one.  
+   install dependencies (I used Python 3.8; TensorFlow 2.10.1), as needed.  
 
 3. Get the data from Kaggle.  
    download and unzip the data...[OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
@@ -37,7 +37,7 @@
    
 5. Play time.
    follow instructions in GAinference.py to do inference on some images files, or use the ones provided in the projects \inference folder.  
-   Use the weights file you created above during training or pull this one down (~250 MG):  [Download the weights file (`GAweights.h5`)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5)
+   Use the weights file you created above during training or pull this one down (~250 MG):  [Download the weights file (`GAweights.h5`)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5)  
    run GAinference.py.  
 
 For more detail, read the Georgia Project's documentation.  
