@@ -296,7 +296,7 @@ Define destination folders.
    test_cex_dest = r"your_drive_letter_and_folder\GAtestBinary\0"
 </pre>    
 
-At the end, you should see these messages something like this.
+At the end, you should see messages that look something like this.
 
 <pre style="font-family: 'Courier New', Courier, monospace;">
    Moved 4802 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtrainBinary\1
