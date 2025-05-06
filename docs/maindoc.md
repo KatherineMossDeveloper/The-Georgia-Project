@@ -323,7 +323,7 @@ Open the GAmain.py code file.  Change the folder strings to suit your folder lay
 
 Note that the train_directory is pointing to the same location as the train_pg_dest and train_cex_dest are.  The same is true of val_directory and test_directory.  
 
-Setting up the CPU/GPU. 
+Setting up the CPU/GPU.  
 The "use_cpu" variable is set to true by default, so that if you do not have a GPU, or if you do not have a lot of memory on you GPU, the training will still complete.  If you set this variable to false, you will be using your GPU.  I do not have access to a variety of computers, so results may vary.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training, hence the variable.  
 
 Setting up debugging folders and data. 
