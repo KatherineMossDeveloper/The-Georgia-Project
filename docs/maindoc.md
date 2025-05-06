@@ -274,7 +274,7 @@ Extract the data from the archive.zip file.  The data structure created during e
    your_drive_letter_and_folder/archive/cropped/cropped/pg
 </pre>
 
-Step 2. down the code. 
+Step 2. down the code.  
 Navigate to the Georgia Project top level page on Github and click the green "<> Code" button.  Then click "Download ZIP".  Extract the small zip file.  If you are using PyCharm, like I am, set up a place for the code there. 
 
 Step 3. spit up the data.  
