@@ -278,7 +278,7 @@ Step 2. down the code.
 Navigate to the Georgia Project top level page on Github and click the green "<> Code" button.  Then click "Download ZIP".  Extract the small zip file.  If you are using PyCharm, like I am, set up a place for the code there. 
 
 Step 3. spit up the data.  
-Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Below is copy of the folders that need to be edited.  Use the strings below as a guide and simply replace the "your_drive_letter_and_folder" with your folder structure.  The "source folders" should point to the place where you extracted the data earlier.  The code will take that data and split it up in the "destination folders." Read the “to do” list at the top of the file for more information.  Run the GAsplitDataIntoTrainValidandTest.py code file.  (Note that I added spaces below, so that the strings would line up and be easier to read here.  In Python, the editor would complain about this spacing.)  
+Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Below is a copy of the folders that need to be edited.  Use the strings below as a guide and simply replace the "your_drive_letter_and_folder" with your folder structure.  The "source folders" should point to the place where you extracted the data earlier.  The code will take that data and split it up in the "destination folders." Read the “to do” list at the top of the file for more information.  Run the GAsplitDataIntoTrainValidandTest.py code file.  (Note that I added spaces below, so that the strings would line up and be easier to read here.  In Python, the editor would complain about this spacing.)  
 
 Define source folders.  
 <pre style="font-family: 'Courier New', Courier, monospace;">
