@@ -1,5 +1,5 @@
 # The Georgia project.
-# GAinference.py  Version 1.
+# GAinference.py
 #
 # This code will pull png files from a folder and do inference on each one,
 # reporting the classification and confidence to the output window.
@@ -18,11 +18,11 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
 
 # Set up the path to your image folder and weights file
-# for testing only...image_folder = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAtestBinaryDEBUG\0'
-image_folder = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAinference'
-weights_file = r'X:\MLresearch\CrystalStudy\Project_GA\data\GAinference\GAweights_2025-03-22_16-43-54.h5'
+image_folder = folder_prefix + r'\The-Georgia-Project-main\inference'
+weights_file = folder_prefix + r'\The-Georgia-Project-main\inference\GAweights.h5'
 
 # Load the pre-trained model with weights
 print(f'Starting GAinference.py. ')
