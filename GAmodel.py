@@ -1,5 +1,5 @@
 # The Georgia project.
-# GAmodel.py  Version 1.
+# GAmodel.py 
 #
 # This file, GAmodel.py, gathers datasets, trains, and calls for analysis.
 #
