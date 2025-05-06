@@ -1,5 +1,5 @@
 # The Georgia project.
-# GAcallbacks.py  Version 1.
+# GAcallbacks.py 
 #
 # This file contains callbacks for model created in GAmain.py.
 #
