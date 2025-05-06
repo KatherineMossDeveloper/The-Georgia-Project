@@ -1,5 +1,5 @@
 # The Georgia project.
-# GAsplitDataIntoTrainValidandTest  Version 1.
+# GAsplitDataIntoTrainValidandTest.py
 #
 # This code splits this dataset,
 #     https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download
@@ -7,28 +7,30 @@
 # into train (70%), validation (25%) and test (5%), per the paper,
 #     https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896
 #
-# To do.
 # The folder structure will be setup as CEX (0) vs PG (1), so that it matches the logic
 # later in the GAinference.py code.
-#
-# The folder designations below should be changed to suit your computer folder structure.
+
+# To do.
+# Edit the folder_prefix variable. 
 # If the folders you designate do not exist, they will be created.
 # #############################################################################################
 
 import os
 import shutil
 
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
+
 # Define source folders, pointing to the location of the download of the dataset mentioned above.
-source_pg = r"X:\MLresearch\CrystalStudy\Project_GA\data\archive\cropped\cropped\pg"
-source_cex = r"X:\MLresearch\CrystalStudy\Project_GA\data\archive\cropped\cropped\cex"
+source_pg = folder_prefix + r"\archive\cropped\cropped\pg"
+source_cex = folder_prefix + r"\archive\cropped\cropped\cex"
 
 # Define destination folders, pointing to the locations where the data will be extracted to.
-train_pg_dest = r"X:\MLresearch\CrystalStudy\Project_GA\data\GAtrainBinary\0"
-train_cex_dest = r"X:\MLresearch\CrystalStudy\Project_GA\data\GAtrainBinary\1"
-valid_pg_dest = r"X:\MLresearch\CrystalStudy\Project_GA\data\GAvalidBinary\0"
-valid_cex_dest = r"X:\MLresearch\CrystalStudy\Project_GA\data\GAvalidBinary\1"
-test_pg_dest = r"X:\MLresearch\CrystalStudy\Project_GA\data\GAtestBinary\0"
-test_cex_dest = r"X:\MLresearch\CrystalStudy\Project_GA\data\GAtestBinary\1"
+train_pg_dest = folder_prefix + r"\GAtrainBinary\1"
+train_cex_dest = folder_prefix + r"\GAtrainBinary\0"
+valid_pg_dest = folder_prefix + r"\GAvalidBinary\1"
+valid_cex_dest = folder_prefix + r"\GAvalidBinary\0"
+test_pg_dest = folder_prefix + r"\GAtestBinary\1"
+test_cex_dest = folder_prefix + r"\GAtestBinary\0"
 
 # Create directories if they don't exist
 os.makedirs(train_cex_dest, exist_ok=True)
