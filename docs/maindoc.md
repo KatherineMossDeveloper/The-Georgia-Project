@@ -123,7 +123,7 @@ The paper remarks that the two image sets have “very distinct visual features.
 ![Samples](../images/samples_cex.png)  
 ![Samples](../images/samples_pg.png)  
 
-The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folder, and CEX are put in the “0” folder.  The GAsplitDataIntoTrainValidandTest.py code will set up these folders, and the GAmain.py code file will refer to these locations during training.  You will, of course, need to modify these files to create the folder structure on your computer.   See the “How to recreate the results” section for more.  
+The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folders, and CEX are put in the “0” folders.  The GAsplitDataIntoTrainValidandTest.py code will set up these folders, and the GAmain.py code file will refer to these locations during training.  You will, of course, need to modify these the code to create the folder structure on your computer.  See the “How to recreate the results” section for more.  
 
 …\GAtrainBinary  
     \0  
@@ -137,10 +137,10 @@ The folder structure is as follows during training, validation, and testing.  PG
 [back to top](#content)  
 
 ## The results.  
-The final code had all F1 scores above 99.7% in 5 epochs or less.  The details of the training runs for this final version are in section D. below.  
+The final code had all F1 scores above 99.7% in 10 epochs or less.  The details of the training runs for this final version are in section D. below.  
 To produce these numbers, I re-ran versions of the code so that I could understand exactly what delivered the best metrics and shortest runtimes for training.  I found that making 10% of the ImageNet layers trainable improved metrics.  I found that adding two Dropout layers improved metrics.  Finally, I found that both of them, together, produced a better model.  
 This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
-Below are the training details.  The words “last good” refers to my base version of the Python code I used, which is version 1 on GitHub.  Each line in the tables below represents a training and test run.  There are four categories, A. through D., with D. being the final version with the best resutls.  If you have any questions, or would like more details, write to me.
+Below are the training details.  The words “last good” refers to my base version of the Python code I used.  Each line in the tables below represents a training and test run.  There are four categories, A. through D., with D. being the final version with the best resutls.  If you have any questions, or would like more details, write to me.
 Here are the column names in the tables below and their meanings.
 
 |variable name     |definition                                                                |
