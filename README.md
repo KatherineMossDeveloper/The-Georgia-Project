@@ -39,7 +39,7 @@
    - Use your weights file or download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder.
    - Run GAinference.py to label images.  
 
-For more detail, read the Georgia Project's documentation.  
+For more detail documentation, read the Georgia Project's documentation.  
 [Go to the main doc file](docs/maindoc.md)    
 
 For more background, read the research paper that inspired the Georgia Project.  
