@@ -47,7 +47,7 @@ I found the crystal image dataset on Kaggle.  I decided to work with it because 
 
 The dataset I found was collected using Mettler-Toledo, LLC, (MT) instrumentation.  While this is not a research paper, where one would typically make an affiliation statement, I should mention that I worked at MT on their vision products for years.  However, I am no longer affiliated with the Company and am not necessarily endorsing their products here, nor have I used any intellectual property owned by MT.  
 
-I chose crystallization in images because I think it is an important area of A.I.  Other corners of the A.I. world, like LLM’s, video creation, and robotics, are in the news more these days, but the detection and categorization of crystallization in images is important because it is used in the food processing, drug discovery, quality control in manufacturing, etc.  It would be good to have more developers and data scientists interested in this part of A.I.  
+I chose crystallization in images because I think it is an important area of A.I.  Other corners of the A.I. world, like LLM’s, video creation, and robotics, have grabbed headlines these days, but I would argue that the detection and categorization of crystallization in images is just as important because it is used in the food processing, drug discovery, quality control in manufacturing, etc.  It would be good to have more developers and data scientists interested in this part of A.I.  
 
 This study is about the crystallization dataset on Kaggle.  However, in this documentation, to make things easer, I will refer to the dataset as the “GA data,” and this project as the “Georgia Project,” since all of the authors were at the School of Chemical & Biomolecular Engineering, Georgia Institute of Technology in Atlanta, GA, which happens to be my husband’s alma mater.  
 [back to top](#content)   
@@ -76,7 +76,7 @@ The paper does not mention whether the MATLAB work done is publicly available.  
 
 For hardware, I used a Quadro P1000 GPU, using CUDA version 12.2, with 4 GB of memory.  I did not see in the paper what hardware was used in the study.  
 
-You can also run the code on the CPU.  See GAmain.py for details.  I did final testing with the CPU, so that if you don't have a GPU, or if the memory on your GPU is not enough for a project like this, you can still recreate my results.  This project is for everyone.
+If needed, you can also run the code on your CPU.  See GAmain.py for details.  I did final testing with the CPU, so that if you don't have a GPU, or if the memory on your GPU is not enough for a project like this, you can still recreate my results.  This project is for everyone.
 [back to top](#content)   
 
 ## The model.  
@@ -93,13 +93,13 @@ In the table below are the details offered by the published paper, then on the r
 |added dropout layers     |(did not comment)       |2                      |
 |trainable ImageNet layers|(did not comment)       |made last 10% trainable|
 
-The trained model had all F1 scores above 99.7% in 5 epochs or less.  Here are the changes that have made the metrics better and the training runtimes shorter. 
+The trained model had all F1 scores above 99.7% in 10 epochs or less.  Here are the changes that have made the metrics better and the training runtimes shorter. 
 
 1.  used ResNet-101.  See “GAmodel.py.”   
 The paper used ResNet-18 and ResNet-50.  I thought it would be interesting if I used the more complex model architecture here.  
 
 2.  changed the learning rate from 1E-4 to 1E-1.  See “GAmain.py.”  
-I slowly made the learning rate larger until I got to 1E-1.  The model could learn faster, without losing its mind.  
+I gradually increased the learning rate from 1E-4 to 1E-1.  The model could learn faster, without losing its mind.  
 
 3.  added two Dropout layers, with drop out rates at .4 and .3 respectively.  See “GAmodel.py.”  
 I added these because I usually do add them when training models. 
@@ -107,7 +107,7 @@ I added these because I usually do add them when training models.
 4.  made 10% of the ImageNet layers trainable.  See “GAmodel.py.”    
 I made these layers trainable on a lark, not knowing if they would make a difference.  They did.  
 
-I also wrote code to split the data into training, validation, and test sets.  See section a. in “The Georgia code and deliverables.”  I added code that would stop the training based on the F1 scores.1  See “GAcallbacks.py.”  
+I also wrote code to split the data into training, validation, and test sets.  See section a. in “The Georgia code and deliverables.”  I added code that would stop the training based on the F1 scores.  See “GAcallbacks.py.”  
 [back to top](#content)  
 
 ## The data.  
