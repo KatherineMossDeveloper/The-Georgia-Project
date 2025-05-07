@@ -13,7 +13,6 @@
 
 ## Content. 
 [Quick start.](#quick-start) • 
-[Instructions](#Instructions) • 
 [Code overview.](#code-overview) • 
 [Model comparison](#model-comparison) • 
 [Contributions](#contributions) • 
