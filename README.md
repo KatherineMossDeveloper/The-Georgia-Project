@@ -38,7 +38,7 @@
    
 4. Play time.
    - Follow instructions in GAinference.py to do inference on some images in the project's \inference folder.  
-   - [Download the weights file to the /inference folder or use your own.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5)  
+   - Use your weights file or [download the weights file here to the /inference folder.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5)  
    - Run GAinference.py to label images.  
 
 For more detail, read the Georgia Project's documentation.  
