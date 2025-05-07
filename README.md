@@ -22,28 +22,29 @@
 
 ## Quick start. 
 1. Set up the code for this project.  
-   [Download the source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.zip)  
-   [Download the source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.tar.gz)  
-   set up a Python environment (I used PyCharm, ver. 2023.2.4, Community Edition), if you don't already have one.  
-   install dependencies (I used Python 3.8; TensorFlow 2.10.1), as needed.  
+   - [Download the source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.zip)  
+   - [...or the source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.tar.gz)  
+   - Set up a Python environment, if you don't already have one.  I used PyCharm, ver. 2023.2.4, Community Edition.  
+   - Install dependencies as needed.  I used Python 3.8 and TensorFlow 2.10.1.  
 
-3. Get the data from Kaggle.  
-   download and unzip the data...[OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
-   follow instructions for editing folders in GAsplitDataIntoTrainValidandTest.py to split up the data.  
+2. Get the data from Kaggle.  
+   - [Download OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
+   - Follow instructions for editing folders in GAsplitDataIntoTrainValidandTest.py to split up the data.  
+   - Run GAsplitDataIntoTrainValidandTest.py. to split the data up into training, validation, and testing. 
 
-4. Run the training.  
-   follow instructions for editing folders in GAmain.py to run training.  
-   run GAmain.py.  
+3. Run the training.  
+   - Follow instructions for editing folders in GAmain.py to run training.  
+   - Run GAmain.py to train the model. 
    
-5. Play time.
-   follow instructions in GAinference.py to do inference on some images files, or use the ones provided in the projects \inference folder.  
-   Use the weights file you created above during training or pull this one down (~250 MG):  [Download the weights file (`GAweights.h5`)]https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5)  
-   run GAinference.py.  
+4. Play time.
+   - Follow instructions in GAinference.py to do inference on some images in the project's \inference folder.  
+   - [Download the weights file to the /inference folder or use your own.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5)  
+   - Run GAinference.py to label images.  
 
 For more detail, read the Georgia Project's documentation.  
 [Go to the main doc file](docs/maindoc.md)    
 
-For more background, read the research paper.  
+For more background, read the research paper that inspired the Georgia Project.  
 [In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)   
 
 ## Code overview.  
