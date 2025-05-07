@@ -5,11 +5,8 @@
 # reporting the classification and confidence to the output window.
 #
 # To do.
-# create an inference folder on your computer.
-# edit the image_folder and weights_file strings to point to your folder.
-# Add some images to this folder.
-# Save the weights file created during your training of the Georgia project to this folder, or
-#      use the weights...h5 file provided in the GitHub Geogia Project.
+# Edit the folder_prefix variable to point to the Georgia Project on your pc.
+# Save the weights file downloaded from the Georgia Project on Github.
 # #############################################################################################
 
 import os
@@ -21,11 +18,11 @@ from tensorflow.keras.applications.resnet50 import preprocess_input
 folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
 
 # Set up the path to your image folder and weights file
-image_folder = folder_prefix + r'\The-Georgia-Project-main\inference'
-weights_file = folder_prefix + r'\The-Georgia-Project-main\inference\GAweights.h5'
+image_folder = folder_prefix + r"\The-Georgia-Project-main\inference"
+weights_file = folder_prefix + r\The-Georgia-Project-main\inference\GAweights.h5"
 
 # Load the pre-trained model with weights
-print(f'Starting GAinference.py. ')
+print(f'Starting GAinference.py.')
 model = load_model(weights_file)
 png_files_in_folder = [f for f in os.listdir(image_folder) if f.endswith('.png')]  # the no. of files in folder.
 png_file_count = len(png_files_in_folder)
