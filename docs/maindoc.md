@@ -194,7 +194,7 @@ GAmodel.py
 This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls GAanalyze.py to reports results.  
 
 GAcallbacks.py  
-This module creates the callbacks2 that the model will need during training.  
+This module creates the callbacks that the model will need during training.  
 
 GAutility.py    
 This module organizes largely unrelated pieces of code in one place.  Its principal use is to create various dataset objects.  
@@ -205,7 +205,7 @@ Finally, this code is called after the training, at which time it creates the pl
 c.  The inference code. 
 It is time to play.  After you trained the model, the file GAinference.py can then perform inference on any png file that you give it.  Below are some examples.  When you call the predict function of the model, you get back the percent chance that the image is of phenyglycine.  In other words, the predict call (roughly) answers the question “is this a picture of phenylglycine?”  So, if you put a picture of a cat in your inference folder, it should be tagged as cephalexin, but that was not true in our samples run below. 
 
-As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.*  Note that the weights file is here, as the code expects.  Each weights files is created at the end of the training.  The computers date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files is have a different name than the one shown here.   
+As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.*  Note that the weights file is here, as the code expects.  Each weights files is created at the end of the training. The computers date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here.  You can also download the GAweights.h5 file from the Github Georgia Project website.  
 
 ![InferenceExamples](../images/InferenceExample.png)
 
@@ -230,8 +230,7 @@ d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in
    GAweights_2025-03-22_16-43-54.onnx  
 </pre>
 
-e.  In the ouput window in PyCharm, during training, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average3, and F1-scores.1 
-
+e.  In the ouput window in PyCharm, during training, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average3, and F1-scores.
 <pre style="font-family: 'Courier New', Courier, monospace;">
    Epoch 3 - Class-Wise Metrics:
    PG -  Precision: 0.9988, Recall: 0.9982, F1-Score: 0.9985
@@ -246,9 +245,9 @@ f.   Next come the GAFinalTestResults.txt file.  After the training is completed
 |-------------|----------|--------|----------|---------|
 |          PG |    0.99  |   1.00 |    1.00  |     341 |
 |         CEX |    1.00  |   0.99 |    1.00  |     343 |
-|    accuracy |          |        |    1.00  |    684  |
-|   macro avg |    1.00  |   1.00 |    1.00  |    684  |
-|weighted avg |    1.00  |   1.00 |    1.00  |    684  |  
+|    accuracy |          |        |    1.00  |     684 |
+|   macro avg |    1.00  |   1.00 |    1.00  |     684 |
+|weighted avg |    1.00  |   1.00 |    1.00  |     684 |  
 [back to top](#content)  
 
 g.  GAmetrics_plot.png, the plot of training accuracy and validation accuracy.  
