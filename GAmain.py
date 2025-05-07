@@ -23,15 +23,16 @@
 #        GAutility.py       odd and ends of code.
 #
 # To do.
-# Edit the folder_prefix for your computer.
+# Edit the folder_prefix variable to point to the Georgia Project on your pc.
 # #############################################################################################
 from datetime import datetime
 from GAutility import print_elapsed_time
 from GAmodel import ModelTrainer
 
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
+
 prefix = "GA"                # prefixed letters for the deliverables file to identify them.
 name = "GA_study"            # the identifying title of graphs, etc.
-folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
 deliverables_folder = folder_prefix + r"\GAdeliverables"  # result files after training will be here. 
 use_cpu = True               # Set this to False if running on the GPU
 really_training = True       # Set this to False if debugging.
