@@ -263,19 +263,19 @@ i.  GAfinal_roc_auc.png, the ROC graph with AUC.
 ## How to recreate the results.  
 These instructions were written for my Windows PC.  The data zip file is over 1 GB, so you will need a drive with some free space on it to work with this data.  There are notes at the top of each code file about the minimum one needs to do in order to run the code.  Basically, just edit the folder strings to match your pc folder system. 
 
-Step 1. download the data.   
-Navigate to the Kaggle website using this hyperlink, create an account (which you can do for free), sign into the site, and press the “Download” button.  Downloading, and especially extraction, can take a while, so go get another cup of coffee.  
+Step 1. download the code.  
+   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.tar.gz) and extract it.  
+   - Set up a Python environment, if you don't already have one.  I used PyCharm, ver. 2023.2.4, Community Edition.  
+   - Install dependencies as needed.  I used Python 3.8 and TensorFlow 2.10.1.  
 
-https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download
+Step 2. download the data.  
+Navigate to the Kaggle website using this hyperlink, create an account (which you can do for free), sign into the site, and press the “Download” button.  Download [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) and extract it.  Downloading, and especially extraction, can take a while, so go get another cup of coffee.  
 
 Extract the data from the archive.zip file.  The data structure created during extraction for the cropped image files is like this…
 <pre style="font-family: 'Courier New', Courier, monospace;">
    your_drive_letter_and_folder/archive/cropped/cropped/cex
    your_drive_letter_and_folder/archive/cropped/cropped/pg
 </pre>
-
-Step 2. down the code.  
-Navigate to the Georgia Project top level page on Github and click the green "<> Code" button.  Then click "Download ZIP".  Extract the small zip file.  If you are using PyCharm, like I am, set up a place for the code there. 
 
 Step 3. spit up the data.  
 Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Edit "folder_prefix" to the location where you extracted the data earlier.  The code will take that data and split it up in the "destination folders." Read the “to do” list at the top of the file for more information.  Then run the GAsplitDataIntoTrainValidandTest.py code file.  At the end of the run, you should see messages that look something like this.
@@ -291,10 +291,11 @@ Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Edit 
 </pre>    
 
 Step 4. prepare for training.  
-Open the GAmain.py code file.  Edit "folder_prefix" to the location where you extracted the data earlier. 
+Open the GAmain.py code file.  Edit "folder_prefix" to the location where you extracted the data earlier.  This code will do inference on some images in the project's \inference folder.  Use your weights file or download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder.
+Run GAinference.py to label images.  
 
 Setting up the CPU/GPU.  
-The "use_cpu" variable is set to true by default, so that if you do not have a GPU, or if you do not have a lot of memory on you GPU, the training will still complete.  If you set this variable to false, you will be using your GPU.  I do not have access to a variety of computers, so results may vary.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training, hence the variable.  
+The "use_cpu" variable is set to true by default, so that if you do not have a GPU, or if you do not have a lot of memory on your GPU, the training will still complete.  If you set this variable to false, you will be using your GPU.  I do not have access to a variety of computers, so I could not test every scenario.  Results may vary.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training, hence the variable.  
 
 Setting up debugging folders and data.  
 Sometimes when debugging, it is nice to have a way to run a short “rehearsal” training.  If you want that, in the GAmain.py code, set the variable really_training = False.  Then edit the folders for debugging to point to an abbreviated version of the files.  To fill up the train, validation, and test image file folders for debugging, I copied about 10% of the files from the “real” training folders.  The epochs variable is set to 3, again so that the run is short.  Note that your training metrics will look bad when you run your debugging sub-set of the data because the model will not have time to train on the data, nor enough data to train with.  Debugging in this way is for testing things like a new result file, not model performance. 
