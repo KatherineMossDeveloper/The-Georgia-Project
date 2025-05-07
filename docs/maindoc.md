@@ -151,7 +151,7 @@ Here are the column names in the tables below and their meanings.
 |valid acc	       | the validation accuracy of the last epoch, reported in the output window.|   
 |test acc	         | the test accuracy, reported in GAFinalTestResults.txt file.              |   
 |acc delta	       | the validation accuracy minus the training accuracy.                     |   
-|test missed	     | the no. of miss-classified images, reported in the confusion matrix.     |   
+|test missed	     | the no. of misclassified images, reported in the confusion matrix.       |   
 |epochs		         | the number of epochs completed during the training.                      |   
 |learning rate	   | the learning rate used throughout the training.                          |   
 |dropout layers	   | the status of the dropout layers, shown in the GAmodel.py.               |   
