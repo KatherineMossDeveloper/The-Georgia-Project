@@ -39,15 +39,15 @@ really_training = True       # Set this to False if debugging.
 if really_training:
     # we are training.  Edit these folder when training.
     epochs = 100  # the early stopping functions will stop us before we get here.
-    train_directory = folder_prefix + \GAtrainBinary'
-    val_directory = folder_prefix + \GAvalidBinary'
-    test_directory = folder_prefix + \GAtestBinary'
+    train_directory = folder_prefix + r"\GAtrainBinary"
+    val_directory = folder_prefix + r"\GAvalidBinary"
+    test_directory = folder_prefix + r"\GAtestBinary"
 else:
     # we are debugging.  Edit these folders when debugging; create datasets that are small subset of the 'real' data.
     epochs = 3
-    train_directory = folder_prefix + \GAtrainBinaryDEBUG'
-    val_directory = folder_prefix + \GAvalidBinaryDEBUG'
-    test_directory = folder_prefix + \GAtestBinaryDEBUG'
+    train_directory = folder_prefix + r"\GAtrainBinaryDEBUG"
+    val_directory = folder_prefix + r"\GAvalidBinaryDEBUG"
+    test_directory = folder_prefix + r"\GAtestBinaryDEBUG"
 
 # set up parameters for the Model_train class that we may want to change.
 batch_size = 64
