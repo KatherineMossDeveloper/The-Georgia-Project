@@ -10,9 +10,11 @@
 #
 # This code will set up the folders for training a Resnet101 model.  The model will load the Keras built-in
 # ImageNet weights.  It will train using the dataset discussed in the Salami, et al. paper cited above.
+# If debugging, set really_training to False, edit the debugging folders for your computer, and create
+# datasets that are small subsets of the complete dataset.
 #
 # Code structure.
-# To keep the code neat and modular, the following modules call each other in roughly this order.
+# The following modules call each other in roughly this order.
 #
 #    GAmain.py              sets up the folder system and basic variables for the model.
 #        GAmodel.py         creates the ResNet101 model, loads ImageNet weights, trains, and reports.
@@ -21,9 +23,7 @@
 #        GAutility.py       odd and ends of code.
 #
 # To do.
-# Edit the deliverables_folder for your computer.
-# If debugging, set really_training to False, edit the debugging folders for your computer, and
-# create datasets that are small subsets of the complete dataset.
+# Edit the folder_prefix for your computer.
 # #############################################################################################
 from datetime import datetime
 from GAutility import print_elapsed_time
