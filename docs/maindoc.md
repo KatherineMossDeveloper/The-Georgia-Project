@@ -191,12 +191,14 @@ GAmain.py
 This module sets up the folder system and basic variables for the model.  It will then call   GAmodel.py. 
 
 GAmodel.py       
-This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls GAanalyze.py to reports results.
+This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls GAanalyze.py to reports results.  
 
 GAcallbacks.py  
-This module creates the callbacks2 that the model will need during training. 
+This module creates the callbacks2 that the model will need during training.  
+
 GAutility.py    
-This module organizes largely unrelated pieces of code in one place.  Its principal use is to create various dataset objects.
+This module organizes largely unrelated pieces of code in one place.  Its principal use is to create various dataset objects.  
+
 GAanalysis.py    
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
