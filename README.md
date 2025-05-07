@@ -28,7 +28,7 @@
    - Install dependencies as needed.  I used Python 3.8 and TensorFlow 2.10.1.  
 
 2. Get the data from Kaggle.  
-   - Download [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download)  
+   - Download [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download).  
    - Follow instructions for editing folders in GAsplitDataIntoTrainValidandTest.py to split up the data.  
    - Run GAsplitDataIntoTrainValidandTest.py. to split the data up into training, validation, and testing. 
 
@@ -71,7 +71,8 @@ If you found an issue or would like to make a suggestion for an improvement to t
 None.  
 
 ## Contact info.                                                                     
-For more details about this project, feel free to reach out to me at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  My time zone is EST in the U.S.
+For more details about this project, feel free to reach out to me at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
+My time zone is EST in the U.S.
 
 [back to top](#content) 
 
