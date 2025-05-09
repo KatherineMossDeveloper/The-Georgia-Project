@@ -27,16 +27,16 @@
 
 2. Get the data from Kaggle.  
    - Download [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) and extract it.  
-   - Follow instructions for editing folders in GAsplitDataIntoTrainValidandTest.py to split up the data.  
+   - Edit the folder_prefix variable to point to the OpenCrystalData on your pc in GAsplitDataIntoTrainValidandTest.py. 
    - Run GAsplitDataIntoTrainValidandTest.py to split the data up into training, validation, and testing. 
 
 3. Run the training.  
-   - Follow instructions for editing folders in GAmain.py to run training.  
+   - Edit the folder_prefix variable to point to the OpenCrystalData on your pc in GAmain.py. 
    - Run GAmain.py to train the model. 
    
 4. Play time.
-   - Follow instructions in GAinference.py to do inference on some images in the project's \inference folder.  
-   - Use your weights file or download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder.
+   - Edit the folder_prefix variable to point to the Georgia Project code in GAinference.py. 
+   - Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder.
    - Run GAinference.py to label images.  
 
 For more detail documentation, read the Georgia Project's documentation.  
