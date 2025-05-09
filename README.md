@@ -21,7 +21,7 @@
 
 ## Quick start. 
 1. Set up the code for this project.  
-   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.tar.gz) and extract it.  
+   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.1.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.1.0.tar.gz) and extract it.  
    - Set up a Python environment, if you don't already have one.  I used PyCharm, ver. 2023.2.4, Community Edition.  
    - Install dependencies as needed.  I used Python 3.8 and TensorFlow 2.10.1.  
 
