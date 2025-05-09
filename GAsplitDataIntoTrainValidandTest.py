@@ -11,7 +11,7 @@
 # later in the GAinference.py code.
 
 # To do.
-# Edit the folder_prefix variable to point to the Georgia Project on your pc.
+# Edit the folder_prefix variable to point to the OpenCrystalData on your pc.
 # If the folders you designate do not exist, they will be created.
 # #############################################################################################
 
