@@ -23,7 +23,8 @@
 #        GAutility.py       odd and ends of code.
 #
 # To do.
-# Edit the folder_prefix variable to point to the Georgia Project on your pc.
+# Edit the folder_prefix variable to point to the OpenCrystalData on your pc.
+# If the folders you designate do not exist, they will be created.
 # #############################################################################################
 from datetime import datetime
 from GAutility import print_elapsed_time
