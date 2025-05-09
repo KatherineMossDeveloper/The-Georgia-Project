@@ -5,8 +5,8 @@
 # reporting the classification and confidence to the output window.
 #
 # To do.
-# Edit the folder_prefix variable to point to the Georgia Project on your pc.
-# Save the weights file downloaded from the Georgia Project on Github.
+# Edit the folder_prefix variable to point to the Georgia Project code on your pc.
+# Save the weights file downloaded from the Georgia Project on GitHub to the \inference folder.
 # #############################################################################################
 
 import os
@@ -18,8 +18,8 @@ from tensorflow.keras.applications.resnet50 import preprocess_input
 folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
 
 # Set up the path to your image folder and weights file
-image_folder = folder_prefix + r"\The-Georgia-Project-main\inference"
-weights_file = folder_prefix + r\The-Georgia-Project-main\inference\GAweights.h5"
+image_folder = folder_prefix + r"\inference"
+weights_file = folder_prefix + r"\inference\GAweights.h5"
 
 # Load the pre-trained model with weights
 print(f'Starting GAinference.py.')
@@ -61,7 +61,7 @@ try:
             print(f"Prediction for {filename}: {prediction}")
 
             # Assuming binary classification: CEX (0) vs PG (1)
-            confidence = prediction[0][0]  # This is the predicted probability for PG
+            confidence = prediction[0][0]  
 
             # Assign the class label based on the threshold of 0.5
             class_label = 'PG' if confidence < 0.5 else 'CEX'

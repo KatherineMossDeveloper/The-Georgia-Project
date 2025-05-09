@@ -203,9 +203,9 @@ GAanalysis.py
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
 c.  The inference code. 
-It is time to play.  After you trained the model, the file GAinference.py can then perform inference on any png file that you give it.  Below are some examples.  When you call the predict function of the model, you get back the percent chance that the image is of phenyglycine.  In other words, the predict call (roughly) answers the question “is this a picture of phenylglycine?”  So, if you put a picture of a cat in your inference folder, it should be tagged as cephalexin, but that was not true in our samples run below. 
+It is time to play.  After you trained the model, the file GAinference.py can then perform inference on any png file that you give it.  Below are some examples.  
 
-As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.*  Note that the weights file is here, as the code expects.  Each weights files is created at the end of the training. The computers date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here.  You can also download the GAweights.h5 file from the Github Georgia Project website.  
+As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  Each weights files is created at the end of the training. The computers date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here.  You can also download the GAweights.h5 file from the Github Georgia Project website.  
 
 ![InferenceExamples](../images/InferenceExample.png)
 
@@ -307,7 +307,7 @@ Step 6. view results.
 All files generated will be in your deliverables folder that you designated in the GAmain.py code file.  
 
 Step 7. play with it.  
-Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  Edit "folder_prefix" to the location where you extracted the code earlier.  This folder contains a few images from the project, a few stray images, and a GAweights.h5 file.  See the “to do” section at the top of the file for more details.  Run GAinference.py.  The labeling and confidence factors will appear in the output window. 
+Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  Edit "folder_prefix" to the location where you extracted the code earlier (not the data).  This folder contains a few images from the project, plus a few stray images.  Save the weights file downloaded from the Georgia Project on GitHub to the \inference folder.  Run GAinference.py.  The labeling and confidence factors will appear in the output window. 
 
 [back to top](#content)  
 
