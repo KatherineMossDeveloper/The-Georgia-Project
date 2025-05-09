@@ -209,7 +209,7 @@ Finally, this code is called after the training, at which time it creates the pl
 c.  The inference code. 
 It is time to play.  After you trained the model, the file GAinference.py can then perform inference on any png file that you give it.  Below are some examples.  
 
-As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  Each weights files is created at the end of the training. The computers date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here.  You can also download the GAweights.h5 file from the Github Georgia Project website.  
+As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  Each weights file is created at the end of the training. The computers date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  You can also download the GAweights.h5 file from the Github Georgia Project website.  
 
 ![InferenceExamples](../images/InferenceExample.png)
 
