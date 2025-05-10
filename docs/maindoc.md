@@ -123,7 +123,7 @@ The paper remarks that the two image sets have “very distinct visual features.
 ![Samples](../images/samples_cex.png)  
 ![Samples](../images/samples_pg.png)  
 
-The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folders, and CEX are put in the “0” folders.  The GAsplitDataIntoTrainValidandTest.py code will set up these folders, and the GAmain.py code file will refer to these locations during training.  You will, of course, need to modify these the code to create the folder structure on your computer.  See the “How to recreate the results” section for more.  
+The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folders, and CEX are put in the “0” folders.  The GAsplitDataIntoTrainValidandTest.py code will set up these folders, and the GAmain.py code file will refer to these locations during training.  You will, of course, need to modify the code to create the folder structure on your computer.  See the “How to recreate the results” section for more.  
 
 …\GAtrainBinary  
     \0  
