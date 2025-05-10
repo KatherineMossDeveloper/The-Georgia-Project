@@ -46,7 +46,7 @@ For detailed documentation, read the Georgia Project's documentation.
 [Go to the main doc file](docs/maindoc.md)    
 
 For background, read the research paper that inspired the Georgia Project.  
-[In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)   
+[In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
 
 ## Code overview.  
 <img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
