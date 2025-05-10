@@ -36,7 +36,7 @@
    - Check the results in the \GAdeliverables folder (where you extracted the data).  
    
 4. Play time.
-   - Edit the folder_prefix variable to point to the Georgia Project code in GAinference.py. 
+   - Edit the folder_prefix variable in GAinference.py, so that it points to the Georgia Project code. 
    - Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder.
    - Run GAinference.py to label images.  
 
