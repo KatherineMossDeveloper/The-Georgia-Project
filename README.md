@@ -32,7 +32,8 @@
 
 3. Run the training.  
    - Edit the folder_prefix variable to point to the OpenCrystalData on your pc in GAmain.py. 
-   - Run GAmain.py to train the model. 
+   - Run GAmain.py to train the model.
+   - Check the results in the \GAdeliverables folder (where you extracted the data).  
    
 4. Play time.
    - Edit the folder_prefix variable to point to the Georgia Project code in GAinference.py. 
