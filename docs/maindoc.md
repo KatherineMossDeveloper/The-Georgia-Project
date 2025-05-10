@@ -72,11 +72,11 @@ I wanted to create useful code, documentation, and weights that use the paper’
 [back to top](#content)   
 
 ## The development environment.
-The paper does not mention whether the MATLAB work done is publicly available.  Therefore, I tried to recreate their work with my code, which is written in Python with TensorFlow (Python 3.8; TensorFlow 2.10.1).  I used PyCharm (ver. 2023.2.4, Community Edition) as the IDE.  See sections a., b., and c. of “The Georgia code and deliverables” for more.   
+The paper does not mention whether the MATLAB work done is publicly available.  Therefore, I tried to recreate their work with my code, which is written in Python with TensorFlow (Python 3.8; TensorFlow 2.10.1).  I used PyCharm ver. 2023.2.4, Community Edition, as the IDE.   
 
-For hardware, I used a Quadro P1000 GPU, using CUDA version 12.2, with 4 GB of memory.  I did not see in the paper what hardware was used in the study.  
+I have a Windows PC.  I have not tested this project in other environments.  For the GPU, I used a Quadro P1000, with 4 GB of memory, using CUDA version 12.2.  I did not see in the paper what hardware was used in the study.  
 
-By default, the code will run your CPU.  See GAmain.py for details.  I did final testing with the CPU, so that if you don't have a GPU, or if the memory on your GPU is not enough for a project like this, you can still recreate my results.  This project is for everyone.
+By default, I set the code up to do training on your CPU because some people do not have a GPU, or their GPU (like mine) does not have enough memory to handle the training for this dataset.  On the other hand, you can use your GPU for training; just set use_cpu = False in GAmodel.py.
 [back to top](#content)   
 
 ## The model.  
@@ -93,16 +93,16 @@ In the table below are the details offered by the published paper, then on the r
 |added dropout layers     |(did not comment)       |2                      |
 |trainable ImageNet layers|(did not comment)       |made last 10% trainable|
 
-The trained model had all F1 scores above 99.7% in 10 epochs or less.  Here are the changes that have made the metrics better and the training runtimes shorter. 
+The trained model had all F1 scores above 99.7% in 10 epochs or less.  Here are the changes that have made the metrics better and the training shorter. 
 
 1.  used ResNet-101.  See “GAmodel.py.”   
 The paper used ResNet-18 and ResNet-50.  I thought it would be interesting if I used the more complex model architecture here.  
 
 2.  changed the learning rate from 1E-4 to 1E-1.  See “GAmain.py.”  
-I gradually increased the learning rate from 1E-4 to 1E-1.  The model could learn faster, without losing its mind.  
+I gradually increased the learning rate from 1E-4 to 1E-1.  The model learned faster, without losing its mind.  
 
 3.  added two Dropout layers, with drop out rates at .4 and .3 respectively.  See “GAmodel.py.”  
-I added these because I usually do add them when training models. 
+I added these just to see what would happen. 
 
 4.  made 10% of the ImageNet layers trainable.  See “GAmodel.py.”    
 I made these layers trainable on a lark, not knowing if they would make a difference.  They did.  
@@ -111,7 +111,7 @@ I also wrote code to split the data into training, validation, and test sets.  S
 [back to top](#content)  
 
 ## The data.  
-There are 6,860 image files for each of the two classes of crystal images.  
+There are ~6,800 image files for each of the two classes of crystal images.  
 |             |PG                |CEX              |
 |-------------|------------------|-----------------|
 |Train 	      |4,762 image files |4,802 image files|
