@@ -13,6 +13,7 @@
 
 ## Content. 
 [Quick start.](#quick-start) • 
+[Slow start.](#slow-start) • 
 [Code overview.](#code-overview) • 
 [Model comparison](#model-comparison) • 
 [Contributions](#contributions) • 
@@ -40,10 +41,11 @@
    - Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder.
    - Run GAinference.py to label images.  
 
-For more detail documentation, read the Georgia Project's documentation.  
+## Slow start. 
+For detailed documentation, read the Georgia Project's documentation.  
 [Go to the main doc file](docs/maindoc.md)    
 
-For more background, read the research paper that inspired the Georgia Project.  
+For background, read the research paper that inspired the Georgia Project.  
 [In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)   
 
 ## Code overview.  
