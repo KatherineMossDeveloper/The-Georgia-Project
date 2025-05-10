@@ -76,7 +76,7 @@ The paper does not mention whether the MATLAB work done is publicly available.  
 
 For hardware, I used a Quadro P1000 GPU, using CUDA version 12.2, with 4 GB of memory.  I did not see in the paper what hardware was used in the study.  
 
-If needed, you can also run the code on your CPU.  See GAmain.py for details.  I did final testing with the CPU, so that if you don't have a GPU, or if the memory on your GPU is not enough for a project like this, you can still recreate my results.  This project is for everyone.
+By default, the code will run your CPU.  See GAmain.py for details.  I did final testing with the CPU, so that if you don't have a GPU, or if the memory on your GPU is not enough for a project like this, you can still recreate my results.  This project is for everyone.
 [back to top](#content)   
 
 ## The model.  
