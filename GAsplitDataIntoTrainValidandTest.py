@@ -1,4 +1,4 @@
-# The Georgia project.
+# The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAsplitDataIntoTrainValidandTest.py
 #
 # This code splits this dataset,
