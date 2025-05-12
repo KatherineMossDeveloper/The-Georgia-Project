@@ -1,4 +1,4 @@
-# The Georgia project.
+# The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAmain.py
 #
 # This code trains a model on the data from the paper,
@@ -8,8 +8,20 @@
 #    Organic Process Research & Development 2021 25 (7), 1670-1679
 #    DOI: 10.1021/acs.oprd.1c00136
 #
-# This code will set up the folders for training a Resnet101 model.  The model will load the Keras built-in
+# This OpenCrystalData dataset is here,
+#
+#     https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896
+#
+# This code will set up the folders for training a model.  The model will load the Keras built-in
 # ImageNet weights.  It will train using the dataset discussed in the Salami, et al. paper cited above.
+# If the folders you designate do not exist, they will be created.
+#
+# Setting up the CPU/GPU.
+# The "use_cpu" variable is set to true by default, so that if you do not have a GPU, or if you do not have
+# a lot of memory on your GPU, the training will still complete. If you set this variable to false, you will
+# be using your GPU.
+#
+# Setting up debugging.
 # If debugging, set really_training to False, edit the debugging folders for your computer, and create
 # datasets that are small subsets of the complete dataset.
 #
@@ -17,14 +29,13 @@
 # The following modules call each other in roughly this order.
 #
 #    GAmain.py              sets up the folder system and basic variables for the model.
-#        GAmodel.py         creates the ResNet101 model, loads ImageNet weights, trains, and reports.
+#        GAmodel.py         creates the model, loads ImageNet weights, trains, and reports.
 #        GAcallbacks.py     creates the callbacks that the model uses during training.
 #        GAanalysis.py      reports on how the training went.
 #        GAutility.py       odd and ends of code.
 #
 # To do.
 # Edit the folder_prefix variable to point to the OpenCrystalData on your pc.
-# If the folders you designate do not exist, they will be created.
 # #############################################################################################
 from datetime import datetime
 from GAutility import print_elapsed_time
@@ -39,13 +50,13 @@ use_cpu = True               # Set this to False if running on the GPU
 really_training = True       # Set this to False if debugging.
 
 if really_training:
-    # we are training.  Edit these folder when training.
+    # we are training.
     epochs = 100  # the early stopping functions will stop us before we get here.
     train_directory = folder_prefix + r"\GAtrainBinary"
     val_directory = folder_prefix + r"\GAvalidBinary"
     test_directory = folder_prefix + r"\GAtestBinary"
 else:
-    # we are debugging.  Edit these folders when debugging; create datasets that are small subset of the 'real' data.
+    # we are debugging.  Create datasets that are small subset of the 'real' data.
     epochs = 3
     train_directory = folder_prefix + r"\GAtrainBinaryDEBUG"
     val_directory = folder_prefix + r"\GAvalidBinaryDEBUG"
