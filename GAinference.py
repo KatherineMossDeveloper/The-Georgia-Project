@@ -1,4 +1,4 @@
-# The Georgia project.
+# The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAinference.py
 #
 # This code will pull png files from a folder and do inference on each one,
@@ -6,7 +6,8 @@
 #
 # To do.
 # Edit the folder_prefix variable to point to the Georgia Project code on your pc.
-# Save the weights file downloaded from the Georgia Project on GitHub to the \inference folder.
+# Save the weights file downloaded from the Georgia Project on GitHub to the \inference folder,
+# or you can use the weights that you created training the model.  Change h5 file name if needed.
 # #############################################################################################
 
 import os
@@ -15,17 +16,11 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
-folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
 
 # Set up the path to your image folder and weights file
 image_folder = folder_prefix + r"\inference"
 weights_file = folder_prefix + r"\inference\GAweights.h5"
-
-# Load the pre-trained model with weights
-print(f'Starting GAinference.py.')
-model = load_model(weights_file)
-png_files_in_folder = [f for f in os.listdir(image_folder) if f.endswith('.png')]  # the no. of files in folder.
-png_file_count = len(png_files_in_folder)
 
 
 # Function to load, resize, and preprocess an image
@@ -47,6 +42,12 @@ def load_and_preprocess_image(img_path, target_size=(224, 224)):
 
 # Inference for each image in the folder
 try:
+    # Load the pre-trained model with weights
+    print(f'Starting GAinference.py.')
+    model = load_model(weights_file)
+    png_files_in_folder = [f for f in os.listdir(image_folder) if f.endswith('.png')]  # the no. of files in folder.
+    png_file_count = len(png_files_in_folder)
+
     for filename in os.listdir(image_folder):
         if filename.endswith('.png'):  # Check if the file is a PNG file
             file_path = os.path.join(image_folder, filename)

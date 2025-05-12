@@ -203,6 +203,9 @@ This module creates the callbacks that the model will need during training.
 GAutility.py    
 This module organizes largely unrelated pieces of code in one place.  Its principal use is to create various dataset objects.  
 
+GAdata.py    
+This module creates the data objects for training, validation, and testing.  For training, it include data augmentation. fx
+
 GAanalysis.py    
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
@@ -260,8 +263,6 @@ g.  GAmetrics_plot.png, the plot of training accuracy and validation accuracy.
 h.  GAfinal_confusion_matrix.png, the confusion matrix.  
 ![Results](../images/results_confusion.png)  
 
-i.  GAfinal_roc_auc.png, the ROC graph with AUC.  
-![Results](../images/results_rocauc.png)  
 [back to top](#content)  
 
 ## How to recreate the results.  

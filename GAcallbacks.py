@@ -1,4 +1,4 @@
-# The Georgia project.
+# The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAcallbacks.py 
 #
 # This file contains callbacks for model created in GAmain.py.

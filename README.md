@@ -14,7 +14,6 @@
 ## Content. 
 [Quick start.](#quick-start) • 
 [Slow start.](#slow-start) • 
-[Code overview.](#code-overview) • 
 [Model comparison](#model-comparison) • 
 [Contributions](#contributions) • 
 [Known issues](#known-issues) • 
@@ -47,9 +46,6 @@ For detailed documentation, read the Georgia Project's documentation.
 
 For background, read the research paper that inspired the Georgia Project.  
 [In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
-
-## Code overview.  
-<img src="images/codeoverview.png" alt="code overview" width="402" height="293">  
 
 ## Model comparison.  
 In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   

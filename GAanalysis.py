@@ -1,14 +1,15 @@
-# The Georgia project.
+# The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAcallbacks.py 
 #
-# This file contains post-training analysis for GAmodel.py.
+# This file contains post-training analysis for GAmodel.py.  All the files generated will be in
+# the deliverables folder, which is designated in the GAmain.py file.  The graphs created
+# will not pop up as windows, but you can change the code to do that.
 #
-#  def setup_shared_variables_analysis               shared variables, like deliverables folder.
-#  def analyze                                       drive the creation of the deliverables.
+#  class AnalysisConfig                              shared variables, like deliverables folder.
+#  def generate_deliverables                         drive the creation of the deliverables.
 #  def save_model_to_disk                            save model to h5 and onnx formats.
 #  def metrics_plot                                  plots accuracies, etc.
 #  def test_eval                                     class wise breakdown of test metrics
-#  def roc_auc                                       ROC, AUC graphic
 #  def confusion                                     create a confusion matrix
 #
 # To do.
@@ -24,70 +25,61 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 from datetime import datetime
-from sklearn.metrics import confusion_matrix, classification_report, roc_curve, auc
+from sklearn.metrics import confusion_matrix, classification_report
 from GAutility import get_color
 
-study_name = ""
-prefix_name = ""
-deliverables_folder = ""
-class_names = ""
-
-# create colors for the plots.
+# create colors for the plots. 
 background_color = get_color(210, 220, 230)  # light blue-gray
 plot_color = get_color(250, 250, 250)        # off-white
 
 
-# variables shared to make the report the results.
-def setup_shared_variables_analysis(name="unspecified", prefix="", folder="", classes=None):
-    global study_name
-    study_name = name
-    global prefix_name
-    prefix_name = prefix
-    global deliverables_folder
-    deliverables_folder = folder
-    global class_names  # class_names=['PG', 'CEX']
-    class_names = classes
+# This class will set hold the shared variables for all the deliverables
+# which are generated after the training is completed in GAmodel.py.  The
+# generate_deliverables function will call 4 other functions that save the
+# model to disk, create plots and text files to capture the metrics when testing
+# the model.
+class AnalysisConfig:
+    def __init__(self, name="unspecified", prefix="", folder="", classes=None):
+
+        if classes is None:
+            classes = ['PG', 'CEX']
+        self.study_name = name
+        self.prefix = prefix
+        self.folder = folder
+        self.classes = classes
+
+    def generate_deliverables(self, model, test_generator, lr_logger):
+
+        save_model_to_disk(model, self.prefix, self.folder)    # save the model.
+        metrics_plot(lr_logger, self.study_name, self.folder, self.prefix)  # plot metrics.
+        test_eval(model, test_generator, self.folder, self.prefix, self.study_name)  # print the test results.
+        confusion(model, test_generator, self.classes, self.study_name, self.folder, self.prefix)  # draw confusion matrix.
 
 
-# functions.
-def analyze(model, test_generator, lr_logger):
-
-    save_model_to_disk(model)         # save the model.
-    metrics_plot(lr_logger)           # plot metrics.
-    test_eval(model, test_generator)  # print the test results.
-    roc_auc(model, test_generator)    # draw the ROC/AUC.
-    confusion(model, test_generator)  # draw confusion matrix.
-
-
-# create h5 and onnx versions of the model.
-def save_model_to_disk(model):
+# This function will create two files for the weights.
+# one in the H5 format and the other in the onnx format.
+def save_model_to_disk(model, prefix_name, deliverables_folder):
     gc.collect()  # Force garbage collection
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")  # Create filename using timestamp
-    filename = f"{prefix_name}weights_{timestamp}"
-
-    # Ensure the folder exists
-    print(f'---> folder {deliverables_folder}')
-    os.makedirs(deliverables_folder, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")  # Create a timestamp.
+    filename = f"{prefix_name}weights_{timestamp}"            # Create a unique file name.
 
     # Define full file path
     file_path = os.path.join(deliverables_folder, filename)
-    print(f'---> file path {file_path}')
 
-    # Delete existing file if needed
-    if os.path.exists(file_path):
-        os.remove(file_path)
-
-    # Save in HDF5 format
+    # Save in HDF5 format; ensure the folder with its full path exists
+    os.makedirs(deliverables_folder, exist_ok=True)
     model.save(file_path + ".h5", save_format='h5')
 
     # Convert to ONNX format and save that.
     onnx_model, _ = tf2onnx.convert.from_keras(model, opset=13)
     onnx.save(onnx_model, file_path + ".onnx")
 
-    print(f"Saved model to {deliverables_folder}.")
+    print(f"Saved models in formats h5 and onnx to {deliverables_folder}.")
 
 
-def metrics_plot(lr_logger):
+# This function will create a plot of two metrics.  For each epoch,
+# the plot will show the training and validation accuracies.
+def metrics_plot(lr_logger, study_name, deliverables_folder, prefix_name):
     # Plot training and validation accuracy
     fig, ax1 = plt.subplots()
 
@@ -112,15 +104,25 @@ def metrics_plot(lr_logger):
     ax1.set_xticks(lr_logger.epochs)  # Set tick positions at each epoch
     ax1.set_xticklabels([int(epoch) for epoch in lr_logger.epochs])  # Convert tick labels to integers
 
-    # Save plot if a path is provided
-    if deliverables_folder:
-        plt.savefig(f"{deliverables_folder}/{prefix_name}metrics_plot.png")
+    # Save plot; ensure the folder with its full path exists
+    os.makedirs(deliverables_folder, exist_ok=True)
+    plt.savefig(f"{deliverables_folder}/{prefix_name}metrics_plot.png")
 
     # Show the plot, if needed
     # plt.show()
 
 
-def test_eval(model, test_gen):
+# This function will create a text file with metrics
+# broken down by classes PG and CEX.  Here is an example...
+#               precision    recall  f1-score   support
+#
+#           PG       1.00      1.00      1.00       343
+#          CEX       1.00      1.00      1.00       341
+#     accuracy                           1.00       684
+#    macro avg       1.00      1.00      1.00       684
+# weighted avg       1.00      1.00      1.00       684
+def test_eval(model, test_gen, deliverables_folder, prefix_name, study_name):
+
     # Run final evaluation on test set
     print(f'--->TestEvalFinal starting.')
     test_loss, test_accuracy = model.evaluate(test_gen)
@@ -140,72 +142,18 @@ def test_eval(model, test_gen):
     # send it to the output window
     print("\nFinal Test Set Classification Report:\n", report)
 
-    # send it to a file.
+    # send it to a file; ensure the folder with its full path exists
+    os.makedirs(deliverables_folder, exist_ok=True)
     file_path = f'{deliverables_folder}/{prefix_name}FinalTestResults.txt'
     with open(file_path, 'w') as file:
         file.write(f"\n{study_name} Test set classification:\n")
         file.write(report)
 
 
-def roc_auc(model, test_gen):
-    # Computes and plots the ROC/AUC for a given model and test data.
-    # Args:
-    #     model: Trained Keras model.
-    #     test_image_generator: Test data generator (ImageDataGenerator or similar).
-    print("\nGenerating ROC/AUC...")
-
-    # Extract true labels from the test generator
-    y_true = test_gen.classes  # True labels from generator
-    # class_indices = list(self.test_gen.class_indices.values())  # Class mapping
-
-    # Predict probabilities (not binary predictions)
-    y_pred_proba = model.predict(test_gen, steps=len(test_gen), verbose=1)
-
-    # If model output shape is (num_samples, 1), flatten the predictions
-    if y_pred_proba.shape[1] == 1:
-        y_pred_proba = y_pred_proba.ravel()
-
-    # Compute ROC curve
-    fpr, tpr, thresholds = roc_curve(y_true, y_pred_proba)
-
-    # Compute AUC score
-    roc_auc_score = auc(fpr, tpr)
-
-    # Plot the ROC curve
-    fig = plt.figure(figsize=(8, 6))
-    fig.patch.set_facecolor(background_color)
-    plt.plot(fpr, tpr, color='blue', lw=2, label=f"ROC curve (AUC = {roc_auc_score:.3f})")
-    plt.plot([0, 1], [0, 1], color="gray", linestyle="--")  # Diagonal line (random model)
-    plt.xlabel("False Positive Rate (FPR)")
-    plt.ylabel("True Positive Rate (TPR)")
-    plt.title(f"{study_name} ROC/AUC")
-    plt.legend(loc="lower right")
-
-    # Save plot if a folder is provided
-    if deliverables_folder:
-        plt.savefig(f"{deliverables_folder}/{prefix_name}final_roc_auc.png")
-        print(f"ROC/AUC plot saved at {deliverables_folder}/{prefix_name}final_roc_auc.png")
-
-    # Show the plot, if needed
-    # plt.show()
-
-    # Open a text file for writing the thresholds used in the ROC creation.
-    file_path = f'{deliverables_folder}/{prefix_name}ROC_thresholds.txt'
-    print(f'printing to file {file_path}')
-
-    with open(file_path, 'w') as f:
-        # Write the headers
-        f.write("Thresholds, FPR, TPR\n")
-        # Iterate through the thresholds, FPR, and TPR and write them to the file
-        for i in range(len(thresholds)):
-            f.write(f"{thresholds[i]}, {fpr[i]}, {tpr[i]}\n")
-
-
-def confusion(model, test_gen):
+# This function will create a plot showing how many correct and incorrect
+# labels that the model predicted for the two classes PG and CEX.
+def confusion(model, test_gen, class_names, study_name, deliverables_folder, prefix_name ):
     # Generates a confusion matrix at the end of training.
-    # Args:
-    #                 model
-    #                 test_generator (ImageDataGenerator): Test data generator.
     print("\nGenerating Final Confusion Matrix...")
 
     # Get true labels and predictions
@@ -239,9 +187,9 @@ def confusion(model, test_gen):
     plt.ylabel("True Label")
     plt.title(f"{study_name} Confusion Matrix")
 
-    # Save plot if a path is provided
-    if deliverables_folder:
-        plt.savefig(f"{deliverables_folder}/{prefix_name}final_confusion_matrix.png")
+    # Save plot; ensure the folder with its full path exists
+    os.makedirs(deliverables_folder, exist_ok=True)
+    plt.savefig(f"{deliverables_folder}/{prefix_name}final_confusion_matrix.png")
 
     # Show the plot, if needed
     # plt.show()

@@ -31,6 +31,7 @@
 #    GAmain.py              sets up the folder system and basic variables for the model.
 #        GAmodel.py         creates the model, loads ImageNet weights, trains, and reports.
 #        GAcallbacks.py     creates the callbacks that the model uses during training.
+#        GAdata.py          create the data objects.
 #        GAanalysis.py      reports on how the training went.
 #        GAutility.py       odd and ends of code.
 #
@@ -41,7 +42,7 @@ from datetime import datetime
 from GAutility import print_elapsed_time
 from GAmodel import ModelTrainer
 
-folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
 
 prefix = "GA"                # prefixed letters for the deliverables file to identify them.
 name = "GA_study"            # the identifying title of graphs, etc.
@@ -62,7 +63,7 @@ else:
     val_directory = folder_prefix + r"\GAvalidBinaryDEBUG"
     test_directory = folder_prefix + r"\GAtestBinaryDEBUG"
 
-# set up parameters for the Model_train class that we may want to change.
+# set up parameters for the Model class that we may want to change.
 batch_size = 64
 image_size = (224, 224)
 random_seed = 42                 # using a random seed in the hopes of creating more reproducible metrics.
