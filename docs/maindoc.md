@@ -185,14 +185,14 @@ The Georgia code overview.
  <img src="../images/codeoverview.png" alt="code overview" width="402" height="293">  
 
 a.  The code to split up the data.  
-GAsplitDataIntoTrainValidandTest.py	
-This code splits the data into 70% training data, 25% validation data, and 5% test data, because that is the way that it is divided up in the paper.
+GAsplitDataIntoTrainValidandTest.py  
+This code splits the OpenCrystalData dataset that you downloaded and extracted into 70% training data, 25% validation data, and 5% test data, because that is the way that it is divided up in the paper.  The dataset extracts itself into a CEX folder and a PG folder.  With this code, these data will be moved to a '0' folder for CEX and a '1' folder for PG.  For example, 70% of the OpenCrystalData CEX folder images will be moved to a GAtrainBinary\0 folder. 
 
 b.  The training and analysis code. 
 Generally, this next section of code files further preprocesses the data, trains the ResNet-101 model, then reports results.  The model will load the Keras built-in ImageNet weights.  It will train with the hyperparameters in the paper, with exceptions mentioned in “The model” section.  The code is organized into files, or modules, which call each other, in roughly the order here.
 
 GAmain.py        
-This module sets up the folder system and basic variables for the model.  It will then call   GAmodel.py. 
+This module sets up the folder system and basic variables for the model.  It will then call GAmodel.py. 
 
 GAmodel.py       
 This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls GAanalyze.py to reports results.  
