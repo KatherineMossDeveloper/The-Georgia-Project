@@ -179,10 +179,9 @@ D.  The last good version with dropouts and trainable ImageNet layers:  the porr
 [back to top](#content)  
 
 ## The georgia code and deliverables.  
-Sections a. through c. below are notes on the Python code files.  Sections d. through i. are the notes about the deliverables.  
-
-The Georgia code overview.  
- <img src="../images/codeoverview.png" alt="code overview" width="402" height="293">  
+Sections a. through c. below are notes on the Python code files.  Sections d. through i. are the notes about the deliverables. 
+  
+<img src="../images/codeoverview.png" alt="code overview" width="402" height="293">  
 
 a.  The code to split up the data.  
 GAsplitDataIntoTrainValidandTest.py  
