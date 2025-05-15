@@ -143,7 +143,7 @@ To produce these numbers, I re-ran versions of the code so that I could understa
 
 This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
 
-Below are the training results column definitions and then the results in tables.  The words “last good” refers to my base version of the Python code I used.  Each line in the tables below represents a training run (GAmodel.py) and test run (GAanalysis.py test_eval function).  There are results tables of the training, A. through D., with D. being the final version with the best results.  If you have any questions, or would like more details, write to me.  
+Below are the training results column definitions and then the results in tables.  Each line in the tables below represents a training run (GAmodel.py) and test run (GAanalysis.py test_eval function).  The best runs were with version D., which is the version of the code here in the GitHub project.  If you have any questions, or would like more details, write to me.  
 
 The training results column definitions. 
 
@@ -166,16 +166,16 @@ Here is a note on formatting of floats.  For some of the runs, for example GArun
 Generally, in C. and D. training runs below, the dropout layers made the model run consistently longer.  In the B. training runs, where 10% of the ImageNet weights were being trained, I do not see an improvement over the A. runs.  However, in D., with both dropouts and 10% training of ImageNet weights, I see the best combination.   
 
 The training results.  
-A.	The last good version, with no dropouts and no trainable ImageNet layers.  
+A.	The version with no dropouts and no trainable ImageNet layers.  
  <img src="../images/results_a.png" alt="result group a." width="624" height="209">  
 
-B.	The last good version, with no dropouts, but with trainable ImageNet layers.  
+B.	The version with no dropouts, but with trainable ImageNet layers.  
 <img src="../images/results_b.png" alt="result group b." width="624" height="209">  
 
-C.  The last good version, with dropouts and with no trainable ImageNet layers.  
+C.  The version with dropouts and with no trainable ImageNet layers.  
 <img src="../images/results_c.png" alt="result group c." width="624" height="209">  
 
-D.  The last good version with dropouts and trainable ImageNet layers:  the porridge that is just right.  
+D.  The final published version with dropouts and trainable ImageNet layers:  the porridge that is just right.  
 <img src="../images/results_d.png" alt="result group d." width="624" height="209">  
 [back to top](#content)  
 
