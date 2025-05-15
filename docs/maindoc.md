@@ -180,8 +180,8 @@ Here is a note on formatting of floats.  For some of the runs, for example GArun
 
 [back to top](#content)  
 
-## The georgia code and deliverables.  
-Sections a. through c. below are notes on the Python code files.  Sections d. through i. are the notes about the deliverables. 
+## The Georgia Project code and deliverables.  
+Sections a. through c. below are notes on the Python code files.  Sections d. through h. are the notes about the deliverables.  Let's start with high level look... 
   
 <img src="../images/codeoverview.png" alt="code overview" width="402" height="293">  
 
@@ -213,21 +213,21 @@ Finally, this code is called after the training, at which time it creates the pl
 c.  The inference code. 
 It is time to play.  After you trained the model, the file GAinference.py can then perform inference on any png file that you give it.  Below are some examples.  
 
-As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  Each weights file is created at the end of the training. The computers date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  You can also download the GAweights.h5 file from the Github Georgia Project website.  Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder where you downloaded the Georgia Project code on your PC.  
+As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  You can also download the GAweights.h5 file from the Github Georgia Project website.  Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder where you downloaded the Georgia Project code on your PC.  (I was surprised to see that Tara, The Cat, is phenylglycine.)
 
 ![InferenceExamples](../images/InferenceExample.png)
 
-|image              |prediction                         |
-|-------------------|-----------------------------------|
-|File CAT_TARA.png  | prediction PG confidence 0.5501   |
-|File CEX (2344).png| prediction PG confidence 1.0000   |
-|File CEX (293).png	| prediction PG confidence 1.0000   |
-|File CEX (3).png	  | prediction PG confidence 0.9486   |
-|File OIP (5).png	  | prediction PG confidence 0.5020   |
-|File PG (5282).png	| prediction CEX confidence 0.0000  |
-|File PG (567).png	| prediction CEX confidence 0.0023  |
-|File PG (590).png	| prediction CEX confidence 0.0000  |
-|File PG (5946).png	| prediction CEX confidence 0.0071  |
+|image              |prediction                           |
+|-------------------|-------------------------------------|
+|File: CEX (1).png  | Prediction: CEX, Confidence: 0.00%  |
+|File: CEX (2).png  | Prediction: CEX, Confidence: 0.00%  |
+|File: CEX (3).png  | Prediction: CEX, Confidence: 12.40% |
+|File: OIP (5).png  | Prediction: PG, Confidence: 98.10%  |
+|File: PG (5282).png| Prediction: PG, Confidence: 100.00% |
+|File: PG (567).png | Prediction: PG, Confidence: 100.00% |
+|File: PG (590).png | Prediction: PG, Confidence: 100.00% |
+|File: PG (5946).png| Prediction: PG, Confidence: 99.95%  |
+|File: tara.png     | Prediction: PG, Confidence: 85.85%  |
 
 The following notes are about the deliverables created at the end of the training run.  
 
@@ -238,7 +238,7 @@ d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in
    GAweights_2025-03-22_16-43-54.onnx  
 </pre>
 
-e.  In the ouput window in PyCharm, during training, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average3, and F1-scores.
+e.  In the ouput window in PyCharm, during training, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average, and F1-scores.
 <pre style="font-family: 'Courier New', Courier, monospace;">
    Epoch 3 - Class-Wise Metrics:
    PG -  Precision: 0.9988, Recall: 0.9982, F1-Score: 0.9985
@@ -247,7 +247,7 @@ e.  In the ouput window in PyCharm, during training, there are class-wise text b
    weighted avg - Precision: 0.9985, Recall: 0.9985, F1-Score: 0.9985
 </pre>
 
-f.   Next come the GAFinalTestResults.txt file.  After the training is completed, the model attempts to distinguish images in the two classes from each other.  The word “support” here tells us how many files the model used to determine the precision, recall, and F1 scores.   
+f.   Next comes the GAFinalTestResults.txt file.  After the training is completed, the model attempts to distinguish images in the two classes from each other.  The word “support” here tells us how many files the model used to determine the precision, recall, and F1 scores.   
             
 |             |precision | recall | f1-score |  support|
 |-------------|----------|--------|----------|---------|
