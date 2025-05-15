@@ -34,9 +34,6 @@
 <a href="#contact-info">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> Contact info.  
 </a><br>
-<a href="#the-footnotes">
-  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The footnotes.
-</a><br>
 
 ## The overview
 I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1 scores above 99.7% in 10 epochs or less. 
@@ -238,7 +235,7 @@ d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in
    GAweights_2025-03-22_16-43-54.onnx  
 </pre>
 
-e.  In the ouput window in PyCharm, during training, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average, and F1-scores.
+e.  During training, in the ouput window in PyCharm, there are class-wise text breakdowns of the test precision, recall, macro average, weighted average, and F1-scores.
 <pre style="font-family: 'Courier New', Courier, monospace;">
    Epoch 3 - Class-Wise Metrics:
    PG -  Precision: 0.9988, Recall: 0.9982, F1-Score: 0.9985
@@ -247,7 +244,7 @@ e.  In the ouput window in PyCharm, during training, there are class-wise text b
    weighted avg - Precision: 0.9985, Recall: 0.9985, F1-Score: 0.9985
 </pre>
 
-f.   Next comes the GAFinalTestResults.txt file.  After the training is completed, the model attempts to distinguish images in the two classes from each other.  The word “support” here tells us how many files the model used to determine the precision, recall, and F1 scores.   
+f.  After training, in the GAFinalTestResults.txt file, the model give similar metrics during testing. The word “support” here tells us how many files the model used to determine the precision, recall, and F1 scores.   
             
 |             |precision | recall | f1-score |  support|
 |-------------|----------|--------|----------|---------|
@@ -324,8 +321,4 @@ This project is licensed under the MIT License.  See the license.txt file for de
 ## Contact info.                                                                     
 For more details about this project, feel free to reach out to me  
 at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228).  
-[back to top](#content)  
-
-## The footnotes.  
-TBD  
 [back to top](#content)  
