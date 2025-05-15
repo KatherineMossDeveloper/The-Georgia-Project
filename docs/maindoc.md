@@ -145,7 +145,7 @@ This seems contradictory.  When layers are trainable, more weights are getting u
 
 Below are the training details.  The words “last good” refers to my base version of the Python code I used.  Each line in the tables below represents a training and test run.  There are four categories, A. through D., with D. being the final version with the best results.  If you have any questions, or would like more details, write to me.  
 
-Here are the column names in the tables below and their meanings.
+The training details column definitions. 
 
 |variable name     |definition                                                                |
 |------------------|--------------------------------------------------------------------------|
@@ -165,6 +165,7 @@ Here is a note on formatting of floats.  For some of the runs, for example GArun
 
 Generally, in C. and D. training runs below, the dropout layers made the model run consistently longer.  In the B. training runs, where 10% of the ImageNet weights were being trained, I do not see an improvement over the A. runs.  However, in D., with both dropouts and 10% training of ImageNet weights, I see the best combination.  
 
+The training details.  
 A.	The last good version, with no dropouts and no trainable ImageNet layers.  
  <img src="../images/results_a.png" alt="result group a." width="624" height="209">  
 
