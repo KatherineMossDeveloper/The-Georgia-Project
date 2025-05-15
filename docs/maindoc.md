@@ -68,7 +68,7 @@ What I can say, without going against the spirit of the pay wall agreement, is t
 [back to top](#content)   
 
 ## The goals
-I wanted to create useful code, documentation, and weights that use the paper’s guidance and its binary dataset of crystallization images.  The code and/or weights that I produce could be useful because they are in a popular technology (Python/TensorFlow/Keras), along with details about the results.  
+I wanted to create useful code, weights, and documentation, that use the paper’s guidance and its binary dataset of crystallization images.  The code and weights files that I produce might be useful to others because they are in popular technologies.  The code is in Python, TensorFlow, and Keras.  The weights files are in HDF5 and ONNX.  The details are posted in this project in Markdown language and PNG files.
 [back to top](#content)   
 
 ## The development environment.
