@@ -227,7 +227,7 @@ As an example of an inference run, here is a collection of images, most of which
 |File: PG (567).png | Prediction: PG, Confidence: 100.00% |
 |File: PG (590).png | Prediction: PG, Confidence: 100.00% |
 |File: PG (5946).png| Prediction: PG, Confidence: 99.95%  |
-|File: tara.png     | Prediction: PG, Confidence: 85.85%  |
+|File: CAT_TARA.png | Prediction: PG, Confidence: 85.85%  |
 
 The following notes are about the deliverables created at the end of the training run.  
 
