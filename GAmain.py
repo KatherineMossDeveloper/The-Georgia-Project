@@ -42,7 +42,7 @@ from datetime import datetime
 from GAutility import print_elapsed_time
 from GAmodel import ModelTrainer
 
-folder_prefix = r"X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData"  # edit this before running the code.
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
 
 prefix = "GA"                # prefixed letters for the deliverables file to identify them.
 name = "GA_study"            # the identifying title of graphs, etc.

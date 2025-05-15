@@ -22,8 +22,7 @@ from tensorflow.keras.preprocessing import image
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
-# folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
-folder_prefix = r"C:\Users\mossr\PycharmProjects\pythonProject\TestProject\work\Transformer\GAproject"  # edit this before running the code.
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
 
 # Set up the path to your image folder and weights file
 image_folder = folder_prefix + r"\inference"
