@@ -72,11 +72,11 @@ I wanted to create useful code, weights, and documentation, that use the paperâ€
 [back to top](#content)   
 
 ## The development environment.
-The paper does not mention whether the MATLAB work done is publicly available.  Therefore, I tried to recreate their work with my code, which is written in Python with TensorFlow (Python 3.8; TensorFlow 2.10.1).  I used PyCharm ver. 2023.2.4, Community Edition, as the IDE.   
+The paper does not mention whether the MATLAB work done is publicly available.  Therefore, I tried to recreate their work with my code, which is written in Python with TensorFlow (Python 3.8; TensorFlow 2.10.1; Keras 2.10.0).  I used PyCharm ver. 2023.2.4, Community Edition, as the IDE.   
 
 I have a Windows PC.  I have not tested this project in other environments.  For the GPU, I used a Quadro P1000, with 4 GB of memory, using CUDA version 12.2.  I did not see in the paper what hardware was used in the study.  
 
-By default, I set the code up to do training on your CPU because some people do not have a GPU, or their GPU (like mine) does not have enough memory to handle the training for this dataset.  On the other hand, you can use your GPU for training; just set use_cpu = False in GAmodel.py.  
+By default, I set the code up to do training on your CPU because some people do not have a GPU, or their GPU (like mine) does not have enough memory to handle the training for this dataset.  On the other hand, you can use your GPU for training; just set use_cpu = False in GAmain.py.  
 [back to top](#content)   
 
 ## The model.  
