@@ -161,8 +161,6 @@ The training results column definitions.
 |dropout layers	   | the status of the dropout layers, shown in the GAmodel.py.               |   
 |trainable layers  | the status of the top 10% ImageNet layers, shown in the GAmodel.py.      |   
 
-Here is a note on formatting of floats.  For some of the runs, for example GArun_27, the GAfinal_confusion_matrix.png showed 1 error, which is in the ‘test missed’ column.  Meanwhile, the ‘test acc’ column shows a note about the results of the GAFinalTestResults.txt.  In these runs, the final class-wise breakdown showed 100% in all categories.  This is due to formatting of floats.  I could have changed the code perhaps, which produces the final class-wise breakdown, so that 4 decimals, or so, were used, but I did not bother to do that.  Also, seeing 100% anywhere in metrics in the machine learning world is, of course, a mark of over-fitting.  I do not believe that is a problem here.  
-
 Generally, in C. and D. training runs below, the dropout layers made the model run consistently longer.  In the B. training runs, where 10% of the ImageNet weights were being trained, I do not see an improvement over the A. runs.  However, in D., with both dropouts and 10% training of ImageNet weights, I see the best combination.   
 
 The training results.  
@@ -177,6 +175,9 @@ C.  The version with dropouts and with no trainable ImageNet layers.
 
 D.  The final published version with dropouts and trainable ImageNet layers:  the porridge that is just right.  
 <img src="../images/results_d.png" alt="result group d." width="624" height="209">  
+
+Here is a note on formatting of floats.  For some of the runs, for example GArun_27, the GAfinal_confusion_matrix.png showed 1 error, which is in the ‘test missed’ column.  Meanwhile, the ‘test acc’ column shows a note about the results of the GAFinalTestResults.txt.  In these runs, the final class-wise breakdown showed 100% in all categories.  This is due to formatting of floats.  I could have changed the code perhaps, which produces the final class-wise breakdown, so that 4 decimals, or so, were used, but I did not bother to do that.  Also, seeing 100% anywhere in metrics in the machine learning world is, of course, a mark of over-fitting.  I do not believe that is a problem here.  
+
 [back to top](#content)  
 
 ## The georgia code and deliverables.  
