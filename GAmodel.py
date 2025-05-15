@@ -1,7 +1,7 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
-# GAmodel.py 
+# GAmodelNEW.py
 #
-# This file, GAmodel.py, gathers datasets, trains, and calls for analysis.
+# This file, GAmodelNEW.py, gathers datasets, trains, and calls for analysis.
 #
 # GAmain instantiates the class ModelTrainer, which calls preliminaties function.
 # GAmain then calls the class's run function.

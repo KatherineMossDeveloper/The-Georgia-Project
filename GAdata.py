@@ -1,10 +1,13 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAdata.py
 #
-# This file contains a class that create the data objects for the model.
+# This file contains a class that creates the data objects for the model.  It will apply ResNet-specific
+# preprocessing to all three types of data object types:  training, validation, and testing.  The mods are...
+# scaling:  rescaled from the [0, 255] range (default for 8-bit RGB images) to the range [-1, 1].
+# mean subtraction:  subtract ImageNet average color values.  red, 123.68; green, 116.779; blue, 103.939.
 #
 # check_generator           # write the data object details to screen, in order to check them.
-# get_training_data         # prepare the training data.
+# get_training_data         # prepare the training data and report classes.
 # get_validation_data       # prepare the validation data.
 # get_test_data             # prepare the test data.
 #
@@ -56,8 +59,8 @@ class DataObjectGeneration:
             height_shift_range=0.2,
             zoom_range=0.3,
             horizontal_flip=True,
-           vertical_flip=True,
-           fill_mode='nearest'
+            vertical_flip=True,
+            fill_mode='nearest'
         )
         train_generator = train_datagen.flow_from_directory(
             train_dir,
@@ -68,6 +71,9 @@ class DataObjectGeneration:
             shuffle=True
         )
         self.check_generator(train_generator, "Train Generator")
+
+        # Check the classes.
+        print(f'Training classes:  {train_generator.class_indices}')
 
         return train_generator
 
@@ -93,7 +99,7 @@ class DataObjectGeneration:
     # prepare the test data.
     def get_test_data(self, test_dir):
         # Load the test data.
-        # There are no transforms because we want to test with 'real data.'
+        # The only transform is because we want to test with 'real data.'
         print(f'test directory {test_dir}')
         test_datagen = ImageDataGenerator(
             preprocessing_function=preprocess_input

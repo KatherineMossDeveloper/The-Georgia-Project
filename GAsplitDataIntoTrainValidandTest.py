@@ -7,7 +7,12 @@
 # into train (70%), validation (25%) and test (5%), per the paper,
 #     https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896
 #
-# The CEX images will be put in folders named "0".  The PG images will be put in folders named "1".
+# This code splits the OpenCrystalData dataset that you downloaded and extracted into 70% training data,
+# 25% validation data, and 5% test data, because that is the way that it is divided up in the paper.
+# The dataset extracts itself into a CEX folder and a PG folder.  With this code, these data will be
+# moved to a '0' folder for CEX and a '1' folder for PG.  For example, 70% of the OpenCrystalData CEX
+# folder images will be moved to a GAtrainBinary\0 folder.
+#
 # This folder structure matches the logic later in the GAinference.py code.  If the folders you
 # designate do not exist, they will be created.  When the files are divided up into train,
 # validation, and testing, they will be moved, not copied, so that you will not need to erase
