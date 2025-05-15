@@ -43,7 +43,7 @@
 ## Slow start.  
 The scientists who wrote the paper trained ResNet models with ImageNet weights on the OpenCrystalData dataset. It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  This project recreates their work, with a little better results.  
 
-For detailed documentation, read the Georgia Project's documentation.  
+For details, read the Georgia Project's documentation.  
 [Go to the main doc file](docs/maindoc.md)    
 
 For background, read the research paper that inspired the Georgia Project.  
