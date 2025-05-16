@@ -318,11 +318,7 @@ Step 7. play with it.
 Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  Edit "folder_prefix" to the location where you extracted the code earlier (not the data).  This folder contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
 
 Setting up the weights file.  
-
-   - Edit the folder_prefix variable in GAinference.py, so that it points to the Georgia Project code. 
-   - Run GAinference.py to label images.
-   - 
-There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can save the weights file downloaded from the Georgia Project on GitHub to the \inference folder in the code folder on your pc.  Download the provided weights file here:  [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.2.0/GAweights.h5). Either way, note that there is a "weights_file" variables in the GAinference.py code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
+There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub, by saving it to the \inference folder in the code folder on your pc.  Download the provided weights file here:  [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.2.0/GAweights.h5). Either way, note that there is a "weights_file" variables in the GAinference.py code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
 
 Run GAinference.py.  The labeling and confidence factors will appear in the output window.  
 
