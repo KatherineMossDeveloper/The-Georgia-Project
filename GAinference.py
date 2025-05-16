@@ -76,7 +76,6 @@ try:
             # Convert to percentage
             confidence_percent = confidence * 100
 
-            # Assign the class label with threshold 0.5.
             # Assign the class label with threshold 0.5 for PG.
             class_label = 'PG' if confidence >= 0.5 else 'CEX'  # PG if prob >= 0.5, else CEX
 
