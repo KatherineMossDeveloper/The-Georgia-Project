@@ -267,7 +267,7 @@ h.  GAfinal_confusion_matrix.png, the confusion matrix.
 These instructions were written for my Windows PC.  The data zip file is over 1 GB, so you will need a drive with some free space on it to work with this data.  There are notes at the top of each code file about the minimum one needs to do in order to run the code.  Basically, just edit the folder strings to match your pc folder system. 
 
 Step 1. download the code.  
-   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.0.tar.gz) and extract it.  
+   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.2.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.2.0.tar.gz) and extract it.  
    - Set up a Python environment, if you don't already have one.  I used PyCharm, ver. 2023.2.4, Community Edition.  
    - Install dependencies as needed.  I used Python 3.8 and TensorFlow 2.10.1.  
 
@@ -294,7 +294,7 @@ Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Edit 
 </pre>    
 
 Step 4. prepare for training.  
-Open the GAmain.py code file.  Edit "folder_prefix" to the location where you extracted the data earlier.  This code will do inference on some images in the project's \inference folder.  Use your weights file or download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder.
+Open the GAmain.py code file.  Edit "folder_prefix" to the location where you extracted the data earlier.  This code will do inference on some images in the project's \inference folder.  Use your weights file or download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.2.0/GAweights.h5) to the \inference folder.
 Run GAinference.py to label images.  
 
 Setting up the CPU/GPU.  
