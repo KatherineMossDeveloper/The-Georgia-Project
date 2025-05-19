@@ -36,7 +36,7 @@
 </a><br>
 
 ## The overview
-I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1 scores above 99.7% in 10 epochs or less. 
+I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1 scores above 99.7% in 12 epochs or less. 
 
 I am a software developer doing an independent study into using machine learning to identify crystallization in images.  I found an interesting dataset and a really good research paper on the topic, so I wrote code to train on the data, using the paper for guidance.  I am posting the code and results here in the hope that others will also find it interesting.  
 
@@ -90,7 +90,7 @@ In the table below are the details offered by the published paper, then on the r
 |added dropout layers     |(did not comment)       |2                      |
 |trainable ImageNet layers|(did not comment)       |made last 10% trainable|
 
-The trained model had all F1 scores above 99.7% in 10 epochs or less.  Here are the changes that have made the metrics better and the training shorter. 
+The trained model had all F1 scores above 99.7% in 12 epochs or less.  Here are the changes that have made the metrics better and the training shorter. 
 
 1.  used ResNet-101.  See “GAmodel.py.”   
 The paper used ResNet-18 and ResNet-50.  I thought it would be interesting if I used the more complex model architecture here.  
@@ -134,7 +134,7 @@ The folder structure is as follows during training, validation, and testing.  PG
 [back to top](#content)  
 
 ## The results.  
-The final code had all F1 scores above 99.7% in 10 epochs or less.  The details of the training runs for this final version are in section D. below.  
+The final code had all F1 scores above 99.7% in 12 epochs or less.  The details of the training runs for this final version are in section D. below.  
 To produce these numbers, I re-ran versions of the code so that I could understand exactly what delivered the best metrics and shortest runtimes for training.  I found that making 10% of the ImageNet layers trainable improved metrics.  I found that adding two Dropout layers improved metrics.  Finally, I found that both of them, together, produced a better model.  
 
 This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
