@@ -112,8 +112,13 @@ There are ~6,800 image files for each of the two classes of crystal images.
 |Totals       |6,804 image files |6,860 image files|
 
 The paper remarks that the two image sets have “very distinct visual features.”  Here are some of the CEX images.  Below that are some PG images.  While the CEX images are distinctive, let me suggest here that the PG data varies a lot.  
-![Samples](../images/samples_cex.png)  
-![Samples](../images/samples_pg.png)  
+<a href="#">
+  <img src="../images/samples_cex.png" alt="CEX samples" style="vertical-align: middle; width: 623px; height: 134px;"/>
+</a><br>
+
+<a href="#">
+  <img src="../images/samples_pg.png" alt="PG samples" style="vertical-align: middle; width: 623px; height: 151px;"/>
+</a><br>
 
 The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folders, and CEX are put in the “0” folders.  The GAsplitDataIntoTrainValidandTest.py code will set up these folders, and the GAmain.py code file will refer to these locations during training.  You will, of course, need to modify the code to match the folder structure on your computer.  See the “How to recreate the results” section for more.  
 
