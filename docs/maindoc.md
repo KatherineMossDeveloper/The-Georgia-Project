@@ -269,7 +269,7 @@ These instructions were written for my Windows PC.  The data zip file is over 1 
 Step 1. download the code.  
    - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.2.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.2.0.tar.gz) and extract it.  
    - Set up a Python environment, if you don't already have one.  I used PyCharm, ver. 2023.2.4, Community Edition.  
-   - Install dependencies as needed.  I used Python 3.8 and TensorFlow 2.10.1.  
+   - Install dependencies as needed.  I used Python 3.8, TensorFlow 2.10.1, and Keras 2.10.0.  
 
 Step 2. download the data.  
 Navigate to the Kaggle website using this hyperlink, create an account (which you can do for free), sign into the site, and press the “Download” button.  Download [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) and extract it.  Downloading, and especially extraction, can take a while, so go get another cup of coffee.  
