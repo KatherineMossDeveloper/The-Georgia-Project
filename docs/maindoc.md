@@ -299,7 +299,7 @@ Open the GAmain.py code file.  Edit "folder_prefix" to the location where you ex
 Setting up the study variables.  
 The "prefix" and "name" variables are put on plots, etc., after training, so you can edit them to identify a given run.  
 
-Setting up the deliverables folder. 
+Setting up the deliverables folder.  
 The "deliverables_folder" variable is where the code will save the results and the weights files at the end of training.  This folder will be, by default, automatically created in the same folder where you saved the data.  You can, of course, change the folder location and/or name. 
 
 Setting up the CPU/GPU.  
