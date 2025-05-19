@@ -50,22 +50,17 @@ This study is about the crystallization dataset on Kaggle.  However, in this doc
 [back to top](#content)   
 
 ## The paper  
-The dataset references a paper,  
+The dataset references the research paper,  
 
-In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.  
-Hossein Salami, Matthew A. McDonald, Andreas S. Bommarius, Ronald W. Rousseau, and Martha A. Grover
-Organic Process Research & Development 2021 25 (7), 1670-1679
-DOI: 10.1021/acs.oprd.1c00136  
+Salami, H., McDonald, M. A., Bommarius, A. S., Rousseau, R. W., & Grover, M. A. (2021). [In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production](https://doi.org/10.1021/acs.oprd.1c00136). *Organic Process Research & Development, 25*(7), 1670–1679. 
 
-This paper will be referred to here as “the paper.”  Below is a hyperlink to an abstract of the paper, along with a supplemental file.   The full paper is only available behind paywalls.  I purchased a copy in order to continue my study, so I ethically cannot share my copy with others here.  However, here is the abstract, which is public.  
-
-https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896  
+This paper will be referred to here as “the paper.”  Its hyperlink points to an abstract of the paper, along with a supplemental file.   The full paper is only available behind paywalls.  I purchased a copy in order to continue my study, so I ethically cannot share my copy with others here.  
 
 What I can say, without going against the spirit of the pay wall agreement, is that the scientists who wrote the paper trained ResNet models with ImageNet weights on the GA data.  It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  They used both ResNet-18 and ResNet-50.  They used MATLAB 2020b Deep Learning Toolbox and deepNetworkDesigner app.  
 [back to top](#content)   
 
 ## The goals
-I wanted to create useful code, weights, and documentation, that use the paper’s guidance and its binary dataset of crystallization images.  The code and weights files that I produce might be useful to others because they are in popular technologies.  The code is in Python, TensorFlow, and Keras.  The weights files are in HDF5 and ONNX.  The details are posted in this project in Markdown language and PNG files.  
+I wanted to create useful code, weights, and documentation that use the paper’s guidance and its binary dataset of crystallization images.  The code and weights files that I produce might be useful to others because they are in popular technologies.  The code is in Python, TensorFlow, and Keras.  The weights files are in HDF5 and ONNX.  The details are posted in this project in Markdown language and PNG files.  
 [back to top](#content)   
 
 ## The development environment.
@@ -92,17 +87,17 @@ In the table below are the details offered by the published paper, then on the r
 
 The trained model had all F1 scores above 99.7% in 12 epochs or less.  Here are the changes that have made the metrics better and the training shorter. 
 
-1.  used ResNet-101.  See “GAmodel.py.”   
+1.  ResNet-101.  See “GAmodel.py.”   
 The paper used ResNet-18 and ResNet-50.  I thought it would be interesting if I used the more complex model architecture here.  
 
-2.  changed the learning rate from 1E-4 to 1E-1.  See “GAmain.py.”  
+2.  The learning rate 1E-1.  See “GAmain.py.”  
 I gradually increased the learning rate from 1E-4 to 1E-1.  The model learned faster, without losing its mind.  
 
-3.  added two Dropout layers, with drop out rates at .4 and .3 respectively.  See “GAmodel.py.”  
-I added these just to see what would happen. 
+3.  Two Dropout layers, with drop out rates at .4 and .3 respectively.  See “GAmodel.py.”  
+I added these just to see what would happen.  That was a good idea. 
 
-4.  made 10% of the ImageNet layers trainable.  See “GAmodel.py.”    
-I made these layers trainable on a lark, not knowing if they would make a difference.  They did.  
+4.  Trainable ImageNet layers.  See “GAmodel.py.”    
+I made 10% of the ImageNet layers trainable, not knowing if they would make a difference.  They did.  
 
 I also wrote code to split the data into training, validation, and test sets.  See section a. in “The Georgia code and deliverables.”  I added code that would stop the training based on the F1 scores.  See “GAcallbacks.py.”  
 [back to top](#content)  
