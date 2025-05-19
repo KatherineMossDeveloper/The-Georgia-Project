@@ -173,7 +173,7 @@ C.  The version with dropouts and with no trainable ImageNet layers.
 D.  The final published version with dropouts and trainable ImageNet layers:  the porridge that is just right.  
 <img src="../images/results_d.png" alt="result group d." width="624" height="209">  
 
-Here is a note on formatting of floats.  For some of the runs, for example GArun_27, the GAfinal_confusion_matrix.png showed 1 error, which is in the ‘test missed’ column.  Meanwhile, the ‘test acc’ column shows a note about the results of the GAFinalTestResults.txt.  In these runs, the final class-wise breakdown showed 100% in all categories.  This is due to formatting of floats.  I could have changed the code perhaps, which produces the final class-wise breakdown, so that 4 decimals, or so, were used, but I did not bother to do that.  Also, seeing 100% anywhere in metrics in the machine learning world is, of course, a mark of over-fitting.  I do not believe that is a problem here.  
+Here is a note on the formatting of floats.  For some of the runs, for example GArun_27, the GAfinal_confusion_matrix.png showed 1 error, which is in the ‘test missed’ column.  Meanwhile, the ‘test acc’ column shows a note about the results of the GAFinalTestResults.txt.  In these runs, the final class-wise breakdown showed 100% in all categories.  This is due to the formatting of floats.  I could have changed the code perhaps, which produces the final class-wise breakdown, so that 4 decimals, or so, were used, but I did not bother to do that.  Also, seeing 100% anywhere in metrics in the machine learning world is, of course, a mark of over-fitting.  I do not believe that is a problem here.  
 
 [back to top](#content)  
 
@@ -202,7 +202,7 @@ GAutility.py
 This module organizes unrelated pieces of code in one place. 
 
 GAdata.py    
-This module creates the data objects for training, validation, and testing.  For training, it include data augmentation.
+This module creates the data objects for training, validation, and testing.  For training, it includes data augmentation.
 
 GAanalysis.py    
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
@@ -320,7 +320,7 @@ Lastly, there is a code file, GAinference.py, that will perform inference on any
 Setting up the weights file.  
 There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub here:  [weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0/GAweights.h5).  
 
-Either way, save it to the existing \inference folder in the code folder on your pc.  Note that there is a "weights_file" variables in the GAinference.py code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
+Either way, save it to the existing \inference folder in the code folder on your pc.  Note that there is a "weights_file" variable in the GAinference.py code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
 
 Run GAinference.py.  The labeling and confidence factors will appear in the output window.  
 
