@@ -43,6 +43,9 @@
 ## Slow start.  
 The scientists who wrote the paper trained ResNet models with ImageNet weights on the OpenCrystalData dataset. It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  This project recreates their work.  
 
+### Citation
+Salami, H., McDonald, M. A., Bommarius, A. S., Rousseau, R. W., & Grover, M. A. (2021). [In situ imaging combined with deep learning for crystallization process monitoring: Application to Cephalexin production](https://doi.org/10.1021/acs.oprd.1c00136). *Organic Process Research & Development, 25*(7), 1670–1679. https://doi.org/10.1021/acs.oprd.1c00136
+
 For more, read the research paper that inspired the Georgia Project.  
 [In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
 
