@@ -41,16 +41,13 @@
    - Run GAinference.py to label images in the \inference folder.  
 
 ## Slow start.  
-Here is the research paper that inspired this Github project.  
-[In situ imaging combined with deep learning for crystallization process monitoring: Application to Cephalexin production](https://doi.org/10.1021/acs.oprd.1c00136)
+The scientists who wrote the paper trained ResNet models with ImageNet weights on the OpenCrystalData dataset. It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  This project recreates their work.  
 
-The scientists who wrote the paper trained ResNet models with ImageNet weights on the OpenCrystalData dataset. It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  This project recreates their work, with a little better results.  
+For more, read the research paper that inspired the Georgia Project.  
+[In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
 
 For details, read the Georgia Project's documentation.  
 [Go to the main doc file](docs/maindoc.md)    
-
-For background, read the research paper that inspired the Georgia Project.  
-[In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production.](https://www.sciencedirect.com/science/article/abs/pii/S1083616021010896)  
 
 ## Model comparison.  
 In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   
