@@ -253,6 +253,7 @@ f.  After training, in the GAFinalTestResults.txt file, the model gives similar 
 |    accuracy |          |        |    1.00  |     684 |
 |   macro avg |    1.00  |   1.00 |    1.00  |     684 |
 |weighted avg |    1.00  |   1.00 |    1.00  |     684 |  
+
 [back to top](#content)  
 
 g.  GAmetrics_plot.png, the plot of training accuracy and validation accuracy.  
