@@ -27,18 +27,18 @@
 
 2. Get the data from Kaggle.  
    - Download [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) and extract it.  
-   - Edit the folder_prefix variable to point to the OpenCrystalData on your pc in GAsplitDataIntoTrainValidandTest.py. 
+   - Edit GAsplitDataIntoTrainValidandTest.py so that the folder_prefix variable points to the OpenCrystalData on your pc. 
    - Run GAsplitDataIntoTrainValidandTest.py to split the data up into training, validation, and testing. 
 
 3. Run the training.  
-   - Edit the folder_prefix variable to point to the OpenCrystalData on your pc in GAmain.py. 
+   - Edit GAmain.py so that the folder_prefix variable points to the OpenCrystalData on your pc. 
    - Run GAmain.py to train the model.
    - Check the results in the \GAdeliverables folder (where you extracted the data).  
    
 4. Play time.
    - Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.2.0/GAweights.h5) to the \inference folder.
-   - Edit the folder_prefix variable in GAinference.py, so that it points to the Georgia Project code. 
-   - Run GAinference.py to label images.  
+   - Edit GAinference.py so that the folder_prefix variable points to the Georgia Project code. 
+   - Run GAinference.py to label images in the \inference folder.  
 
 ## Slow start.  
 The scientists who wrote the paper trained ResNet models with ImageNet weights on the OpenCrystalData dataset. It was a binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  This project recreates their work, with a little better results.  
