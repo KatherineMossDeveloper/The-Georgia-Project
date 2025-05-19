@@ -267,7 +267,7 @@ h.  GAfinal_confusion_matrix.png, the confusion matrix.
 These instructions were written for my Windows PC.  The data zip file is over 1 GB, so you will need a drive with some free space on it to work with this data.  There are notes at the top of each code file about the minimum one needs to do in order to run the code.  Basically, just edit the folder strings to match your pc folder system. 
 
 Step 1. download the code.  
-   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.2.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.2.0.tar.gz) and extract it.  
+   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.0.tar.gz) and extract it.  
    - Set up a Python environment, if you don't already have one.  I used PyCharm, ver. 2023.2.4, Community Edition.  
    - Install dependencies as needed.  I used Python 3.8, TensorFlow 2.10.1, and Keras 2.10.0.  
 
@@ -318,7 +318,7 @@ Step 7. play with it.
 Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  Edit "folder_prefix" to point to the location where you extracted the code earlier (not the data).  This folder contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
 
 Setting up the weights file.  
-There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub here:  [weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.2.0/GAweights.h5).  
+There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub here:  [weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0/GAweights.h5).  
 
 Either way, save it to the existing \inference folder in the code folder on your pc.  Note that there is a "weights_file" variables in the GAinference.py code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
 
