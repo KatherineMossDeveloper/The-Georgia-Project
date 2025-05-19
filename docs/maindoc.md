@@ -178,7 +178,7 @@ Here is a note on formatting of floats.  For some of the runs, for example GArun
 [back to top](#content)  
 
 ## The Georgia Project code and deliverables.  
-Sections a. through c. below are notes on the Python code files.  Sections d. through h. are the notes about the deliverables.  Let's start with high level look... 
+Sections a. through c. below are notes on the Python code files.  Sections d. through h. are the notes about the deliverables.  Let's start with a high level look... 
   
 <img src="../images/codeoverview.png" alt="code overview" width="402" height="293">  
 
