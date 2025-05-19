@@ -244,7 +244,7 @@ e.  During training, in the ouput window in PyCharm, there are class-wise text b
    weighted avg - Precision: 0.9985, Recall: 0.9985, F1-Score: 0.9985
 </pre>
 
-f.  After training, in the GAFinalTestResults.txt file, the model give similar metrics during testing. The word “support” here tells us how many files the model used to determine the precision, recall, and F1 scores.   
+f.  After training, in the GAFinalTestResults.txt file, the model gives similar metrics during testing. The word “support” here tells us how many files the model used to determine the precision, recall, and F1 scores.   
             
 |             |precision | recall | f1-score |  support|
 |-------------|----------|--------|----------|---------|
