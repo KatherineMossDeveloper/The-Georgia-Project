@@ -190,10 +190,10 @@ b.  The training and analysis code.
 Generally, this next section of code files further preprocesses the data, trains the ResNet-101 model, then reports results.  The model will load the Keras built-in ImageNet weights.  It will train with the hyperparameters in the paper, with exceptions mentioned in “The model” section.  The code is organized into files, or modules, which call each other, in roughly the order here.
 
 `GAmain.py`        
-This module sets up the folder system and basic variables for the model.  It will then call GAmodel.py. 
+This module sets up the folder system and basic variables for the model.  It will then call `GAmodel.py`. 
 
 `GAmodel.py`       
-This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls GAanalyze.py to reports results.  
+This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls `GAanalyze.py` to reports results.  
 
 `GAcallbacks.py`  
 This module creates the callbacks that the model will need during training.  
