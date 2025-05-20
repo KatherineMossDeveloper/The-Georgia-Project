@@ -120,7 +120,7 @@ The paper remarks that the two image sets have “very distinct visual features.
   <img src="../images/samples_pg.png" alt="PG samples" style="vertical-align: middle; width: 623px; height: 151px;"/>
 </a><br>
 
-The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folders, and CEX are put in the “0” folders.  The GAsplitDataIntoTrainValidandTest.py code will set up these folders, and the GAmain.py code file will refer to these locations during training.  You will, of course, need to modify the code to match the folder structure on your computer.  See the “How to recreate the results” section for more.  
+The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folders, and CEX are put in the “0” folders.  The `GAsplitDataIntoTrainValidandTest.py` code will set up these folders, and the `GAmain.py` code file will refer to these locations during training.  You will, of course, need to modify the code to match the folder structure on your computer.  See the “How to recreate the results” section for more.  
 
 …\GAtrainBinary  
     \0  
@@ -140,7 +140,7 @@ To produce these numbers, I re-ran versions of the code so that I could understa
 
 This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
 
-Below are the training results column definitions and then the results in tables.  Each line in the tables below represents a training run (GAmodel.py) and test run (GAanalysis.py test_eval function).  The best runs were with version D., which is the version of the code here in the GitHub project.  If you have any questions, or would like more details, write to me.  
+Below are the training results column definitions and then the results in tables.  Each line in the tables below represents a training run (`GAmodel.py`) and test run (`GAanalysis.py` test_eval function).  The best runs were with version D., which is the version of the code here in the GitHub project.  If you have any questions, or would like more details, write to me.  
 
 The training results column definitions. 
 
@@ -183,32 +183,32 @@ Sections a. through c. below are notes on the Python code files.  Sections d. th
 <img src="../images/codeoverview.png" alt="code overview" width="402" height="293">  
 
 a.  The code to split up the data.  
-GAsplitDataIntoTrainValidandTest.py  
+`GAsplitDataIntoTrainValidandTest.py`  
 This code splits the OpenCrystalData dataset that you downloaded and extracted into 70% training data, 25% validation data, and 5% test data, because that is the way that it is divided up in the paper.  The dataset extracts itself into a CEX folder and a PG folder.  With this code, these data will be moved to a '0' folder for CEX and a '1' folder for PG.  For example, 70% of the OpenCrystalData CEX folder images will be moved to a GAtrainBinary\0 folder. 
 
 b.  The training and analysis code. 
 Generally, this next section of code files further preprocesses the data, trains the ResNet-101 model, then reports results.  The model will load the Keras built-in ImageNet weights.  It will train with the hyperparameters in the paper, with exceptions mentioned in “The model” section.  The code is organized into files, or modules, which call each other, in roughly the order here.
 
-GAmain.py        
+`GAmain.py`        
 This module sets up the folder system and basic variables for the model.  It will then call GAmodel.py. 
 
-GAmodel.py       
+`GAmodel.py`       
 This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls GAanalyze.py to reports results.  
 
-GAcallbacks.py  
+`GAcallbacks.py`  
 This module creates the callbacks that the model will need during training.  
 
-GAutility.py    
+`GAutility.py`    
 This module organizes unrelated pieces of code in one place. 
 
-GAdata.py    
+`GAdata.py`    
 This module creates the data objects for training, validation, and testing.  For training, it includes data augmentation.
 
-GAanalysis.py    
+`GAanalysis.py`    
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
 c.  The inference code. 
-It is time to play.  After you trained the model, the file GAinference.py can then perform inference on any png file that you give it.  Below are some examples.  
+It is time to play.  After you trained the model, the file `GAinference.py` can then perform inference on any png file that you give it.  Below are some examples.  
 
 As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  You can also download the GAweights.h5 file from the GitHub Georgia Project website.  Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder where you downloaded the Georgia Project code on your PC.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)
 
@@ -280,7 +280,7 @@ Extract the data from the archive.zip file.  The data structure created during e
 </pre>
 
 Step 3. spit up the data.  
-Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Edit "folder_prefix" to the location where you extracted the data earlier.  The code will take that data and split it up in the "destination folders." Read the “to do” list at the top of the file for more information.  Then run the GAsplitDataIntoTrainValidandTest.py code file.  At the end of the run, you should see messages that look something like this.
+Open the `GAsplitDataIntoTrainValidandTest.py` code file in the Python IDE.  Edit `folder_prefix` to the location where you extracted the data earlier.  The code will take that data and split it up in the `destination folders`. Read the “to do” list at the top of the file for more information.  Then run the `GAsplitDataIntoTrainValidandTest.py` code file.  At the end of the run, you should see messages that look something like this.
 
 <pre style="font-family: 'Courier New', Courier, monospace;">
    Moved 4802 files to X:\MLresearch\CrystalStudy\Project_GA\GitHubTestingData\GAtrainBinary\1
@@ -293,35 +293,35 @@ Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Edit 
 </pre>    
 
 Step 4. prepare for training.  
-Open the GAmain.py code file.  Edit "folder_prefix" to the location where you extracted the data earlier.  
+Open the `GAmain.py` code file.  Edit `folder_prefix` to the location where you extracted the data earlier.  
 
 Setting up the study variables.  
-The "prefix" and "name" variables are put on plots, etc., after training, so you can edit them to identify a given run.  
+The `prefix` and `name` variables are put on plots, etc., after training, so you can edit them to identify a given run.  
 
 Setting up the deliverables folder.  
-The "deliverables_folder" variable is where the code will save the results and the weights files at the end of training.  This folder will be, by default, automatically created in the same folder where you saved the data.  You can, of course, change the folder location and/or name. 
+The `deliverables_folder` variable is where the code will save the results and the weights files at the end of training.  This folder will be, by default, automatically created in the same folder where you saved the data.  You can, of course, change the folder location and/or name. 
 
 Setting up the CPU/GPU.  
-The "use_cpu" variable is set to true by default, so if you do not have a lot of memory on your GPU, the training will still complete.  If you set this variable to false, you will be using your GPU, assuming you have one.  I do not have access to a variety of computers, so I could not test every scenario.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training on my GPU, so I created this variable to avoid them.  
+The `use_cpu` variable is set to true by default, so if you do not have a lot of memory on your GPU, the training will still complete.  If you set this variable to false, you will be using your GPU, assuming you have one.  I do not have access to a variety of computers, so I could not test every scenario.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training on my GPU, so I created this variable to avoid them.  
 
 Setting up debugging folders and data.  
-The "really_training" variable is set to true by default.  On the other hand, sometimes when debugging, it is nice to have a way to run a short “rehearsal” training.  If you want that, in the GAmain.py code, set the variable "really_training" to False.  Then edit the folders for debugging to point to an abbreviated version of the files.  To fill up the train, validation, and test image file folders for debugging, I copied about 10% of the files from the “real” training folders.  The epochs variable is set to 3, again so that the run is short.  Note that your training metrics will look bad when you run your debugging sub-set of the data because the model will not have time to train on the data, nor enough data to train with.  Debugging in this way is for testing things like a new result file, not model performance.  
+The `really_training` variable is set to true by default.  On the other hand, sometimes when debugging, it is nice to have a way to run a short “rehearsal” training.  If you want that, in the `GAmain.py` code, set the variable `really_training` to False.  Then edit the folders for debugging to point to an abbreviated version of the files.  To fill up the train, validation, and test image file folders for debugging, I copied about 10% of the files from the “real” training folders.  The epochs variable is set to 3, again so that the run is short.  Note that your training metrics will look bad when you run your debugging sub-set of the data because the model will not have time to train on the data, nor enough data to train with.  Debugging in this way is for testing things like a new result file, not model performance.  
 
 Step 5. train.  
-To train the model, start the GAmain.py file.  You can watch progress in the output window of PyCharm, if that is your IDE.  
+To train the model, start the `GAmain.py` file.  You can watch progress in the output window of PyCharm, if that is your IDE.  
 
 Step 6. view results.  
-All results files generated will be in your deliverables folder that you designated in the GAmain.py code file.  
+All results files generated will be in your deliverables folder that you designated in the `GAmain.py` code file.  
 
 Step 7. play with it.  
-Lastly, there is a code file, GAinference.py, that will perform inference on any png file that you give it.  Edit "folder_prefix" to point to the location where you extracted the code earlier (not the data).  This folder contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
+Lastly, there is a code file, `GAinference.py`, that will perform inference on any png file that you give it.  Edit `folder_prefix` to point to the location where you extracted the code earlier (not the data).  This folder contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
 
 Setting up the weights file.  
 There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub here:  [weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0/GAweights.h5).  
 
-Either way, save it to the existing \inference folder in the code folder on your pc.  Note that there is a "weights_file" variable in the GAinference.py code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
+Either way, save it to the existing \inference folder in the code folder on your pc.  Note that there is a `weights_file` variable in the `GAinference.py` code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
 
-Run GAinference.py.  The labeling and confidence factors will appear in the output window.  
+Run `GAinference.py`  The labeling and confidence factors will appear in the output window.  
 
 [back to top](#content)  
 
