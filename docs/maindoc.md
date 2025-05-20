@@ -178,7 +178,7 @@ Here is a note on the formatting of floats.  For some of the runs, for example G
 [back to top](#content)  
 
 ## The Georgia Project code and deliverables.  
-Sections a. through c. below are notes on the Python code files.  Sections d. through h. are the notes about the deliverables.  Let's start with a high level look... 
+Sections a. through c. below are notes on the Python code files.  Sections d. through h. are the notes about the deliverables.  Let's start with a high-level look... 
   
 <img src="../images/codeoverview.png" alt="code overview" width="402" height="293">  
 
@@ -210,7 +210,7 @@ Finally, this code is called after the training, at which time it creates the pl
 c.  The inference code. 
 It is time to play.  After you trained the model, the file GAinference.py can then perform inference on any png file that you give it.  Below are some examples.  
 
-As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  You can also download the GAweights.h5 file from the Github Georgia Project website.  Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder where you downloaded the Georgia Project code on your PC.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)
+As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  You can also download the GAweights.h5 file from the GitHub Georgia Project website.  Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder where you downloaded the Georgia Project code on your PC.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)
 
 ![InferenceExamples](../images/InferenceExample.png)
 
@@ -283,12 +283,12 @@ Step 3. spit up the data.
 Open the GAsplitDataIntoTrainValidandTest.py code file in the Python IDE.  Edit "folder_prefix" to the location where you extracted the data earlier.  The code will take that data and split it up in the "destination folders." Read the “to do” list at the top of the file for more information.  Then run the GAsplitDataIntoTrainValidandTest.py code file.  At the end of the run, you should see messages that look something like this.
 
 <pre style="font-family: 'Courier New', Courier, monospace;">
-   Moved 4802 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtrainBinary\1
-   Moved 1715 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAvalidBinary\1
-   Moved 343 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtestBinary\1
-   Moved 4762 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtrainBinary\0
-   Moved 1701 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAvalidBinary\0
-   Moved 341 files to X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData\GAtestBinary\0
+   Moved 4802 files to X:\MLresearch\CrystalStudy\Project_GA\GitHubTestingData\GAtrainBinary\1
+   Moved 1715 files to X:\MLresearch\CrystalStudy\Project_GA\GitHubTestingData\GAvalidBinary\1
+   Moved 343 files to X:\MLresearch\CrystalStudy\Project_GA\GitHubTestingData\GAtestBinary\1
+   Moved 4762 files to X:\MLresearch\CrystalStudy\Project_GA\GitHubTestingData\GAtrainBinary\0
+   Moved 1701 files to X:\MLresearch\CrystalStudy\Project_GA\GitHubTestingData\GAvalidBinary\0
+   Moved 341 files to X:\MLresearch\CrystalStudy\Project_GA\GitHubTestingData\GAtestBinary\0
    Data split into Train (70%), Validation (25%), and Test (5%)
 </pre>    
 
