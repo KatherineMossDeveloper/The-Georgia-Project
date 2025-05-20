@@ -27,7 +27,7 @@
 
 2. Get the data from Kaggle.  
    - Download [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) and extract it.  
-   - Edit GAsplitDataIntoTrainValidandTest.py so that the folder_prefix variable points to the OpenCrystalData on your pc. 
+   - Edit `GAsplitDataIntoTrainValidandTest.py` so that the folder_prefix variable points to the OpenCrystalData on your pc. 
    - Run GAsplitDataIntoTrainValidandTest.py to split the data up into training, validation, and testing. 
 
 3. Run the training.  
