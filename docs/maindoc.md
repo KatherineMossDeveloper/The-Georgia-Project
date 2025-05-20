@@ -186,7 +186,7 @@ a.  The code to split up the data.
 `GAsplitDataIntoTrainValidandTest.py`  
 This code splits the OpenCrystalData dataset that you downloaded and extracted into 70% training data, 25% validation data, and 5% test data, because that is the way that it is divided up in the paper.  The dataset extracts itself into a CEX folder and a PG folder.  With this code, these data will be moved to a '0' folder for CEX and a '1' folder for PG.  For example, 70% of the OpenCrystalData CEX folder images will be moved to a GAtrainBinary\0 folder. 
 
-b.  The training and analysis code. 
+b.  The training and analysis code.  
 Generally, this next section of code files further preprocesses the data, trains the ResNet-101 model, then reports results.  The model will load the Keras built-in ImageNet weights.  It will train with the hyperparameters in the paper, with exceptions mentioned in “The model” section.  The code is organized into files, or modules, which call each other, in roughly the order here.
 
 `GAmain.py`        
@@ -207,7 +207,7 @@ This module creates the data objects for training, validation, and testing.  For
 `GAanalysis.py`    
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
-c.  The inference code. 
+c.  The inference code.  
 It is time to play.  After you trained the model, the file `GAinference.py` can then perform inference on any png file that you give it.  Below are some examples.  
 
 As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  You can also download the GAweights.h5 file from the GitHub Georgia Project website.  Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder where you downloaded the Georgia Project code on your PC.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)
