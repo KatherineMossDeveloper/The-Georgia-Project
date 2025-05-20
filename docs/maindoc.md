@@ -208,7 +208,11 @@ This module creates the data objects for training, validation, and testing.  For
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
 c.  The inference code.  
-It is time to play.  After you trained the model, the file `GAinference.py` can then perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in. Note that the weights file is here, as the code expects.  A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  You can also download the GAweights.h5 file from the GitHub Georgia Project website.  Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) to the \inference folder where you downloaded the Georgia Project code on your PC.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)
+It is time to play.  After you trained the model, the file `GAinference.py` can then perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)  Note that the weights file is in the same folder, as the code expects.  
+
+A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  
+
+You can also download the GAweights file from the GitHub Georgia Project website.  Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.onnx) to the \inference folder where you downloaded the Georgia Project code on your PC.  
 
 ![InferenceExamples](../images/InferenceExample.png)
 
