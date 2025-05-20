@@ -68,7 +68,7 @@ The paper does not mention whether the MATLAB work done is publicly available.  
 
 I have a Windows PC.  I have not tested this project in other environments.  For the GPU, I used a Quadro P1000, with 4 GB of memory, using CUDA version 12.2.  I did not see in the paper what hardware was used in the study.  
 
-By default, I set the code up to do training on your CPU because some people do not have a GPU, or their GPU (like mine) does not have enough memory to handle the training for this dataset.  On the other hand, you can use your GPU for training; just set use_cpu = False in GAmain.py.  
+By default, I set the code up to do training on the CPU because some people do not have a GPU, or their GPU (like mine) does not have enough memory to handle the training for this dataset.  On the other hand, you can use your GPU for training; just set `use_cpu = False` in `GAmain.py`.  
 [back to top](#content)   
 
 ## The model.  
@@ -87,19 +87,19 @@ In the table below are the details offered by the published paper, then on the r
 
 The trained model had all F1 scores above 99.7% in 12 epochs or less.  Here are the changes that have made the metrics better and the training shorter. 
 
-1.  ResNet-101.  See “GAmodel.py.”   
+1.  ResNet-101.  See `GAmodel.py.`  
 The paper used ResNet-18 and ResNet-50.  I thought it would be interesting if I used the more complex model architecture here.  
 
-2.  The learning rate 1E-1.  See “GAmain.py.”  
+2.  The learning rate 1E-1.  See `GAmain.py.`  
 I gradually increased the learning rate from 1E-4 to 1E-1.  The model learned faster, without losing its mind.  
 
-3.  Two Dropout layers, with drop out rates at .4 and .3 respectively.  See “GAmodel.py.”  
+3.  Two Dropout layers, with drop out rates at .4 and .3 respectively.  See `GAmodel.py.`  
 I added these just to see what would happen.  That was a good idea. 
 
-4.  Trainable ImageNet layers.  See “GAmodel.py.”    
+4.  Trainable ImageNet layers.  See `GAmodel.py.`    
 I made 10% of the ImageNet layers trainable, not knowing if they would make a difference.  They did.  
 
-I also wrote code to split the data into training, validation, and test sets.  See section a. in “The Georgia code and deliverables.”  I added code that would stop the training based on the F1 scores.  See “GAcallbacks.py.”  
+I also wrote code to split the data into training, validation, and test sets.  See section a. in “The Georgia code and deliverables.”  I added code that would stop the training based on the F1 scores.  See `GAcallbacks.py.`  
 [back to top](#content)  
 
 ## The data.  
