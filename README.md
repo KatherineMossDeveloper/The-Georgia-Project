@@ -27,7 +27,7 @@
 
 2. Get the data from Kaggle.  
    - Download [OpenCrystalData Crystal Impurity Detection](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download) and extract it.  
-   - Edit `GAsplitDataIntoTrainValidandTest.py` so that the folder_prefix variable points to the OpenCrystalData on your pc. 
+   - Edit `GAsplitDataIntoTrainValidandTest.py` so that the folder_prefix variable points to the data on your pc. 
    - Run `GAsplitDataIntoTrainValidandTest.py` to split the data up into training, validation, and testing. 
 
 3. Run the training.  
@@ -46,7 +46,7 @@ The scientists who wrote the paper trained ResNet models with ImageNet weights o
 Here is the research paper. 
 Salami, H., McDonald, M. A., Bommarius, A. S., Rousseau, R. W., & Grover, M. A. (2021). [In Situ Imaging Combined with Deep Learning for Crystallization Process Monitoring: Application to Cephalexin Production](https://doi.org/10.1021/acs.oprd.1c00136). *Organic Process Research & Development, 25*(7), 1670–1679. 
 
-Here is the Georgia Project's documentation.  
+Here is the Georgia Project's detailed documentation.  
 [Go to the main doc file](docs/maindoc.md)    
 
 ## Model comparison.  
