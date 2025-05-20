@@ -140,7 +140,7 @@ To produce these numbers, I re-ran versions of the code so that I could understa
 
 This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
 
-Below are the training results column definitions and then the results in tables.  Each line in the tables below represents a training run (`GAmodel.py`) and test run (`GAanalysis.py` test_eval function).  The best runs were with version D., which is the version of the code here in the GitHub project.  If you have any questions, or would like more details, write to me.  
+Below are the training results column definitions and then the results in tables.  Each line in the tables below represents a training run (`GAmodel.py`) and test run (`GAanalysis.py`).  The best runs were with version D., which is the version of the code here in the GitHub project.  If you have any questions, or would like more details, write to me.  
 
 The training results column definitions. 
 
