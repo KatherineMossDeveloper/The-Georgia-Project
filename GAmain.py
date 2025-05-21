@@ -9,8 +9,10 @@
 #    DOI: 10.1021/acs.oprd.1c00136
 #
 # This OpenCrystalData dataset is here,
-#
 #     https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896
+#
+# The data is here, 
+#     https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download
 #
 # This code will set up the folders for training a model.  The model will load the Keras built-in
 # ImageNet weights.  It will train using the dataset discussed in the Salami, et al. paper cited above.
