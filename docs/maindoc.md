@@ -60,7 +60,7 @@ What I can say, without going against the spirit of the paywall agreement, is th
 [back to top](#content)   
 
 ## The goals
-I wanted to create useful code, weights, and documentation that use the paper’s guidance and its binary dataset of crystallization images.  The code and weights files that I produce might be useful to others because they are in popular technologies.  The code is in Python, TensorFlow, and Keras.  The weights files are in HDF5 and ONNX.  The details are posted in this project in Markdown language and PNG files.  
+I wanted to create useful code, weights, and documentation that use the paper’s guidance and its binary dataset of crystallization images.  The code and weights files that I produce might be useful to others because they are in popular technologies.  The code is in Python, TensorFlow, and Keras.  The weights files are in HDF5, the default in Tensorflow, and ONNX, the cross-platform format.  The details are posted in this project in Markdown language and PNG files.  
 [back to top](#content)   
 
 ## The development environment.
@@ -68,7 +68,7 @@ The paper does not mention whether the MATLAB work done is publicly available.  
 
 I have a Windows PC.  I have not tested this project in other environments.  For the GPU, I used a Quadro P1000, with 4 GB of memory, using CUDA version 12.2.  I did not see in the paper what hardware was used in the study.  
 
-By default, I set the code up to do training on the CPU because some people do not have a GPU, or their GPU (like mine) does not have enough memory to handle the training for this dataset.  On the other hand, you can use your GPU for training; just set `use_cpu = False` in `GAmain.py`.  
+The `use_cpu` variable in GAmain.py is set to true by default, so if you do not have a lot of memory on your GPU, the training will still complete.  If you set this variable to false, you will be using your GPU, assuming you have one.  I do not have access to a variety of computers, so I could not test every scenario.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training on my GPU, so I created this variable to avoid them.  
 [back to top](#content)   
 
 ## The model.  
@@ -213,7 +213,7 @@ It is time to play.  After you trained the model, the file `GAinference.py` can 
 
 A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  
 
-You can also download the GAweights file from the GitHub Georgia Project website.  Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.onnx) to the \inference folder where you downloaded the Georgia Project code on your PC.  
+You can also download the GAweights file from the GitHub Georgia Project website.  There are two formats available.  The weights files are in HDF5, the default in Tensorflow, and ONNX, the cross-platform format.  Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.0.0/GAweights.onnx) to the \inference folder where you downloaded the Georgia Project code on your PC.  
 
 ![InferenceExamples](../images/InferenceExample.png)
 
