@@ -1,12 +1,14 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAinference.py
 #
-# This code will pull png files from a folder and do inference on each one,
-# reporting the classification and confidence to the output window.
-# The prediction logic below assumes a binary classification, where the
-# CEX images are in folder '0' and PG are in folder '1'.  By convention,
-# '1' is the positive class in binary classification, meaning the class
-# that the model is trained to predict.
+# This code will pull png files from a folder and do inference on each one, reporting the 
+# classification and confidence to the output window.  The prediction logic below assumes 
+# a binary classification, where the CEX images are in folder '0' and PG are in folder '1'.  
+# By convention, '1' is the positive class in binary classification, meaning the class that
+# the model is trained to predict.
+#
+# Note that the model in GAmodel is resnet101, but the preprocess_input is from resnet50 
+# because the pre-processing is identical, and keras did not create one for the resnet101.
 #
 # To do.
 # Edit the folder_prefix variable to point to the Georgia Project code on your pc.
