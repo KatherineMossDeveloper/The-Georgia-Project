@@ -333,6 +333,7 @@ This project is licensed under the MIT License.  See the license.txt file for de
 [back to top](#content)  
 
 ## Contact info.                                                                     
-For more details about this project, feel free to reach out to me  
-at katherinemossdeveloper@gmail.com or [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228).  
+For more details about this project, feel free to reach out to me at katherinemossdeveloper@gmail.com or my account on [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
+My time zone is EST in the U.S.
+
 [back to top](#content)  
