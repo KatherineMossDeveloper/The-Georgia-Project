@@ -75,6 +75,7 @@ By default, I set the code up to do training on the CPU because some people do n
 In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   
 |                         |Salami et al. paper     |my work                |
 |-------------------------|------------------------|-----------------------|
+|framework                |MATLAB                  |PyCharm                |
 |model type               |ResNet-18, ResNet-50    |ResNet-101             |
 |optimization method      |SGDM	                   |Keras SGD (momentum .9)|
 |learning rate 			      |1 × 10−4		             |1 × 10−1	             |
