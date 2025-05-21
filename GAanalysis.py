@@ -1,7 +1,7 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAcallbacks.py 
 #
-# This file contains post-training analysis for GAmodelNEW.py.  All the files generated will be in
+# This file contains post-training analysis for GAmodel.py.  All the files generated will be in
 # the deliverables folder, which is designated in the GAmain.py file.  The graphs created
 # will not pop up as windows, but you can change the code to do that.
 #
@@ -34,7 +34,7 @@ plot_color = get_color(250, 250, 250)        # off-white
 
 
 # This class will set hold the shared variables for all the deliverables
-# which are generated after the training is completed in GAmodelNEW.py.  The
+# which are generated after the training is completed in GAmodel.py.  The
 # generate_deliverables function will call 4 other functions that save the
 # model to disk, create plots and text files to capture the metrics when testing
 # the model.
