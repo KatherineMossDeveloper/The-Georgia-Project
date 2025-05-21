@@ -13,8 +13,8 @@
 
 ## Content. 
 [Quick start.](#quick-start) • 
-[Slow start.](#slow-start) • 
 [Model comparison](#model-comparison) • 
+[Slow start.](#slow-start) • 
 [Contributions](#contributions) • 
 [Known issues](#known-issues) • 
 [Contact info](#contact-info)
@@ -40,6 +40,22 @@
    - Edit `GAinference.py` so that the folder_prefix variable points to the Georgia Project code. 
    - Run `GAinference.py` to label images in the \inference folder.  
 
+## Model comparison.  
+In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   
+
+|                         |Salami et al. paper     |my work                |
+|-------------------------|------------------------|-----------------------|
+|framework                |MATLAB                  |PyCharm                |
+|model type               |ResNet-18, ResNet-50    |ResNet-101             |
+|optimization method      |SGDM	                   |Keras SGD (momentum .9)|
+|learning rate 			      |1 × 10−4		             |1 × 10−1	             |
+|training data            |3200−3600 in each class |(same)                 |
+|train/val./test %        |70/25/5%                |(same)                 |
+|minibatch size 		      |32−64                   |64                     |
+|validation frequency     |10−50                   |1                      |
+|added dropout layers     |(did not comment)       |2                      |
+|trainable ImageNet layers|(did not comment)       |made last 10% trainable|
+
 ## Slow start.  
 The scientists who wrote the paper trained ResNet models with ImageNet weights on the OpenCrystalData dataset. The models were trained to do binary classification of images of crystals, designating them as either CEX (a.k.a., “cephalexin antibiotic,” a good thing) or PG (a.k.a. “phenylglycine,” a bad thing).  This project recreates their work.  
 
@@ -48,20 +64,6 @@ Salami, H., McDonald, M. A., Bommarius, A. S., Rousseau, R. W., & Grover, M. A. 
 
 Here is the Georgia Project's detailed documentation.  
 [Go to the main doc file](docs/maindoc.md)    
-
-## Model comparison.  
-In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   
-|                         |Salami et al. paper     |my work                |
-|-------------------------|------------------------|-----------------------|
-|model type               |ResNet-18, ResNet-50    |ResNet-101             |
-|optimization method      |SGDM	                  |Keras SGD (momentum .9)|
-|learning rate	      	  |1 × 10−4                |1 × 10−1	            |
-|training data            |3200−3600 in each class |(same)                 |
-|train/val./test %        |70/25/5%                |(same)                 |
-|minibatch size           |32−64                   |64                     |
-|validation frequency     |10−50                   |1                      |
-|added dropout layers     |(did not comment)       |2                      |
-|trainable ImageNet layers|(did not comment)       |made last 10% trainable|
 
 ## Contributions.  
 If you found an issue or would like to make a suggestion for an improvement to the code or documentation, please click on the issue tab on the project page and leave me a note.  If you like this project, leave a star.  
