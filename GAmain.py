@@ -31,7 +31,7 @@
 # The following modules call each other in roughly this order.
 #
 #    GAmain.py              sets up the folder system and basic variables for the model.
-#        GAmodelNEW.py         creates the model, loads ImageNet weights, trains, and reports.
+#        GAmodel.py         creates the model, loads ImageNet weights, trains, and reports.
 #        GAcallbacks.py     creates the callbacks that the model uses during training.
 #        GAdata.py          create the data objects.
 #        GAanalysis.py      reports on how the training went.
