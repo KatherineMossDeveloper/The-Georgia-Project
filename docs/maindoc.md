@@ -284,7 +284,7 @@ The data structure created during extraction for the cropped image files is like
    your_drive_letter_and_folder/archive/cropped/cropped/pg
 </pre>
 
-Step 3. spit up the data.  
+Step 3. split up the data.  
    - Open the `GAsplitDataIntoTrainValidandTest.py` code file in the Python IDE.
    - Edit `folder_prefix` to the location where you extracted the data earlier.  The code will take that data and split it up in the `destination folders`.
    - Read the “to do” list at the top of the file for more information.
