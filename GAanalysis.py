@@ -178,7 +178,7 @@ def confusion(model, test_gen, class_names, study_name, deliverables_folder, pre
     # Compute confusion matrix
     cm = confusion_matrix(y_true, y_pred)
 
-    # Plot confusion matrix
+    # Plot confusion matrix, presented as a heatmap from the seaborn visualization library. 
     fig = plt.figure(figsize=(6, 5))
     fig.patch.set_facecolor(background_color)
     sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=class_names,
