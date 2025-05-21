@@ -330,7 +330,7 @@ Step 7. play with it.
 [back to top](#content)  
 
 ## The license.  
-This project is licensed under the MIT License.  See the license.txt file for details [here](LICENSE).  
+This project is licensed under the MIT License.  See the license.txt file for details [here](../LICENSE).  
 [back to top](#content)  
 
 ## Contact info.                                                                     
