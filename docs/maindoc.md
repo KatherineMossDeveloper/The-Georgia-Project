@@ -217,17 +217,17 @@ You can also download the GAweights file from the GitHub Georgia Project website
 
 ![InferenceExamples](../images/InferenceExample.png)
 
-|image              |prediction                           |
-|-------------------|-------------------------------------|
-|File: CEX (1).png  | Prediction: CEX, Confidence: 0.00%  |
-|File: CEX (2).png  | Prediction: CEX, Confidence: 0.00%  |
-|File: CEX (3).png  | Prediction: CEX, Confidence: 12.40% |
-|File: OIP (5).png  | Prediction: PG, Confidence: 98.10%  |
-|File: PG (5282).png| Prediction: PG, Confidence: 100.00% |
-|File: PG (567).png | Prediction: PG, Confidence: 100.00% |
-|File: PG (590).png | Prediction: PG, Confidence: 100.00% |
-|File: PG (5946).png| Prediction: PG, Confidence: 99.95%  |
-|File: CAT_TARA.png | Prediction: PG, Confidence: 85.85%  |
+|image               |prediction                           |
+|--------------------|-------------------------------------|
+|File: CEX (1).png   | Prediction: CEX, Confidence: 0.00%  |
+|File: CEX (2).png   | Prediction: CEX, Confidence: 0.00%  |
+|File: CEX (3).png   | Prediction: CEX, Confidence: 0.20%  |
+|File: OIP (5).png   | Prediction: CEX, Confidence: 33.81% |
+|File: PG (5282).png | Prediction: PG, Confidence: 100.00% |
+|File: PG (567).png  | Prediction: PG, Confidence: 100.00% |
+|File: PG (590).png  | Prediction: PG, Confidence: 99.91%  |
+|File: PG (5946).png | Prediction: PG, Confidence: 99.80%  |
+|File: tara.png      | Prediction: PG, Confidence: 93.50%  |
 
 The following notes are about the deliverables created at the end of the training run.  
 
