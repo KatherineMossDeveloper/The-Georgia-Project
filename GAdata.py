@@ -5,6 +5,8 @@
 # preprocessing to all three types of data object types:  training, validation, and testing.  The mods are...
 # scaling:  rescaled from the [0, 255] range (default for 8-bit RGB images) to the range [-1, 1].
 # mean subtraction:  subtract ImageNet average color values.  red, 123.68; green, 116.779; blue, 103.939.
+# Note that the model in GAmodel is resnet101, but the preprocess_input is from resnet50 because   
+# the pre-processing is identical, and keras did not create one for the resnet101.
 #
 # check_generator           # write the data object details to screen, in order to check them.
 # get_training_data         # prepare the training data and report classes.
