@@ -3,7 +3,7 @@
 #
 # This file, GAmodel.py, gathers datasets, trains, and calls for analysis.
 #
-# GAmain instantiates the class ModelTrainer, which calls preliminaties function.
+# GAmain instantiates the class ModelTrainer, which calls preliminaries function.
 # GAmain then calls the class's run function.
 # The run function determine whether a CPU or GPU will be used.
 # The run function then calls train function.
@@ -136,7 +136,8 @@ class ModelTrainer:
         analysis.generate_deliverables(model, test_generator, metrics_logger_callback)
 
     def run(self):
-        #  credit to https://www.geeksforgeeks.org/how-to-run-tensorflow-on-cpu/ for this code.
+        #  credit to Geeks for Geeks for this logic, copied here May of 2025.  For more, see their 
+        #  article "How to Run TensorFlow on CPU" here https://www.geeksforgeeks.org/how-to-run-tensorflow-on-cpu/. 
         #  scenario 1  use_cpu = true, and there is no GPU.
         #  scenario 2  use_cpu = true, even though there is a GPU.
         #  scenario 3  use_cpu = false, but there is no GPU.
