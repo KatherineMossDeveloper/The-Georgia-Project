@@ -213,7 +213,7 @@ It is time to play.  After you trained the model, the file `GAinference.py` can 
 
 A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  
 
-You can also download the GAweights file from the GitHub Georgia Project website.  There are two formats available.  The weights files are in HDF5, the default in Tensorflow, and ONNX, the cross-platform format.  Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.onnx) to the \inference folder where you downloaded the Georgia Project code on your PC.  
+You can also download the GAweights file from the GitHub Georgia Project website.  There are two formats available.  The weights files are in HDF5, the default in Tensorflow, and ONNX, the cross-platform format.  Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.1/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.1/GAweights.onnx) to the \inference folder where you downloaded the Georgia Project code on your PC.  
 
 ![InferenceExamples](../images/InferenceExample.png)
 
@@ -269,7 +269,7 @@ h.  GAfinal_confusion_matrix.png, the confusion matrix, the heatmap of the error
 These instructions were written for my Windows PC.  The data zip file is over 1 GB, so you will need a drive with some free space on it to work with this data.  There are notes at the top of each code file about the minimum one needs to do in order to run the code.  Basically, just edit the folder strings to match your pc folder system. 
 
 Step 1. download the code.  
-   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.5.0.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.5.0.tar.gz) and extract it.  
+   - Download the [source code ZIP file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.5.1.zip) or the [source code TAR file.](https://github.com/KatherineMossDeveloper/The-Georgia-Project/archive/refs/tags/v1.5.1.tar.gz) and extract it.  
    - Set up a Python environment, if you don't already have one.  I used PyCharm, ver. 2023.2.4, Community Edition.  
    - Install dependencies as needed.  I used Python 3.8, TensorFlow 2.10.1, and Keras 2.10.0.  
 
