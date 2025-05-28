@@ -36,7 +36,7 @@
    - Check the results in the \GAdeliverables folder (where you extracted the data).  
    
 4. Play time.
-   - Download the [weights file here](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.1/GAweights.h5) to the \inference folder.
+   - Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.1/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.1/GAweights.onnx) to the \inference folder.  
    - Edit `GAinference.py` so that the folder_prefix variable points to the Georgia Project code. 
    - Run `GAinference.py` to label images in the \inference folder.  
 
