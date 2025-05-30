@@ -36,7 +36,7 @@
 </a><br>
 
 ## The overview
-I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1 scores above 99.7% in 15 epochs or less. 
+I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1 scores above 99.7% in about 50 epochs or less.
 
 I am a software developer doing an independent study into using machine learning to identify crystallization in images.  I found an interesting dataset and a really good research paper on the topic, so I wrote code to train on the data, using the paper for guidance.  I am posting the code and results here in the hope that others will also find it interesting.  
 
@@ -66,7 +66,7 @@ I wanted to create useful code, weights, and documentation that use the paper’
 ## The development environment.
 The paper does not mention whether the MATLAB work done is publicly available.  Therefore, I tried to recreate their work with my code, which is written in Python with TensorFlow (Python 3.8; TensorFlow 2.10.1; Keras 2.10.0).  I used PyCharm ver. 2023.2.4, Community Edition, as the IDE.   
 
-I have a Windows PC.  I have not tested this project in other environments.  For the GPU, I used a Quadro P1000, with 4 GB of memory, using CUDA version 12.2.  I did not see in the paper what hardware was used in the study.  
+I have a Windows PC.  I have not tested this project in other environments.  For the GPU, I used a Quadro P1000, with 4 GB of memory, using CUDA version 12.2.  The paper said that the researchers used a Intel Core i7 3 GHz unit.
 
 The `use_cpu` variable in GAmain.py is set to true by default, so if you do not have a lot of memory on your GPU, the training will still complete.  If you set this variable to false, you will be using your GPU, assuming you have one.  I do not have access to a variety of computers, so I could not test every scenario.  I only tested it on my own computer, which has a GPU with limited memory.  I have gotten out of memory errors occasionally during training on my GPU, so I created this variable to avoid them.  
 [back to top](#content)   
@@ -86,7 +86,7 @@ In the table below are the details offered by the published paper, then on the r
 |added dropout layers     |(did not comment)       |2                      |
 |trainable ImageNet layers|(did not comment)       |made last 10% trainable|
 
-The trained model had all F1 scores above 99.7% in 15 epochs or less.  Here are the changes that have made the metrics better and the training shorter. 
+Here are the changes that made the metrics better and the training shorter. 
 
 1.  ResNet-101.  See `GAmodel.py.`  
 The paper used ResNet-18 and ResNet-50.  I thought it would be interesting if I used the more complex model architecture here.  
@@ -135,7 +135,7 @@ The folder structure is as follows during training, validation, and testing.  PG
 [back to top](#content)  
 
 ## The results.  
-The final code had all F1 scores above 99.7% in 15 epochs or less.  The details of the training runs for this final version are in section D. below.  
+The final code had all F1 scores above 99.7% in about 50 epochs or less.  The details of the training runs for this final version are in section D. below.  
 
 To produce these numbers, I re-ran versions of the code so that I could understand exactly what delivered the best metrics and shortest runtimes for training.  I found that making 10% of the ImageNet layers trainable improved metrics.  I found that adding two Dropout layers improved metrics.  Finally, I found that both of them, together, produced a better model.  
 
