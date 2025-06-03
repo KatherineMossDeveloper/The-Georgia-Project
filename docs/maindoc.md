@@ -340,5 +340,5 @@ My time zone is EST in the U.S.
 [back to top](#content)  
 
 
-[^1]: This is the footnote content. You can include a hyperlink here: [GitHub](https://github.com).
+[^1]: The F1-score is an overall score of how well a model is learning.  It is the harmonic mean of precision and recall for each class.  
 
