@@ -340,8 +340,5 @@ My time zone is EST in the U.S.
 [back to top](#content)  
 
 
-[^1]: The F1-score is an overall score of how well a model is learning.  It is the harmonic mean of precision and recall for each class.  
+[^1]: This is the footnote content, and it can include an image: ![Formula](https://www.codecogs.com/latex/eqneditor.php?latex=90%20%2B%20%5Cfrac%7B20%7D%7B2%7D%20%3D%2055)
 
-<a href="#the-overview">
-  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The overview.
-</a><br>
