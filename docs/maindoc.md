@@ -337,7 +337,7 @@ This project is licensed under the MIT License.  See the license.txt file for de
 [back to top](#content)  
 
 ## The footnotes.
-[^1]:The F1-score is an overall score of how well a model is learning.  It is the harmonic mean of precision and recall for each class.  
+[^1]: This is the footnote content. You can include a hyperlink here: [GitHub](https://github.com).
 
 ## Contact info.                                                                     
 For more details about this project, feel free to reach out to me at katherinemossdeveloper@gmail.com or my account on [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
