@@ -36,12 +36,7 @@
 </a><br>
 
 ## The overview
-
-This is the first sentence. <sup id="a1">[1](#f1)</sup>
-This is a second sentence. <sup id="a2">[2](#f2)</sup>
-This is a third sentence. <sup id="a3">[3](#f3)</sup>
-
-I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1[^1] scores above 99.7% in about 50 epochs or less.
+I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1 <sup id="a1">[1](#f1)</sup> scores above 99.7% in about 50 epochs or less.
 
 I am a software developer doing an independent study into using machine learning to identify crystallization in images.  I found an interesting dataset and a really good research paper on the topic, so I wrote code to train on the data, using the paper for guidance.  I am posting the code and results here in the hope that others will also find it interesting.  
 
@@ -346,6 +341,14 @@ My time zone is EST in the U.S.
 
 
 #### Footnotes
-> <sup id="f1">1</sup> The formula is: $90 + \frac{20}{2} = 55$ [⏎](#a1)
-> <sup id="f2">2</sup> The F1 formula is: $F_1 = \frac{2 \times 90 \times 20}{90 + 20} \approx 32$ [⏎](#a2)
-> <sup id="f3">2</sup> See [F1](https://en.wikipedia.org/wiki/F-score.) [⏎](#a3)
+> <sup id="f1">1</sup> The F1-score is an overall score of how well a model is learning.  It is the harmonic mean of precision and recall for each class.  
+
+A simple average, also known as an “arithmetic mean,” would be too crude a measure because it would simply “take an average” of the two numbers.  For example, if precision were 90% and recall were 20%, then the average would be 55, so you might think the model is working somewhat.  
+
+                               90 + 20/2=55  
+                               
+In reality, the imbalance between the two numbers is a problem, a problem not reflected if you calculated an arithmetic mean, which gives you 55 as the answer.  In contrast, using the same numbers, the harmonic mean would be ~32%, a better reflection of the trouble that the model is in.  Below is the formula for the harmonic mean.  
+
+                 F1=  (2 x precision x recall)/(precision+recall) = (2 x 90 x 20)/(90+ 20)  ≅32
+                         
+ [⏎](#a1)
