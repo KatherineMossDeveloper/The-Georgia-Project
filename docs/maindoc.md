@@ -31,9 +31,6 @@
 <a href="#the-license">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The license.
 </a><br>
-<a href="#the-footnotes">
-  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The footnotes.   
-</a><br>
 <a href="#contact-info">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> Contact info.  
 </a><br>
@@ -336,11 +333,12 @@ Step 7. play with it.
 This project is licensed under the MIT License.  See the license.txt file for details [here](../LICENSE).  
 [back to top](#content)  
 
-## The footnotes.
-[^1]: This is the footnote content. You can include a hyperlink here: [GitHub](https://github.com).
-
 ## Contact info.                                                                     
 For more details about this project, feel free to reach out to me at katherinemossdeveloper@gmail.com or my account on [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
 My time zone is EST in the U.S.
 
 [back to top](#content)  
+
+
+[^1]: This is the footnote content. You can include a hyperlink here: [GitHub](https://github.com).
+
