@@ -31,12 +31,15 @@
 <a href="#the-license">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The license.
 </a><br>
+<a href="#the-footnotes">
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The footnotes.   
+</a><br>
 <a href="#contact-info">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> Contact info.  
 </a><br>
 
 ## The overview
-I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1 scores above 99.7% in about 50 epochs or less.
+I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1[^1] scores above 99.7% in about 50 epochs or less.
 
 I am a software developer doing an independent study into using machine learning to identify crystallization in images.  I found an interesting dataset and a really good research paper on the topic, so I wrote code to train on the data, using the paper for guidance.  I am posting the code and results here in the hope that others will also find it interesting.  
 
@@ -332,6 +335,9 @@ Step 7. play with it.
 ## The license.  
 This project is licensed under the MIT License.  See the license.txt file for details [here](../LICENSE).  
 [back to top](#content)  
+
+## The footnotes.
+[^1]:The F1-score is an overall score of how well a model is learning.  It is the harmonic mean of precision and recall for each class.  
 
 ## Contact info.                                                                     
 For more details about this project, feel free to reach out to me at katherinemossdeveloper@gmail.com or my account on [LinkedIn](https://www.linkedin.com/pub/katherine-moss/3/b49/228) .  
