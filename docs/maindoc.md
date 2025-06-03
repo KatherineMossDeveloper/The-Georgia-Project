@@ -341,20 +341,10 @@ My time zone is EST in the U.S.
 
 
 [^1]: The F1-score is an overall score of how well a model is learning.  It is the harmonic mean of precision and recall for each class.  
-```
-$$
-\displaystyle\sum_{k=3}^5 k^2=3^2 + 4^2 + 5^2 =50
-$$
-```
 A simple average, also known as an “arithmetic mean,” would be too crude a measure because it would simply “take an average” of the two numbers.  For example, if precision were 90% and recall were 20%, then the average would be 55, so you might think the model is working somewhat.  
-                              
-                              $ 90 + \frac{20}{2} = 55 $  
+
+      <img src="../images/formulaAverage.png" alt="icon" style="vertical-align: middle; width: 609px; height: 72px;"/> 
                               
 In reality, the imbalance between the two numbers is a problem, a problem not reflected if you calculated an arithmetic mean, which gives you 55 as the answer.  In contrast, using the same numbers, the harmonic mean would be ~32%, a better reflection of the trouble that the model is in.  Below is the formula for the harmonic mean.
-      ```
-      $$ 
-      F1 = \frac{2 x precision x recall}{precision + recall} = \frac{2 x 90 x 20}{90 + 20} ~= 32 
-      $$  
-      ```
       
 
