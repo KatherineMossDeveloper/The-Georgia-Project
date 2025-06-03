@@ -36,6 +36,11 @@
 </a><br>
 
 ## The overview
+
+This is the first sentence. <sup id="a1">[1](#f1)</sup>
+
+This is a second sentence. <sup id="a2">[2](#f2)</sup>
+
 I am pleased to say that I have successfully trained an A.I. model to distinguish between two crystal types in images.  The trained model had all F1[^1] scores above 99.7% in about 50 epochs or less.
 
 I am a software developer doing an independent study into using machine learning to identify crystallization in images.  I found an interesting dataset and a really good research paper on the topic, so I wrote code to train on the data, using the paper for guidance.  I am posting the code and results here in the hope that others will also find it interesting.  
@@ -340,5 +345,8 @@ My time zone is EST in the U.S.
 [back to top](#content)  
 
 
-[^1]: This is the footnote content, and it can include an image: ![Formula](https://www.codecogs.com/latex/eqneditor.php?latex=90%20%2B%20%5Cfrac%7B20%7D%7B2%7D%20%3D%2055)
+#### Footnotes
+> <sup id="f1">1</sup> Pythagoras theorem $a^2+b^2=c^2$ [⏎](#a1)
 
+
+> <sup id="f2">2</sup> See [De_Gua's_theorem](https://en.wikipedia.org/wiki/De_Gua's_theorem) [⏎](#a2)
