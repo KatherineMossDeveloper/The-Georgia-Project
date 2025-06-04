@@ -197,7 +197,7 @@ This module sets up the folder system and basic variables for the model.  It wil
 This module creates a ResNet-101 model, loads ImageNet weights, trains, and then calls `GAanalyze.py` to reports results.  
 
 `GAcallbacks.py`  
-This module creates the callbacks that the model will need during training.  
+This module creates the callbacks <sup id="a2">[2](#f2)</sup>  that the model will need during training.  
 
 `GAutility.py`    
 This module organizes unrelated pieces of code in one place. 
@@ -341,12 +341,20 @@ My time zone is EST in the U.S.
 
 
 #### Footnotes
-> <sup id="f1">1</sup> The F1-score is an overall score of how well a model is learning.  It is the harmonic mean of precision and recall for each class.  A simple average, also known as an “arithmetic mean,” would be too crude a measure because it would simply “take an average” of the two numbers.  For example, if precision were 90% and recall were 20%, then the average would be 55, so you might think the model is working somewhat.  
-
-                                         (90 + 20) / 2 = 55  
-                               
-In reality, the imbalance between the two numbers is a problem, a problem not reflected if you calculated an arithmetic mean, which gives you 55 as the answer.  In contrast, using the same numbers, the harmonic mean would be ~32%, a better reflection of the trouble that the model is in.  Below is the formula for the harmonic mean.  
-
-            F1=  (2 x precision x recall) / (precision + recall) = (2 x 90 x 20) / (90 + 20) ≅ 32
-                         
+> <sup id="f1">1</sup> The F1-score is an overall score of how well a model is learning.  It is the harmonic mean of precision and recall for each class.  A simple average, also known as an “arithmetic mean,” would be too crude a measure because it would simply “take an average” of the two numbers.  For example, if precision were 90% and recall were 20%, then the average would be 55, so you might think the model is working somewhat.
+>
+>                                        (90 + 20) / 2 = 55
+>
+> In reality, the imbalance between the two numbers is a problem, a problem not reflected if you calculated an arithmetic mean, which gives you 55 as the answer.  In contrast, using the same numbers, the harmonic mean would be ~32%, a better reflection of the trouble that the model is in.  Below is the formula for the harmonic mean.
+>
+>           F1=  (2 x precision x recall) / (precision + recall) = (2 x 90 x 20) / (90 + 20) ≅ 32
+>                        
  [⏎](#a1)
+
+
+> <sup id="f2">2</sup> footnote 2.
+> Callbacks can be thought of as hooks into the model while it is training.  A typical callback is a class with an event function, like on_epoch_end.   Just like it sounds, when the model comes to the end of each epoch, it will call all callback classes, so that each class can do things, like collect metrics, write to the screen, make a decision about stopping the training, etc.  It gives the developer more information and control during training.
+>
+> Technically, in Keras, callbacks are classes because they inherit from the “Callback” mothership.  Therefore, you would instantiate a callback class, hand it to the model, which would then call the instantiation, not the class itself. 
+ 
+ [⏎](#a2)
