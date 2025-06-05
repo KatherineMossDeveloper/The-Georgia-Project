@@ -348,7 +348,8 @@ My time zone is EST in the U.S.
 > In reality, the imbalance between the two numbers is a problem, a problem not reflected if you calculated an arithmetic mean, which gives you 55 as the answer.  In contrast, using the same numbers, the harmonic mean would be ~32%, a better reflection of the trouble that the model is in.  Below is the formula for the harmonic mean.
 >
 >           F1=  (2 x precision x recall) / (precision + recall) = (2 x 90 x 20) / (90 + 20) ≅ 32
->                        
+>
+> For more about F1, visit [F1 on Wikipedia](https://en.wikipedia.org/wiki/F-score).  
 > [⏎](#a1)
 
 
