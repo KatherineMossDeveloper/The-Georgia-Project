@@ -357,7 +357,7 @@ My time zone is EST in the U.S.
 >
 > Technically, in Keras, callbacks are classes because they inherit from the “Callback” mothership.  Therefore, you would instantiate a callback class, hand it to the model, which would then call the instantiation, not the class itself.
 > 
-> For more about Callbacks in Keras, visit [Keras.io](https://keras.io/api/callbacks/).  
+> For more about callbacks, visit [callbacks on Keras.io](https://keras.io/api/callbacks/).  
 > [⏎](#a2)
 >
 > 
