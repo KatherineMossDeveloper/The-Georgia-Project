@@ -355,6 +355,9 @@ My time zone is EST in the U.S.
 
 > <sup id="f2">2</sup> Callbacks can be thought of as hooks into the model while it is training.  A typical callback is a class with an event function, like on_epoch_end.   Just like it sounds, when the model comes to the end of each epoch, it will call all callback classes, so that each class can do things, like collect metrics, write to the screen, make a decision about stopping the training, etc.  It gives the developer more information and control during training.
 >
-> Technically, in Keras, callbacks are classes because they inherit from the “Callback” mothership.  Therefore, you would instantiate a callback class, hand it to the model, which would then call the instantiation, not the class itself.  
-> For more about Callbacks in Keras, visit [Callbacks in Keras](https://keras.io/api/callbacks/).
+> Technically, in Keras, callbacks are classes because they inherit from the “Callback” mothership.  Therefore, you would instantiate a callback class, hand it to the model, which would then call the instantiation, not the class itself.
+> 
+> For more about Callbacks in Keras, visit [Keras.io](https://keras.io/api/callbacks/).  
 > [⏎](#a2)
+>
+> 
