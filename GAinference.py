@@ -66,8 +66,6 @@ try:
             # Load and preprocess the image
             img_array = load_and_preprocess_image(file_path)
 
-            raw_prediction = model.predict(img_array, verbose=0)  # Get the raw output
-
             # Perform inference on the image
             prediction = model.predict(img_array, verbose=0 )
 
