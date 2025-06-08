@@ -238,7 +238,7 @@ d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in
    GAweights_2025-05-22_23-25-12.onnx  
 </pre>
 
-e.  During training, in the ouput window in PyCharm, there are class-wise text breakdowns of the test precision, recall, macro average<sup id="a4">[4](#f4)</sup> , weighted average, and F1-scores.
+e.  During training, in the ouput window in PyCharm, there are class-wise text breakdowns of the test precision, recall, macro average<sup id="a4">[4](#f4)</sup>, weighted average<sup id="a4">[4](#f4)</sup>, and F1-scores.
 <pre style="font-family: 'Courier New', Courier, monospace;">
    Epoch 3 - Class-Wise Metrics:
    PG -  Precision: 0.9988, Recall: 0.9982, F1-Score: 0.9985
@@ -360,19 +360,20 @@ My time zone is EST in the U.S.
 > For more about callbacks, visit [callbacks on Keras.io](https://keras.io/api/callbacks/).  
 > [⏎](#a2)
 
-> <sup id="f4">4</sup>  The macro average is just what it sounds like, the average of precision, recall, or F1 scores for all classes, which for us is just PG and CEX.
-> Macro Avg Precision = Average of the precision values of both classes.
-> Macro Avg Recall = Average of the recall values of both classes.
-> Macro Avg F1-Score = Average of the F1-scores of both classes.
+> <sup id="f4">4</sup>  The macro average is just what it sounds like, the average of precision, recall, or F1 scores for all classes, which for us is just PG and CEX.  
+> Macro Avg Precision = Average of the precision values of both classes.  
+> Macro Avg Recall = Average of the recall values of both classes.  
+> Macro Avg F1-Score = Average of the F1-scores of both classes.  
 >
-> Here is an example from a training run.
+> Here is an example from a training run.  
 >
-> PG           - Precision: 0.9591, Recall: 0.9993, F1-Score: 0.9788
-> CEX          - Precision: 0.9992, Recall: 0.9552, F1-Score: 0.9767
-> macro avg    - Precision: 0.9791, Recall: 0.9773, F1-Score: 0.9777
-> weighted avg - Precision: 0.9786, Recall: 0.9778, F1-Score: 0.9778
+> PG           - Precision: 0.9591, Recall: 0.9993, F1-Score: 0.9788  
+> CEX          - Precision: 0.9992, Recall: 0.9552, F1-Score: 0.9767  
+> macro avg    - Precision: 0.9791, Recall: 0.9773, F1-Score: 0.9777  
+> weighted avg - Precision: 0.9786, Recall: 0.9778, F1-Score: 0.9778  
 >
 > In contrast, the weighted average takes into account the number of samples in each class.  For us, the number of samples is about the same, but for another dataset, these numbers could be unequal, so these numbers could tell us more in that case.  
+> 
 > For more, visit [weighted average on Wikipedia](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean).  
 > [⏎](#a4)
 
