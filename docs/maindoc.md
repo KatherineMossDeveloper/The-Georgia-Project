@@ -360,7 +360,8 @@ My time zone is EST in the U.S.
 > For more about callbacks, visit [callbacks on Keras.io](https://keras.io/api/callbacks/).  
 > [⏎](#a2)
 
-> <sup id="f4">4</sup>  The macro average is just what it sounds like, the average of precision, recall, or F1 scores for all classes, which for us is just PG and CEX.  
+> <sup id="f4">4</sup>  The macro average is just what it sounds like, the average of precision, recall, or F1 scores for all classes, which for us is just PG and CEX.
+>   
 > Macro Avg Precision = Average of the precision values of both classes.  
 > Macro Avg Recall = Average of the recall values of both classes.  
 > Macro Avg F1-Score = Average of the F1-scores of both classes.  
