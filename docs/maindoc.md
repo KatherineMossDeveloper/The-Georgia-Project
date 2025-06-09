@@ -385,6 +385,5 @@ My time zone is EST in the U.S.
 > Testing accuracy is a measure, after training, of how well the model can do predictions, or inference, on a data test set that it was not trained on, often deemed an “independent” dataset that is related to the other two sets, but not collected with it.
 > 
 > For more, visit [validation vs test vs training accuracy](https://www.geeksforgeeks.org/training-vs-testing-vs-validation-sets/).  
-> 
 > [⏎](#a5)
  
