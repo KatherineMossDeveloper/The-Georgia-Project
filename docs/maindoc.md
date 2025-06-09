@@ -257,7 +257,7 @@ f.  After training, in the GAFinalTestResults.txt file, the model gives similar 
 |   macro avg |    1.00  |   1.00 |    1.00  |     684 |
 |weighted avg |    1.00  |   1.00 |    1.00  |     684 |  
 
-g.  GAmetrics_plot.png, the plot of training accuracy and validation accuracy.  
+g.  GAmetrics_plot.png, the plot of training accuracy and validation accuracy<sup id="a5">[5](#f5)</sup>.  
 ![Results](../images/results_accuracies.png)  
 
 h.  GAfinal_confusion_matrix.png, the confusion matrix, the heatmap of the errors and correct inferences.   
@@ -378,4 +378,9 @@ My time zone is EST in the U.S.
 > For more, visit [weighted average on Wikipedia](https://en.wikipedia.org/wiki/Weighted_arithmetic_mean).  
 > [⏎](#a4)
 
-> 
+> <sup id="f5">5</sup> Training accuracy is a measure, during the training epochs, of how well the model is learning the training data.
+> Validation accuracy is a measure, during the training, of how well the model can perform on validation data, meaning data that it has not been trained on.
+> Testing accuracy is a measure, after training, of how well the model can do predictions, or inference, on a data test set that it was not trained on, often deemed an “independent” dataset that is related to the other two sets, but not collected with it.  
+> For more, visit [validation vs test vs training accuracy](https://www.geeksforgeeks.org/validation-vs-test-vs-training-accuracy-which-one-is-compared-for-claiming-overfit/#).  
+> [⏎](#a5)
+ 
