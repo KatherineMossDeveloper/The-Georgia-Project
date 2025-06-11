@@ -260,7 +260,7 @@ f.  After training, in the GAFinalTestResults.txt file, the model gives similar 
 g.  GAmetrics_plot.png, the plot of training accuracy and validation accuracy<sup id="a5">[5](#f5)</sup>.  
 ![Results](../images/results_accuracies.png)  
 
-h.  GAfinal_confusion_matrix.png, the confusion matrix, the heatmap of the errors and correct inferences.   
+h.  GAfinal_confusion_matrix.png, the confusion matrix<sup id="a6">[6](#f6)</sup>, the heatmap of the errors and correct inferences.   
 ![Results](../images/results_confusion.png)  
 
 [back to top](#content)  
@@ -386,4 +386,15 @@ My time zone is EST in the U.S.
 > 
 > For more, visit [validation vs test vs training accuracy](https://www.geeksforgeeks.org/training-vs-testing-vs-validation-sets/).  
 > [⏎](#a5)
+
+> <sup id="f6">6</sup> A Confusion matrix is a commonly used deliverable in machine learning.  Rather than just looking at accuracy numbers, for example, this matrix
+> can simply show you how many errors there were, and in which category.
+>
+> Since this project has been a binary classification effort, and the metrics were very good, the confusion matrix is simple, as seen below.  The X axis (the horizontal axis) is what the model decided, or predicted.  The Y axis (the vertical axis) is the “label,” or “truth.”  The squares are colorized.  The higher the number, the deeper the shade of blue. 
+>
+> ![Results](../images/results_confusion.png)  
+> 
+> For more, visit [confusion matrix on Wikipedia](https://en.wikipedia.org/wiki/Confusion_matrix).  
+> [⏎](#a6)
  
+
