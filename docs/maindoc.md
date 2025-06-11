@@ -393,6 +393,11 @@ My time zone is EST in the U.S.
 > Since this project has been a binary classification effort, and the metrics were very good, the confusion matrix is simple, as seen below.  The X axis (the horizontal axis) is what the model decided, or predicted.  The Y axis (the vertical axis) is the “label,” or “truth.”  The squares are colorized.  The higher the number, the deeper the shade of blue. 
 >
 > ![Results](../images/results_confusion.png)  
+> -The dark blue square on the upper left shows us the number of times, 341, that the model was shown PG crystals and recognized them.
+> -The dark blue square on the lower right shows us the number of times, 342, that the model was shown CEX crystals and recognized them.
+> -The other two squares show the number of errors.
+> 
+> It is called a “confusion” matrix because it can show where a model was confused.  Since the numbers here are good, I could have named it the “Clarity Matrix.”
 > 
 > For more, visit [confusion matrix on Wikipedia](https://en.wikipedia.org/wiki/Confusion_matrix).  
 > [⏎](#a6)
