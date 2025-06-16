@@ -1,14 +1,13 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAinference.py
 #
-# This code will pull png files from a folder and do inference on each one, reporting the 
-# classification and confidence to the output window.  The prediction logic below assumes 
-# a binary classification, where the CEX images are in folder '0' and PG are in folder '1'.  
-# By convention, '1' is the positive class in binary classification, meaning the class that
-# the model is trained to predict.
+# 1.  This code will call GApredict.py to report its confidence, as a percentage, that
+#     a given image in the designated folder is PG, phenylglycine.  The confidence
+#     percent for each image will be in the output window.
 #
-# Note that the model in GAmodel is resnet101, but the preprocess_input is from resnet50 
-# because the pre-processing is identical, and keras did not create one for the resnet101.
+# 2.  This code will then run GAkmeans.py on the same images.  The code will then create
+#     a Kmeans plot and save it to disk in the same 'kmeans' folder.  It will also pop
+#     up a graph showing how the images cluster.
 #
 # To do.
 # Edit the folder_prefix variable to point to the Georgia Project code on your pc.
@@ -18,71 +17,24 @@
 # so change the weights_file variable accordingly.
 # #############################################################################################
 
-import os
-import numpy as np
-from tensorflow.keras.preprocessing import image
+from GApredict import predict_driver
+from GAkmeans import kmeans_driver
 from tensorflow.keras.models import load_model
-from tensorflow.keras.applications.resnet50 import preprocess_input
+from tensorflow.keras.applications import ResNet101
 
-folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
-
-# Set up the path to your image folder and weights file
+# 0.  Set up the path to your image folder and weights file
+folder_prefix = r"X:/MLresearch/CrystalStudy/Project_GA/LastGoodStaging/"  # edit this before running the code.
 image_folder = folder_prefix + r"\inference"
 weights_file = folder_prefix + r"\inference\GAweights.h5"
 
+# 1.  do prediction on the image files.
+classifier_model = load_model(weights_file)
+predict_driver(model=classifier_model, image_folder=image_folder)
 
-# Function to load, resize, and preprocess an image
-def load_and_preprocess_image(img_path, target_size=(224, 224)):
-    # Load and resize the image to the target size (224, 224)
-    img = image.load_img(img_path, target_size=target_size)
-
-    # Convert the image to a NumPy array
-    image_array = image.img_to_array(img)
-
-    # Add batch dimension (the model expects a batch of images, not just one)
-    image_array = np.expand_dims(image_array, axis=0)  # Shape: [1, 224, 224, 3]
-
-    # Apply ResNet-specific preprocessing.
-    # scaling:  rescaled from the [0, 255] range (default for 8-bit RGB images) to the range [-1, 1].
-    # mean subtraction:  subtract ImageNet average color values.  red, 123.68; green, 116.779; blue, 103.939.
-    # Did the same for testing.  See GAmodel.py get_test_data() for details.
-    image_array = preprocess_input(image_array)
-
-    return image_array
-
-
-# Inference for each image in the folder
-try:
-    # Load the pre-trained model with weights
-    print(f'Starting GAinference.py.')
-    model = load_model(weights_file)
-    png_files_in_folder = [f for f in os.listdir(image_folder) if f.endswith('.png')]  # the no. of files in folder.
-    png_file_count = len(png_files_in_folder)
-
-    for filename in os.listdir(image_folder):
-        if filename.endswith('.png'):  # Check if the file is a PNG file
-            file_path = os.path.join(image_folder, filename)
-
-            # Load and preprocess the image
-            img_array = load_and_preprocess_image(file_path)
-
-            # Perform inference on the image
-            prediction = model.predict(img_array, verbose=0 )
-
-            # Assuming binary classification folder structure CEX (0) & PG (1),
-            # this will return the confidence that the image is of PG.
-            confidence = prediction[0][0]
-
-            # Convert to percentage
-            confidence_percent = confidence * 100
-
-            # Assign the class label with threshold 0.5 for PG.
-            class_label = 'PG' if confidence >= 0.5 else 'CEX'  # PG if prob >= 0.5, else CEX
-
-            # Print the result with confidence as a percentage
-            print(f"File: {filename} - Prediction: {class_label}, Confidence: {confidence_percent:.2f}%")
-
-
-except Exception as e:
-    print(f"An error occurred: {e}")
-
+# 2.  do kmeans on the image files.
+image_folder = folder_prefix + r"\kmeans"
+# Load the ResNet101 model without the top layers (include_top=False)
+feature_model = ResNet101(weights=None, include_top=False, input_shape=(224, 224, 3))
+# Load the weights from the weights file.
+feature_model.load_weights(weights_file, by_name=True, skip_mismatch=True)
+kmeans_driver(model=feature_model, folder_path=image_folder, num_clusters=4)
