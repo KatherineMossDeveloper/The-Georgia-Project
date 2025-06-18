@@ -139,7 +139,7 @@ The final code had all F1 scores above 99.7% in about 50 epochs or less.  The de
 
 To produce these numbers, I re-ran versions of the code so that I could understand exactly what delivered the best metrics and shortest runtimes for training.  I found that making 10% of the ImageNet layers trainable improved metrics.  I found that adding two Dropout layers improved metrics.  Finally, I found that both of them, together, produced a better model.  
 
-This seems contradictory.  When layers are trainable, more weights are getting updated.  When dropouts are used, some weights are getting dropped.  These changes seem to be at odds with each other.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable layers together made the model better.  I want to try this idea on other data and architectures in the future.  
+These results seem somewhat contradictory. When layers are trainable, more weights are getting updated. When dropouts are used, the effect of some weights are getting dropped because the activations that the weights contributed to are set to zero.  However, I can say that with this data, and this Resnet model, and these ImageNet weights, dropout layers and trainable ImageNet layers together made the model better. 
 
 Below are the training results column definitions and then the results in tables.  Each line in the tables below represents a training run (`GAmodel.py`) and test run (`GAanalysis.py`).  The best runs were with version D., which is the version of the code here in the GitHub project.  If you have any questions, or would like more details, write to me.  
 
