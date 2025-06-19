@@ -227,7 +227,8 @@ You can also download the GAweights file from the GitHub Georgia Project website
 |File: PG (567).png  | Prediction: PG, Confidence: 100.00% |
 |File: PG (590).png  | Prediction: PG, Confidence: 100.00% |
 |File: PG (5946).png | Prediction: PG, Confidence: 76.98%  |
-|File: tara.png      | Prediction: PG, Confidence: 90.27%  |
+|File: tara.png      | Prediction: PG, Confidence: 90.27%  |  
+
 The output from the GAinference.predict_driver code.  
 
 ![InferenceExamples](../images/InferenceExample.png)  
@@ -236,7 +237,7 @@ An illustration of the output from the GAinference.predict_driver code, to empha
 The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will show groupings in the OpenCrystalData dataset images, using kmeans and PCA with 4 centroids.  
 
 ![KmeansExamples](../images/KmeansFourClusters.png)  
-Image by author using Python code.  I added the blue lines are to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
+Image by author using Python code.  I added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
 
 The following notes are about the deliverables created at the end of the training run.  
 
