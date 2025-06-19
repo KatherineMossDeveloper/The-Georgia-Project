@@ -209,13 +209,13 @@ This module creates the data objects for training, validation, and testing.  For
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
 c.  The inference code.  
-It is time to play.  After you trained the model, the file `GAinference.py` can then perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)  Note that the weights file is in the same folder, as the code expects.  
+It is time to play.  After you trained the model, the file `GAinference.py` will create two deliverables:  one will do inference on images and the other will do kmeans on images.  
+
+The GAinference.py code will first call GApredict.predict_driver.  This code will perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)  Note that the weights file is in the same folder, as the code expects.  
 
 A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  
 
 You can also download the GAweights file from the GitHub Georgia Project website.  There are two formats available.  The weights files are in HDF5, the default in Tensorflow, and ONNX, the cross-platform format.  Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.2/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.2/GAweights.onnx) to the \inference folder where you downloaded the Georgia Project code on your PC.  
-
-![InferenceExamples](../images/InferenceExample.png)
 
 |image               |prediction                           |
 |--------------------|-------------------------------------|
@@ -228,6 +228,15 @@ You can also download the GAweights file from the GitHub Georgia Project website
 |File: PG (590).png  | Prediction: PG, Confidence: 100.00% |
 |File: PG (5946).png | Prediction: PG, Confidence: 76.98%  |
 |File: tara.png      | Prediction: PG, Confidence: 90.27%  |
+The output from the GAinference.predict_driver code.  
+
+![InferenceExamples](../images/InferenceExample.png)  
+An illustration of the output from the GAinference.predict_driver code, to emphasize the model designations.  
+
+The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will show groupings in the OpenCrystalData dataset images, using kmeans and PCA with 4 centroids.  
+
+![KmeansExamples](../images/KmeansFourClusters.png)  
+Image by author using Python code.  I added the blue lines are to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
 
 The following notes are about the deliverables created at the end of the training run.  
 
@@ -321,7 +330,9 @@ Step 6. view results.
    - All results files generated will be in your deliverables folder that you designated in the `GAmain.py` code file.  
 
 Step 7. play with it.  
-   - Lastly, there is a code file, `GAinference.py`, that will perform inference on any png file that you give it.  Edit `folder_prefix` to point to the location where you extracted the code earlier (not the data).  This folder contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
+   - Lastly, there is a code file, `GAinference.py`, that will perform inference on any png file that you give it.  Edit `folder_prefix` to point to the location where you extracted the code earlier (not the data).  The code will then point to the \inference folder, which contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
+
+The GAinference.py code will then perform kmeans, using PCA, with four centroids.  The code is set up to find the \kmeans directory in the location where you extracted the code earlier; i.e., the \inference folder is beside the \kmeans folder.  
 
    - Setting up the weights file.  There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub.  Click here to download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.onnx). Either way, save it to the existing \inference folder in the code folder on your pc.  Note that there is a `weights_file` variable in the `GAinference.py` code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
 
