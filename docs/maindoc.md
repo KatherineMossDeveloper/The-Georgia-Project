@@ -229,10 +229,10 @@ You can also download the GAweights file from the GitHub Georgia Project website
 |File: PG (5946).png | Prediction: PG, Confidence: 76.98%  |
 |File: tara.png      | Prediction: PG, Confidence: 90.27%  |  
 
-The output from the GAinference.predict_driver code.  
+Above is the output from the GAinference.predict_driver code.  
 
 ![InferenceExamples](../images/InferenceExample.png)  
-An illustration of the output from the GAinference.predict_driver code, to emphasize the model designations.  
+Above is an illustration of the output from the GAinference.predict_driver code, to emphasize the model designations.  
 
 The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will show groupings in the OpenCrystalData dataset images, using kmeans and PCA with 4 centroids.  
 
