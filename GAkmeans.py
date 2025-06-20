@@ -1,7 +1,7 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAkmeans.py
 #
-# This file contains code to do K-means clustering and PCA on image files.
+# This file contains code to do K-means clustering and PCA on png image files.
 #
 # Code flow.
 #    kmeans_driver
