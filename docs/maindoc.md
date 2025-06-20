@@ -237,7 +237,11 @@ Above is an illustration of the output from the GAinference.predict_driver code,
 The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will show groupings in the OpenCrystalData dataset images, using kmeans and PCA with 4 centroids.  
 
 ![KmeansExamples](../images/KmeansFourClusters.png)  
-Image by author using Python code.  I added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
+This is the output of the GAkmeans code, plus some detailed added on top.  I added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
+Image by author using Python code.  
+
+![KmeansExamples](../images/KmeansAllImages.png)  
+Image by author using Python.  I reran the GAkmeans code with 
 
 The following notes are about the deliverables created at the end of the training run.  
 
