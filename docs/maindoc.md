@@ -240,9 +240,6 @@ The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will s
 This is the output of the GAkmeans code, plus some detailed added on top.  I added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
 Image by author using Python code.  
 
-![KmeansExamples](../images/KmeansAllImages.png)  
-Image by author using Python.  I reran the GAkmeans code with 
-
 The following notes are about the deliverables created at the end of the training run.  
 
 d.  The resulting weights files in the HDF5 format, native to TensorFlow, and in the ONNX format, for developers working in other environments, like ML.NET.  
