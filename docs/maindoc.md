@@ -209,7 +209,7 @@ This module creates the data objects for training, validation, and testing.  For
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
 c.  The inference code.  
-It is time to play.  After you trained the model, the file `GAinference.py` will create two deliverables:  one will do inference on images and the other will do kmeans on images.  
+It is time to play.  After you trained the model, the file `GAinference.py` will create two deliverables:  one will do inference on images and the other will do kmeans <sup id="a3">[3](#f3)</sup> on images.  
 
 The GAinference.py code will first call GApredict.predict_driver.  This code will perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)  Note that the weights file is in the same folder, as the code expects.  
 
@@ -365,13 +365,15 @@ My time zone is EST in the U.S.
 > For more about F1, visit [F1 on Wikipedia](https://en.wikipedia.org/wiki/F-score).  
 > [⏎](#a1)  
 
-
 > <sup id="f2">2</sup> Callbacks can be thought of as hooks into the model while it is training.  A typical callback is a class with an event function, like on_epoch_end.   Just like it sounds, when the model comes to the end of each epoch, it will call all callback classes, so that each class can do things, like collect metrics, write to the screen, make a decision about stopping the training, etc.  It gives the developer more information and control during training.
 >
 > Technically, in Keras, callbacks are classes because they inherit from the “Callback” mothership.  Therefore, you would instantiate a callback class, hand it to the model, which would then call the instantiation, not the class itself.
 > 
 > For more about callbacks, visit [callbacks on Keras.io](https://keras.io/api/callbacks/).  
 > [⏎](#a2)
+
+> <sup id="f3">3</sup>  Kmeans clustering is an algorithm that can show us how data is grouped.  It does this ‘unsupervised,’ meaning that the data is not labeled.  It is surprising to learn that Kmeans was first proposed in 1957, and yet it is still an important part of a data scientist’s toybox.  There is more than one kind of kmeans algorithm, but the most popular one, and the used in sklearn, is “Lloyd”.   For more on this, I recommend Johannes Wohlenberg’s  great article on www.medium.com.  It has a cool animation that shows how kmeans centroids ‘find’ each group.   [kmeans on Medium](https://medium.com/data-science/three-versions-of-k-means-cf939b65f4ea).  
+> [⏎](#a3)
 
 > <sup id="f4">4</sup>  The macro average is just what it sounds like, the average of precision, recall, or F1 scores for all classes, which for us is just PG and CEX.
 >   
