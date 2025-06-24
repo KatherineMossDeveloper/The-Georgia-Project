@@ -38,7 +38,7 @@
 4. Play time.
    - Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.2/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.2/GAweights.onnx) to the \inference folder.  
    - Edit `GAinference.py` so that the folder_prefix variable points to the Georgia Project code. 
-   - Run `GAinference.py` to label images in the \inference folder.  
+   - Run `GAinference.py` to label images in the \inference folder and plots images in the \kmeans folder.  
 
 ## Model comparison.  
 In the table below are the details offered by the published paper, then on the right are the choices that I elected to work with.   
