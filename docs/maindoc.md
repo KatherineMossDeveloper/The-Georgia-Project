@@ -383,7 +383,7 @@ My time zone is EST in the U.S.
 > For more about callbacks, visit [callbacks on Keras.io](https://keras.io/api/callbacks/).  
 > [⏎](#a2)
 
-> <sup id="f3">3</sup>  Kmeans clustering is an algorithm that can show us how data is grouped.  It does this ‘unsupervised,’ meaning that the data is not labeled.  It is surprising to learn that Kmeans was first proposed in 1957, and yet it is still an important part of a data scientist’s toybox.  There is more than one kind of kmeans algorithm, but the most popular one, and the used in sklearn, is “Lloyd”.   For more on this, I recommend Johannes Wohlenberg’s  great article on www.medium.com.  It has a cool animation that shows how kmeans centroids ‘find’ each group.   [kmeans on Medium](https://medium.com/data-science/three-versions-of-k-means-cf939b65f4ea).  
+> <sup id="f3">3</sup>  Kmeans clustering is an algorithm that can show us how data is grouped.  It does this ‘unsupervised,’ meaning that the data is not labeled.  It is surprising to learn that Kmeans was first proposed in 1957, and yet it is still an important part of a data scientist’s toybox.  There is more than one kind of kmeans algorithm, but the most popular one, and the one used in sklearn, is “Lloyd”.   For more on this, I recommend Johannes Wohlenberg’s  great article on www.medium.com.  It has a cool animation that shows how kmeans centroids ‘find’ each group.   [kmeans on Medium](https://medium.com/data-science/three-versions-of-k-means-cf939b65f4ea).  
 > [⏎](#a3)
 
 > <sup id="f4">4</sup>  The macro average is just what it sounds like, the average of precision, recall, or F1 scores for all classes, which for us is just PG and CEX.
