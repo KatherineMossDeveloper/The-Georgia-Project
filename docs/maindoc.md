@@ -237,8 +237,16 @@ Above is an illustration of the output from the GAinference.predict_driver code,
 The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will show groupings in the OpenCrystalData dataset images, using kmeans and PCA with 4 centroids.  
 
 ![KmeansExamples](../images/KmeansFourClusters.png)  
-This is the output of the GAkmeans code, plus some detailed added on top.  I added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
 Image by author using Python code.  
+Above is the output of the GAkmeans code using images from the kmeans folder in this project.  I then added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
+
+![KmeansExamples](../images/Kmeans3k4clusters.png)  
+Image by author using Python code.  
+Above is the GAkmeans code using all the validation images, both from folder '0' and '1'.  This time I took out the labels showing the image names, since there are around 3,000 images, so the labels overlap too much to read them.  
+
+![KmeansExamples](../images/Kmeans3k4clustersCloseup.png)  
+Image by author using Python code.  
+Above is an plot generated much the same, but I put a dot (period) what an image name would be.  I then zoomed in.  Note that the phenyglycine along the left ‘arm’ of the graph seems organized with less variation in structure, suggesting that they are newly formed crystals.  It seems that phenylglycine, along the right ‘arm’ of the graph, forms a circle, then gets messy looking as it evolves outward.  However, I may be reading too much into this close up view.  Perhaps someone can add some comments on this, please?
 
 The following notes are about the deliverables created at the end of the training run.  
 
