@@ -1,7 +1,7 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAkmeans.py
 #
-# This file contains code to do K-means clustering and PCA on png image files.
+# This file contains code to do K-means clustering and PCA on image files.
 #
 # Code flow.
 #    kmeans_driver
@@ -17,6 +17,7 @@
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 from sklearn.cluster import KMeans
 from sklearn.decomposition import PCA
 from GAutility import load_and_preprocess_image
@@ -37,12 +38,12 @@ def extract_features(model, img_path):
 
 
 # Visualize both PG and CEX clusters on one plot with different colors for 3 clusters
-def visualize_clusters(reduced_features, labels, image_files, centroids, image_folder):
+def visualize_clusters(pca, reduced_features, labels, image_files, centroids, image_folder):
 
     # Set colors for each cluster: Cluster 0 (purple), Cluster 1 (blue), Cluster 2 (orange), Cluster 3 (green)
-    colors = ['purple' if label == 0 else 'blue' if label == 1 else 'orange' if label == 2 else 'green' for label in labels]
+    colors = ['purple' if label == 0 else 'blue' if label == 1 else 'darkorange' if label == 2 else 'green' for label in labels]
 
-    # Visualize the results of clustering using PCA components
+    # draw the PCA components
     plt.figure(figsize=(10, 8))
     scatter = plt.scatter(reduced_features[:, 0], reduced_features[:, 1], c=colors, s=50)
 
@@ -52,13 +53,24 @@ def visualize_clusters(reduced_features, labels, image_files, centroids, image_f
         image_string = f'{os.path.basename(file_path)}'
         plt.text(reduced_features[i, 0], reduced_features[i, 1], image_string, fontsize=8)
 
-    # Add a legend to explain the colors
-    plt.legend(handles=scatter.legend_elements()[0], labels=['Cluster 1', 'Cluster 2', 'Cluster 3', 'Cluster 4'],
-               loc='upper right')
-    plt.scatter(centroids[:, 0], centroids[:, 1], c='gray', s=200, marker='X', label='Centroids')
+    # Create custom legend handles
+    legend_handles = [
+        mpatches.Patch(color='purple', label='Cluster 1'),
+        mpatches.Patch(color='blue', label='Cluster 2'),
+        mpatches.Patch(color='orange', label='Cluster 3'),
+        mpatches.Patch(color='green', label='Cluster 4')
+    ]
+
+    # Add a legend to explain the colors; draw the centroid X's.
+    plt.legend(handles=legend_handles, loc='upper right')
+    plt.scatter(centroids[:, 0], centroids[:, 1], c='lime', s=300, marker='X', label='Centroids')
+
+    # Add the axes labels.
+    plt.xlabel(f'PC1 ({pca.explained_variance_ratio_[0] * 100:.1f}% variance)')
+    plt.ylabel(f'PC2 ({pca.explained_variance_ratio_[1] * 100:.1f}% variance)')
 
     plt.title('K-Means for CEX and PG.')
-    plt.savefig(f"{image_folder}/kmeans_plot.jpg")
+    plt.savefig(os.path.join(image_folder, "kmeans_plot.jpg"))
     plt.show()
 
 
@@ -98,7 +110,7 @@ def kmeans_driver(model, folder_path, num_clusters=2):
         print(normalized_files)
 
         # Visualize both clusters on one plot
-        visualize_clusters(features_reduced, labels_kmeans, normalized_files,
+        visualize_clusters(pca, features_reduced, labels_kmeans, normalized_files,
                            centroids_kmeans, folder_path)
 
         # Print clustering results
