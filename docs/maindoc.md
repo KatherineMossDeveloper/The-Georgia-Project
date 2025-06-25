@@ -246,7 +246,7 @@ How the K-means and PCA algorithms organize the images is dependent on which wei
 ![KmeansExamples](../images/Kmeans3k4clusters.png)  
 Image by author using Python code.  
 
-Above is the GAkmeans code using all the validation images, both from folder '0' and '1'.  This time I took out the labels showing the image names, since there are around 3,000 images, so the labels overlap too much to read them.  
+Above is the GAkmeans code using all the validation images, both from folder '0' and '1'.  This time I took out the labels showing the image names, since there are around 3,000 images, so the labels overlap too much to read them.  Again, the purple cluster is CEX.  The others are PG.    
 
 ![KmeansExamples](../images/Kmeans3k4clusterCloseup.png)  
 Image by author using Python code.  
