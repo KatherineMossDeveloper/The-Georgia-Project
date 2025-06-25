@@ -248,10 +248,10 @@ Image by author using Python code.
 
 Above is the GAkmeans code using all the validation images, both from folder '0' and '1'.  This time I took out the labels showing the image names, since there are around 3,000 images, so the labels overlap too much to read them.  Again, the purple cluster is CEX.  The others are PG.    
 
-![KmeansExamples](../images/Kmeans3k4clusterCloseup.png)  
+<img src="../images/Kmeans3k4clusterCloseup.png" alt="kmeans" width="800" height="800">  
 Image by author using Python code.  
 
-Above is an plot generated much the same, but I put a dot (period) where an image name would be.  I then zoomed in.  Note that the phenyglycine along the left ‘arm’ of the graph seems organized with less variation in structure, suggesting that they are newly formed crystals.  It seems that phenylglycine, along the right ‘arm’ of the graph, forms a circle, then gets messy looking as it evolves outward.  However, I may be reading too much into this close up view.  Perhaps someone can add some comments on this, please?  
+Above is an plot generated much the same, but I put a black dot where an image name would be.  I then zoomed in on the 'elbow'.  Note that the phenyglycine images line up neatly along the left ‘arm’ of the graph.  These images also seem more uniform.  So, when you consider their the orderliness of their march up the arm, plus their uniform appearance, perhaps they are newly-formed crystals.  It seems that phenylglycine, along the right ‘arm’ of the graph gets messy looking as it evolves outward, to the right.  However, I may be reading too much into this close up view.  Perhaps someone can add some comments on this, please?  
 
 The following notes are about the deliverables created at the end of the training run.  
 
