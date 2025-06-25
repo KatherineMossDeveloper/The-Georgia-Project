@@ -241,6 +241,8 @@ Image by author using Python code.
 
 Above is the output of the GAkmeans code using images from the kmeans folder in this project.  I then added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
 
+How the K-means and PCA algorithms organize the images is dependent on which weights file is used.  You will get the same arrangement of images as above if you use the GAweights.h5, or GAweights.onnx, file from this project.  If you create your own weights file and use that one, it can organize the images in this plot somewhat differently. There is a bit of chaos involved.   
+
 ![KmeansExamples](../images/Kmeans3k4clusters.png)  
 Image by author using Python code.  
 
