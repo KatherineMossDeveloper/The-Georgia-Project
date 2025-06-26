@@ -248,7 +248,7 @@ Image by author using Python code.
 
 Above is the GAkmeans code using all the validation images, both from folder '0' and '1'.  This time I took out the labels showing the image names, since there are around 3,000 images, so the labels overlap too much to read them.  Again, the purple cluster is CEX.  The others are PG.    
 
-<img src="../images/Kmeans3k4clusterCloseup.png" alt="kmeans" width="600" height="600">  
+<img src="../images/Kmeans3k4clusterCloseup.png" alt="kmeans" width="500" height="500">  
 Image by author using Python code.  
 
 Above is an plot generated in much the same way, but I put a black dot where an image name would be.  I then zoomed in on the 'elbow'.  Note that the phenyglycine images line up neatly along the left ‘arm’ of the graph.  These images also seem more uniform.  So, when you consider the orderliness of their march up the arm, plus their uniform appearance, perhaps they are newly-formed crystals.  On the other hand, the phenylglycine images, along the right ‘arm’ of the graph gets messy looking as they evolves outward.  This might be showing up crystal growth that is getting more disorganized over time.  However, I may be reading too much into this close-up view.  Perhaps someone can add some comments on this?   
