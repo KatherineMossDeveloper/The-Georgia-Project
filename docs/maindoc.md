@@ -209,7 +209,7 @@ This module creates the data objects for training, validation, and testing.  For
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
 c.  The inference code.  
-It is time to play.  After you trained the model, the file `GAinference.py` will create two deliverables:  one will do inference on images and the other will do k-means <sup id="a3">[3](#f3)</sup> on images.  
+It is time to play.  After you trained the model, the file `GAinference.py` will create two deliverables:  one will do inference on images and the other will do kmeans <sup id="a3">[3](#f3)</sup> on images.  
 
 The GAinference.py code will first call GApredict.predict_driver.  This code will perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)  Note that the weights file is in the same folder, as the code expects.  
 
@@ -234,21 +234,21 @@ Above is the output from the GAinference.predict_driver code.
 ![InferenceExamples](../images/InferenceExample.png)  
 Above is an illustration of the output from the GAinference.predict_driver code, to emphasize the model designations.  
 
-The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will show groupings in the OpenCrystalData dataset images, using k-means and PCA with 4 centroids.  
+The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will show groupings in the OpenCrystalData dataset images, using kmeans and PCA with 4 centroids.  
 
-![k-meansExamples](../images/kmeansFourClusters.png)  
+![kmeansExamples](../images/kmeansFourClusters.png)  
 Image by author using Python code.  
 
-Above is the output of the GAkmeans code using images from the kmeans folder in this project.  I then added the blue lines to illustrate the arcs of the k-means organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
+Above is the output of the GAkmeans code using images from the kmeans folder in this project.  I then added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
 
-How the k-means and PCA algorithms organize the images is dependent on which weights file is used.  You will get the same arrangement of images as above if you use the GAweights.h5, or GAweights.onnx, file from this project.  If you create your own weights file and use that one, it can organize the images in this plot somewhat differently. There is a bit of chaos involved.   
+How the kmeans and PCA algorithms organize the images is dependent on which weights file is used.  You will get the same arrangement of images as above if you use the GAweights.h5, or GAweights.onnx, file from this project.  If you create your own weights file and use that one, it can organize the images in this plot somewhat differently. There is a bit of chaos involved.   
 
-![k-meansExamples](../images/kmeans3k4clusters.png)  
+![kmeansExamples](../images/kmeans3k4clusters.png)  
 Image by author using Python code.  
 
 Above is the GAkmeans code using all the validation images, both from folder '0' and '1'.  This time I took out the labels showing the image names, since there are around 3,000 images, so the labels overlap too much to read them.  Again, the purple cluster is CEX.  The others are PG.    
 
-<img src="../images/kmeans3k4clusterCloseup.png" alt="k-means" width="600" height="600">  
+<img src="../images/kmeans3k4clusterCloseup.png" alt="kmeans" width="600" height="600">  
 Image by author using Python code.  
 
 Above is an plot generated in much the same way, but I put a black dot where an image name would be.  I then zoomed in on the 'elbow'.  Note that the phenyglycine images line up neatly along the left ‘arm’ of the graph.  These images also seem more uniform.  So, when you consider the orderliness of their march up the arm, plus their uniform appearance, perhaps they are newly-formed crystals.  On the other hand, the phenylglycine images, along the right ‘arm’ of the graph gets messy looking as they evolves outward.  This might be showing up crystal growth that is getting more disorganized over time.  However, I may be reading too much into this close-up view.  Perhaps someone can add some comments on this?   
@@ -347,7 +347,7 @@ Step 6. view results.
 Step 7. play with it.  
    - Lastly, there is a code file, `GAinference.py`, that will perform inference on any png file that you give it.  Edit `folder_prefix` to point to the location where you extracted the code earlier (not the data).  The code will then point to the \inference folder, which contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
 
-The GAinference.py code will then perform k-means, using PCA, with four centroids.  The code is set up to find the \kmeans directory in the location where you extracted the code earlier; i.e., the \inference folder is beside the \kmeans folder.  
+The GAinference.py code will then perform kmeans, using PCA, with four centroids.  The code is set up to find the \kmeans directory in the location where you extracted the code earlier; i.e., the \inference folder is beside the \kmeans folder.  
 
    - Setting up the weights file.  There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub.  Click here to download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.onnx). Either way, save it to the existing \inference folder in the code folder on your pc.  Note that there is a `weights_file` variable in the `GAinference.py` code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
 
@@ -385,7 +385,7 @@ My time zone is EST in the U.S.
 > For more about callbacks, visit [callbacks on Keras.io](https://keras.io/api/callbacks/).  
 > [⏎](#a2)
 
-> <sup id="f3">3</sup>  k-means clustering is an algorithm that can show us how data is grouped.  It does this ‘unsupervised,’ meaning that the data is not labeled.  It is surprising to learn that k-means was first proposed in 1957, and yet it is still an important part of a data scientist’s toybox.  There is more than one kind of k-means algorithm, but the most popular one, and the one used in sklearn, is “Lloyd”.   For more on this, I recommend Johannes Wohlenberg’s  great article on www.medium.com.  It has a cool animation that shows how k-means centroids ‘find’ each group.   [k-means on Medium](https://medium.com/data-science/three-versions-of-kmeans-cf939b65f4ea).  
+> <sup id="f3">3</sup>  kmeans clustering is an algorithm that can show us how data is grouped.  It does this ‘unsupervised,’ meaning that the data is not labeled.  It is surprising to learn that kmeans was first proposed in 1957, and yet it is still an important part of a data scientist’s toybox.  There is more than one kind of kmeans algorithm, but the most popular one, and the one used in sklearn, is “Lloyd”.   For more on this, I recommend Johannes Wohlenberg’s  great article on www.medium.com.  It has a cool animation that shows how kmeans centroids ‘find’ each group.   [kmeans on Medium](https://medium.com/data-science/three-versions-of-kmeans-cf939b65f4ea).  
 > [⏎](#a3)
 
 > <sup id="f4">4</sup>  The macro average is just what it sounds like, the average of precision, recall, or F1 scores for all classes, which for us is just PG and CEX.
