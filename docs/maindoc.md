@@ -236,19 +236,19 @@ Above is an illustration of the output from the GAinference.predict_driver code,
 
 The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will show groupings in the OpenCrystalData dataset images, using kmeans and PCA with 4 centroids.  
 
-![kmeansExamples](../images/kmeansFourClusters.png)  
+![kmeansExamples](../images/KmeansFourClusters.png)  
 Image by author using Python code.  
 
 Above is the output of the GAkmeans code using images from the kmeans folder in this project.  I then added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
 
 How the kmeans and PCA algorithms organize the images is dependent on which weights file is used.  You will get the same arrangement of images as above if you use the GAweights.h5, or GAweights.onnx, file from this project.  If you create your own weights file and use that one, it can organize the images in this plot somewhat differently. There is a bit of chaos involved.   
 
-![kmeansExamples](../images/kmeans3k4clusters.png)  
+![kmeansExamples](../images/Kmeans3k4clusters.png)  
 Image by author using Python code.  
 
 Above is the GAkmeans code using all the validation images, both from folder '0' and '1'.  This time I took out the labels showing the image names, since there are around 3,000 images, so the labels overlap too much to read them.  Again, the purple cluster is CEX.  The others are PG.    
 
-<img src="../images/kmeans3k4clusterCloseup.png" alt="kmeans" width="600" height="600">  
+<img src="../images/Kmeans3k4clusterCloseup.png" alt="kmeans" width="600" height="600">  
 Image by author using Python code.  
 
 Above is an plot generated in much the same way, but I put a black dot where an image name would be.  I then zoomed in on the 'elbow'.  Note that the phenyglycine images line up neatly along the left ‘arm’ of the graph.  These images also seem more uniform.  So, when you consider the orderliness of their march up the arm, plus their uniform appearance, perhaps they are newly-formed crystals.  On the other hand, the phenylglycine images, along the right ‘arm’ of the graph gets messy looking as they evolves outward.  This might be showing up crystal growth that is getting more disorganized over time.  However, I may be reading too much into this close-up view.  Perhaps someone can add some comments on this?   
