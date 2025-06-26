@@ -37,7 +37,7 @@ def extract_features(model, img_path):
     return features_flat
 
 
-# Visualize both PG and CEX clusters on one plot with different colors for 3 clusters
+# Visualize both PG and CEX clusters on one plot with different colors for each cluster
 def visualize_clusters(pca, reduced_features, labels, image_files, centroids, image_folder):
 
     # Set colors for each cluster: Cluster 0 (purple), Cluster 1 (blue), Cluster 2 (orange), Cluster 3 (green)
