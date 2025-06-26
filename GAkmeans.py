@@ -109,7 +109,7 @@ def kmeans_driver(model, folder_path, num_clusters=2):
         normalized_files = [os.path.normpath(file_path) for file_path in file_paths]
         print(normalized_files)
 
-        # Visualize both clusters on one plot
+        # Visualize clusters on a plot
         visualize_clusters(pca, features_reduced, labels_kmeans, normalized_files,
                            centroids_kmeans, folder_path)
 
