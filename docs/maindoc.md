@@ -116,6 +116,7 @@ The paper remarks that the two image sets have “very distinct visual features.
 <a href="#">
   <img src="../images/samples_cex.png" alt="CEX samples" style="vertical-align: middle; width: 623px; height: 134px;"/>
 </a><br>
+Image by author.  
 
 <a href="#">
   <img src="../images/samples_pg.png" alt="PG samples" style="vertical-align: middle; width: 623px; height: 151px;"/>
