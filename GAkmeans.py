@@ -37,29 +37,19 @@ def extract_features(model, img_path):
     return features_flat
 
 
-# Visualize both PG and CEX clusters on one plot with different colors for each cluster
-def visualize_clusters(pca, reduced_features, labels, image_files, centroids, image_folder):
-
-    # Set colors for each cluster: Cluster 0 (purple), Cluster 1 (blue), Cluster 2 (orange), Cluster 3 (green)
-    colors = ['purple' if label == 0 else 'blue' if label == 1 else 'darkorange' if label == 2 else 'green' for label in labels]
+# Visualize both PG and CEX clusters on one plot with different colors for 3 clusters
+def visualize_clusters(pca, reduced_features, colors, image_files, centroids, image_folder, legend_handles):
 
     # draw the PCA components
     plt.figure(figsize=(10, 8))
-    scatter = plt.scatter(reduced_features[:, 0], reduced_features[:, 1], c=colors, s=50)
+    plt.scatter(reduced_features[:, 0], reduced_features[:, 1], c=colors, s=50)
 
     # Label the plot with filenames (optional)
     for i, file_path in enumerate(image_files):
-        print(f'image file name {file_path}')
         image_string = f'{os.path.basename(file_path)}'
+        image_string = image_string[:2]
+        # image_string = "."
         plt.text(reduced_features[i, 0], reduced_features[i, 1], image_string, fontsize=8)
-
-    # Create custom legend handles
-    legend_handles = [
-        mpatches.Patch(color='purple', label='Cluster 1'),
-        mpatches.Patch(color='blue', label='Cluster 2'),
-        mpatches.Patch(color='orange', label='Cluster 3'),
-        mpatches.Patch(color='green', label='Cluster 4')
-    ]
 
     # Add a legend to explain the colors; draw the centroid X's.
     plt.legend(handles=legend_handles, loc='upper right')
@@ -75,19 +65,20 @@ def visualize_clusters(pca, reduced_features, labels, image_files, centroids, im
 
 
 # Function to perform K-Means clustering
-def kmeans_driver(model, folder_path, num_clusters=2):
+def kmeans_driver(model, num_clusters=2, file_paths="", image_folder=""):
+
     features = []
-    file_paths = []
+    colors = []
+    centroids_kmeans = []
+    labels_kmeans = []
+    features_reduced = []
 
     try:
         # Extract features for each image in the folder
-        print(f'Starting GAkmeans.py.')
+        print(f'Starting GAkmeans.py with {len(file_paths)} files.')
 
-        for filename in os.listdir(folder_path):
-            if filename.endswith('.png'):
-                img_path = os.path.join(folder_path, filename)
-                features.append(extract_features(model, img_path))
-                file_paths.append(img_path)
+        for filename in file_paths:
+            features.append(extract_features(model, filename))
 
         # Convert features list to numpy array
         features_array = np.array(features)
@@ -107,17 +98,30 @@ def kmeans_driver(model, folder_path, num_clusters=2):
 
         # straighten out the forward, backward slashes.
         normalized_files = [os.path.normpath(file_path) for file_path in file_paths]
-        print(normalized_files)
 
-        # Visualize clusters on a plot
-        visualize_clusters(pca, features_reduced, labels_kmeans, normalized_files,
-                           centroids_kmeans, folder_path)
+        # Set colors for each cluster
+        colors = ['purple' if label == 0 else
+                  'blue' if label == 1 else
+                  'darkorange' if label == 2 else
+                  'green' for label in labels_kmeans]
+
+        # Create custom legend handles
+        legend_handles = [
+            mpatches.Patch(color='purple', label='Cluster 1'),
+            mpatches.Patch(color='blue', label='Cluster 2'),
+            mpatches.Patch(color='orange', label='Cluster 3'),
+            mpatches.Patch(color='green', label='Cluster 4')
+        ]
+
+        # Visualize clusters on one plot
+        visualize_clusters(pca, features_reduced, colors, normalized_files,
+                           centroids_kmeans, image_folder, legend_handles)
 
         # Print clustering results
         print("images clustering results:")
-        for i, label in enumerate(labels_kmeans):
-            print(f"{normalized_files[i]} is in cluster {label}")
 
     except Exception as e:
         print(f"An error occurred in GAkmeans: {e}")
+
+    return colors, centroids_kmeans, labels_kmeans, features_reduced
 
