@@ -23,18 +23,22 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.applications import ResNet101
 
 # 0.  Set up the path to your image folder and weights file
-folder_prefix = r"X:/MLresearch/CrystalStudy/Project_GA/LastGoodStaging/"  # edit this before running the code.
+folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
 image_folder = folder_prefix + r"\inference"
 weights_file = folder_prefix + r"\inference\GAweights.h5"
 
 # 1.  do prediction on the image files.
 classifier_model = load_model(weights_file)
-predict_driver(model=classifier_model, image_folder=image_folder)
+confidence_list, file_paths = predict_driver(model=classifier_model,
+                                             image_folder=image_folder,
+                                             file_type=".png",
+                                             mod=1)
 
 # 2.  do kmeans on the image files.
-image_folder = folder_prefix + r"\kmeans"
 # Load the ResNet101 model without the top layers (include_top=False)
 feature_model = ResNet101(weights=None, include_top=False, input_shape=(224, 224, 3))
-# Load the weights from the weights file.
-feature_model.load_weights(weights_file, by_name=True, skip_mismatch=True)
-kmeans_driver(model=feature_model, folder_path=image_folder, num_clusters=4)
+feature_model.load_weights(weights_file, by_name=True, skip_mismatch=True)  
+colors, centroids_kmeans, labels_kmeans, features_reduced = kmeans_driver(model=feature_model, num_clusters=4,
+                                                                          file_paths=file_paths, image_folder=image_folder)
+
+
