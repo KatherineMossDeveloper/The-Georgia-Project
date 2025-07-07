@@ -24,7 +24,7 @@ from tensorflow.keras.applications import ResNet101
 
 # 0.  Set up the path to your image folder and weights file
 folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
-image_folder = folder_prefix + r"\inference"
+image_folder = folder_prefix + r"\kmeans"
 weights_file = folder_prefix + r"\inference\GAweights.h5"
 
 # 1.  do prediction on the image files.
