@@ -54,7 +54,6 @@ def predict_driver(model, image_folder, file_type = ".png", mod = 1):
 
                 # Convert to percentage
                 confidence_percent = confidence * 100
-                # convert % when CEX...confidence_adjusted = confidence_percent if confidence_percent >= 50 else (100 - confidence_percent)
                 confidence_list.append(int(round(confidence_percent)))
 
                 # Assign the class label with threshold 0.5 for PG.
