@@ -42,12 +42,11 @@ def visualize_clusters(pca, reduced_features, colors, image_files, centroids, im
 
     # draw the PCA components
     plt.figure(figsize=(10, 8))
-    plt.scatter(reduced_features[:, 0], reduced_features[:, 1], c=colors, s=50)
+    scatter = plt.scatter(reduced_features[:, 0], reduced_features[:, 1], c=colors, s=50)
 
     # Label the plot with filenames (optional)
     for i, file_path in enumerate(image_files):
         image_string = f'{os.path.basename(file_path)}'
-        image_string = image_string[:2]
         # image_string = "."
         plt.text(reduced_features[i, 0], reduced_features[i, 1], image_string, fontsize=8)
 
@@ -66,7 +65,6 @@ def visualize_clusters(pca, reduced_features, colors, image_files, centroids, im
 
 # Function to perform K-Means clustering
 def kmeans_driver(model, num_clusters=2, file_paths="", image_folder=""):
-
     features = []
     colors = []
     centroids_kmeans = []
@@ -103,7 +101,8 @@ def kmeans_driver(model, num_clusters=2, file_paths="", image_folder=""):
         colors = ['purple' if label == 0 else
                   'blue' if label == 1 else
                   'darkorange' if label == 2 else
-                  'green' for label in labels_kmeans]
+                  'green' for label in labels_kmeans
+                  ]
 
         # Create custom legend handles
         legend_handles = [
