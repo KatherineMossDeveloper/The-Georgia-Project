@@ -238,9 +238,14 @@ The GAinference.py code will then call GAkmeans.kmeans_driver.  This code will s
 ![kmeansExamples](../images/KmeansFourClusters.png)  
 Image by author using Python code.  
 
-Above is the output of the GAkmeans code using images from the kmeans folder in this project.  I then added the blue lines to illustrate the arcs of the kmeans organization.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
+Above is the output of the GAkmeans code using images from the kmeans folder in this project.  I then added the blue lines to illustrate the arcs of the PCA space.  I added representative images to give an example of the image type in each group.  Note where Tara is.  
 
 How the kmeans and PCA algorithms organize the images is dependent on which weights file is used.  You will get the same arrangement of images as above if you use the GAweights.h5, or GAweights.onnx, file from this project.  If you create your own weights file and use that one, it can organize the images in this plot somewhat differently. There is a bit of chaos involved.   
+
+<img src="../images/GAkmeansd3blocks.png" alt="kmeans" width="700" height="500">  
+Image by author using Python code.  
+
+Above is an plot generated in much the same way, but I am using the scatter plot from the D3Blocks library, which is an open-sourced project on GitHub.  I also am trying out a new color scheme.  This plot is generated in the GAkmeansd3blocks.py file.  For more, visit [D3Blocks](https://github.com/d3blocks/d3blocks).  
 
 ![kmeansExamples](../images/Kmeans3k4clusters.png)  
 Image by author using Python code.  
@@ -250,12 +255,8 @@ Above is the GAkmeans code using all the validation images, both from folder '0'
 <img src="../images/Kmeans3k4clusterCloseup.png" alt="kmeans" width="500" height="500">  
 Image by author using Python code.  
 
-Above is an plot generated in much the same way, but I put a black dot where an image name would be.  I then zoomed in on the 'elbow'.  Note that the phenyglycine images line up neatly along the left ‘arm’ of the graph.  These images also seem more uniform.  So, when you consider the orderliness of their march up the arm, plus their uniform appearance, perhaps they are newly-formed crystals.  On the other hand, the phenylglycine images, along the right ‘arm’ of the graph gets messy looking as they evolves outward.  This might be showing up crystal growth that is getting more disorganized over time.  However, I may be reading too much into this close-up view.  Perhaps someone can add some comments on this?   
+Above is a plot generated in much the same way, but I put a black dot where an image name would be.  I then zoomed in on the 'elbow'.  Note that the phenyglycine images line up neatly along the left ‘arm’ of the graph.  These images also seem more uniform.  So, when you consider the orderliness of their march up the arm, plus their uniform appearance, perhaps they are newly-formed crystals.  On the other hand, the phenylglycine images, along the right ‘arm’ of the graph gets messy looking as they evolves outward.  This might be showing up crystal growth that is getting more disorganized over time.  However, I may be reading too much into this close-up view.  Perhaps someone can add some comments on this?   
 
-<img src="../images/GAkmeansd3blocks.png" alt="kmeans" width="700" height="500">  
-Image by author using Python code.  
-
-Above is an plot generated in much the same way, but I am using the scatter plot from the D3Blocks library, which is an open-sourced project on GitHub.  For more, visit [D3Blocks](https://github.com/d3blocks/d3blocks).  
 
 The following notes are about the deliverables created at the end of the training run.  
 
