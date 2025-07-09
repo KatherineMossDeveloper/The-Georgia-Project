@@ -9,6 +9,9 @@
 #     a Kmeans plot and save it to disk in the same 'kmeans' folder.  It will also pop
 #     up a graph showing how the images cluster.
 #
+# 3.  This code will then run GAkmeansd3blocks.py using the same kmeans centroids and pca
+#     coordinates.  The code will create a plot with the D3Blocks scatter plot.
+#
 # To do.
 # Edit the folder_prefix variable to point to the Georgia Project code on your pc.
 # Save the weights file downloaded from the Georgia Project on GitHub to the \inference
@@ -29,16 +32,19 @@ weights_file = folder_prefix + r"\inference\GAweights.h5"
 
 # 1.  do prediction on the image files.
 classifier_model = load_model(weights_file)
-confidence_list, file_paths = predict_driver(model=classifier_model,
-                                             image_folder=image_folder,
-                                             file_type=".png",
-                                             mod=1)
+file_paths, tooltips = predict_driver(model=classifier_model,
+                                      image_folder=image_folder,
+                                      file_type=".png",
+                                      mod=1)
 
-# 2.  do kmeans on the image files.
+# 2.  graph the kmeans, pca values
 # Load the ResNet101 model without the top layers (include_top=False)
 feature_model = ResNet101(weights=None, include_top=False, input_shape=(224, 224, 3))
-feature_model.load_weights(weights_file, by_name=True, skip_mismatch=True)  
+feature_model.load_weights(weights_file, by_name=True, skip_mismatch=True)  # Load the weights from the weights file.
 colors, centroids_kmeans, labels_kmeans, features_reduced = kmeans_driver(model=feature_model, num_clusters=4,
                                                                           file_paths=file_paths, image_folder=image_folder)
+
+# 3.  graph the k-means, pca values in D3blocks.
+pca3d_driver(features_reduced, labels_kmeans, tooltips, folder_prefix)
 
 
