@@ -10,8 +10,9 @@
 # To do.
 # (nothing)
 # #############################################################################################
-import numpy as np
+
 from datetime import datetime
+import numpy as np
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
