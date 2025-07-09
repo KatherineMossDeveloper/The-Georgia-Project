@@ -22,6 +22,7 @@
 
 from GApredict import predict_driver
 from GAkmeans import kmeans_driver
+from GAkmeansd3blocks import pca3d_driver
 from tensorflow.keras.models import load_model
 from tensorflow.keras.applications import ResNet101
 
