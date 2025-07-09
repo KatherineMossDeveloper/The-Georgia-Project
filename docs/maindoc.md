@@ -208,7 +208,7 @@ This module creates the data objects for training, validation, and testing.  For
 Finally, this code is called after the training, at which time it creates the plots and other results from the training and testing.  
 
 c.  The inference code.  
-It is time to play.  After you trained the model, the file `GAinference.py` will create two deliverables:  one will do inference on images and the other will do kmeans <sup id="a3">[3](#f3)</sup> on images.  
+It is time to play.  After you trained the model, the file `GAinference.py` will create two deliverables types:  one will do inference on images and the other will do kmeans plots <sup id="a3">[3](#f3)</sup> on images.  
 
 The GAinference.py code will first call GApredict.predict_driver.  This code will perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)  Note that the weights file is in the same folder, as the code expects.  
 
@@ -251,6 +251,11 @@ Above is the GAkmeans code using all the validation images, both from folder '0'
 Image by author using Python code.  
 
 Above is an plot generated in much the same way, but I put a black dot where an image name would be.  I then zoomed in on the 'elbow'.  Note that the phenyglycine images line up neatly along the left ‘arm’ of the graph.  These images also seem more uniform.  So, when you consider the orderliness of their march up the arm, plus their uniform appearance, perhaps they are newly-formed crystals.  On the other hand, the phenylglycine images, along the right ‘arm’ of the graph gets messy looking as they evolves outward.  This might be showing up crystal growth that is getting more disorganized over time.  However, I may be reading too much into this close-up view.  Perhaps someone can add some comments on this?   
+
+<img src="../images/GAkmeansd3blocks.png" alt="kmeans" width="700" height="500">  
+Image by author using Python code.  
+
+Above is an plot generated in much the same way, but I am using the scatter plot from the D3Blocks library, which is an open-sourced project on GitHub.  For more, visit [D3Blocks](https://github.com/d3blocks/d3blocks).  
 
 The following notes are about the deliverables created at the end of the training run.  
 
