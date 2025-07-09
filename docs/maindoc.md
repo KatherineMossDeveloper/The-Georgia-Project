@@ -242,7 +242,7 @@ Above is the output of the GAkmeans code using images from the kmeans folder in 
 
 How the kmeans and PCA algorithms organize the images is dependent on which weights file is used.  You will get the same arrangement of images as above if you use the GAweights.h5, or GAweights.onnx, file from this project.  If you create your own weights file and use that one, it can organize the images in this plot somewhat differently. There is a bit of chaos involved.   
 
-<img src="../images/GAkmeansd3blocks.png" alt="kmeans" width="700" height="500">  
+<img src="../images/GAkmeansd3blocks.png" alt="kmeans" width="1000" height="750">  
 Image by author using Python code.  
 
 Above is an plot generated in much the same way, but I am using the scatter plot from the D3Blocks library, which is an open-sourced project on GitHub.  I also am trying out a new color scheme.  This plot is generated in the GAkmeansd3blocks.py file.  For more, visit [D3Blocks](https://github.com/d3blocks/d3blocks).  
