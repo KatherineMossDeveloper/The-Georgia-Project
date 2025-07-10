@@ -1,1 +1,5 @@
 *.h5 filter=lfs diff=lfs merge=lfs -text
+
+# Exclude HTML files from GitHub Linguist language stats
+*.html linguist-vendored
+
