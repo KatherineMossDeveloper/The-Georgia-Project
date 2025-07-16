@@ -6,13 +6,15 @@
 # print_elapsed_time        # report how long training the model took.
 # print_model_details       # print the number of trainable and non-trainable layers.
 # get_color                 # returns normalized RGB values for plots.
+# get_plot_color_objects    returns a colormap for matplotlib & d3blocks, plus a matplotlib legend
 #
 # To do.
 # (nothing)
 # #############################################################################################
 
-from datetime import datetime
 import numpy as np
+from datetime import datetime
+import matplotlib.patches as mpatches
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
@@ -59,3 +61,33 @@ def print_model_details(model):
 def get_color(r, g, b):
     normalized_rgb = (r / 255, g / 255, b / 255)  # Normalized RGB values
     return normalized_rgb
+
+
+def get_plot_color_objects(labels_kmeans, clusters):
+
+    color_palette = [
+        '#0099FF',  # cerulean
+        '#CC0099',  # magenta
+        '#00CC80',  # green
+        '#6643b5',  # purple
+        '#009999',  # teal
+        '#9900CC'  # fuchsia
+    ]
+
+    if clusters > len(color_palette):
+        raise ValueError(
+            f"Error in get_colors_and_legend:  only {len(color_palette)} unique colors are defined, but {clusters} clusters were requested.")
+
+    selected_colors = color_palette[:clusters]
+
+    # map cluster labels to colors
+    label_to_color = {i: selected_colors[i] for i in range(clusters)}
+    colors = [label_to_color[label] for label in labels_kmeans]
+
+    # create custom legend handles
+    legend_handles = [
+        mpatches.Patch(color=selected_colors[i], label=f'Cluster {i + 1}')
+        for i in range(clusters)
+    ]
+
+    return colors, legend_handles
