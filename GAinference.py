@@ -41,11 +41,11 @@ file_paths, tooltips = predict_driver(model=classifier_model,
 # 2.  graph the kmeans, pca values
 # Load the ResNet101 model without the top layers (include_top=False)
 feature_model = ResNet101(weights=None, include_top=False, input_shape=(224, 224, 3))
-feature_model.load_weights(weights_file, by_name=True, skip_mismatch=True)  # Load the weights from the weights file.
-colors, centroids_kmeans, labels_kmeans, features_reduced = kmeans_driver(model=feature_model, num_clusters=4,
-                                                                          file_paths=file_paths, image_folder=image_folder)
+feature_model.load_weights(weights_file, by_name=True, skip_mismatch=True)
+colors, features_reduced = kmeans_driver(model=feature_model,
+                                         num_clusters=4,
+                                         file_paths=file_paths,
+                                         image_folder=image_folder)
 
 # 3.  graph the k-means, pca values in D3blocks.
-pca3d_driver(features_reduced, labels_kmeans, tooltips, folder_prefix)
-
-
+kmeansd3blocks_driver(colors, features_reduced, tooltips, folder_prefix)
