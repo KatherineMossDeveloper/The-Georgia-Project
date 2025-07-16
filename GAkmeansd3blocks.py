@@ -5,11 +5,10 @@
 #
 # Code flow.
 #    pca3d_driver
-#    visualize_clusters
+#    add_note
 #
 # Navigation when the plot is in the browser.
 # Hover for tooltip	   Mouse only
-# Pan	               Mouse drag
 # Zoom	               Mouse wheel
 # Reset	               Reload the page
 #
@@ -22,7 +21,7 @@ import numpy as np
 from d3blocks import D3Blocks
 
 
-def visualize_clusters(file_path):
+def add_note(file_path):
     # read the file and patch it
     with open(file_path, 'r', encoding='utf-8') as file:
         html = file.read()
@@ -55,7 +54,7 @@ def visualize_clusters(file_path):
         file.write(html)
 
 
-def pca3d_driver(features_reduced, colors, tooltips, folder_prefix):
+def kmeansd3blocks_driver(colors, features_reduced, tooltips, folder_prefix):
 
     try:
         # Extract features for each image in the folder
@@ -79,7 +78,7 @@ def pca3d_driver(features_reduced, colors, tooltips, folder_prefix):
             title="PCA of some OpenCrystalData data with kmeans colors. "
         )
 
-        visualize_clusters(file_path)
+        add_note(file_path)
 
     except Exception as e:
         print(f"An error occurred in GApca3d: {e}")
