@@ -180,7 +180,7 @@ Here is a note on the formatting of floats.  For some of the runs, for example G
 ## The Georgia Project code and deliverables.  
 Sections a. through c. below are notes on the Python code files.  Sections d. through h. are the notes about the deliverables.  Let's start with a high-level look... 
   
-<img src="../images/codeoverview.png" alt="code overview" width="900" height="800">  
+<img src="../images/codeoverview.png" alt="code overview" width="600" height="525">  
 
 a.  The code to split up the data.  
 `GAsplitDataIntoTrainValidandTest.py`  
