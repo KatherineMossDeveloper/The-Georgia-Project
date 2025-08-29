@@ -29,13 +29,6 @@ color_palette_small = [
     '#FFAC00'   # marigold
 ]
 
-color_palette_small2 = [
-    '#0099FF',  # cerulean
-    '#CC0099',  # magenta
-    '#6643b5',  # purple
-    '#009999'   # teal
-]
-
 color_palette_large = [
     '#0099FF', '#CC0099', '#00CC80', '#6643b5', '#009999',
     '#9900CC', '#0000CC', '#000099', '#00CCCC', '#CC00CC',
