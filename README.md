@@ -7,10 +7,9 @@
 [![](https://img.shields.io/badge/Kaggle-Dataset-teal?logo=kaggle&logoColor=white)](https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization)
 ![MIT License](https://img.shields.io/badge/License-MIT-green)
 ![PyCharm](https://img.shields.io/badge/PyCharm-2023.2.4-lightorange)
-[![Weaviate](https://img.shields.io/badge/Powered%20by-Weaviate-orange?logo=github)](https://github.com/weaviate/weaviate)
 ![Binary Classification](https://img.shields.io/badge/task-Binary_Classification-yellowgreen)
 ![ResNet](https://img.shields.io/badge/model-ResNet-yellow)
-
+[![Weaviate](https://img.shields.io/badge/Powered%20by-Weaviate-orange?logo=github)](https://github.com/weaviate/weaviate)
 
 ## Content. 
 [Quick start.](#quick-start) • 
