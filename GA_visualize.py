@@ -29,8 +29,7 @@ from GA_kmeansd3blocks import kmeansd3blocks_driver
 from GA_similarityd3blocks import similarityd3blocks_driver
 
 # step 0.  set up the path to your image folder and weights file
-folder_prefix = r"C:\Users\mossr\PycharmProjects\pythonProject\TestProject\work\Transformer\The-Georgia-Project-1.5.6\The-Georgia-Project-1.5.6"  # edit this before running the code.
-# C:\Users\mossr\PycharmProjects\pythonProject\TestProject\work\Transformer\The-Georgia-Project-1.5.6\The-Georgia-Project-1.5.6
+folder_prefix = r"your-folder-path-here"  # edit this before running the code.
 
 # for the weights file...
 weights_folder = folder_prefix + r"\images_testing\GAweights.h5"
