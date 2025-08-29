@@ -258,8 +258,18 @@ Image by author using Python code.
 
 Above is a plot generated in much the same way, but I put a black dot where an image name would be.  I then zoomed in on the 'elbow'.  Note that the phenyglycine images line up neatly along the left ‘arm’ of the graph.  These images also seem more uniform.  So, when you consider the orderliness of their march up the arm, plus their uniform appearance, perhaps they are newly-formed crystals.  On the other hand, the phenylglycine images, along the right ‘arm’ of the graph gets messy looking as they evolves outward.  This might be showing up crystal growth that is getting more disorganized over time.  However, I may be reading too much into this close-up view.  Perhaps someone can add some comments on this?   
 
-Lastly, the GA_visualize.py code will call the GA_similarityd3blocks.py code to create a D3blocks plot of the kmeans/PCA data, as seen below.  Note that you can click and drag the clusters, so that they are arranged roughly in the pattern created by the other images.
+Lastly, the GA_visualize.py code will call the GA_similarityd3blocks.py code to create a D3blocks plot of the vectors, as seen below.  You can click and drag the clusters, so that they are arranged roughly in the pattern created by the other images.
 The data lines up in about the same way despite the fact that they are in different spaces (Cartesian vs. force-directed graph) using different algorithms (kmeans/PCA vs. sklearn's cosine_similarity or, in the case of the Weaviate database, the default HNSW approximate nearest neighbor algorithm.)
+
+<video src="https://raw.githubusercontent.com/KatherineMossDeveloper/The-Georgia-Project/main/images/similarityD3blocks.mp4"
+       controls
+       playsinline
+       muted
+       loop
+       style="max-width: 100%; height: auto; border-radius: 8px;">
+  Sorry, your browser doesn't support embedded videos.
+</video>
+
 <img src="../images/similarityd3blocks.png" alt="similarity" width="830" height="590">  
 
 The following notes are about the deliverables created at the end of the training run.  
