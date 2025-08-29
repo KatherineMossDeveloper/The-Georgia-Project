@@ -210,7 +210,7 @@ Finally, this code is called after the training, at which time it creates the pl
 c.  The inference code.  
 It is time to play.  After you trained the model, GA_visualize.py code will then instantiate the GA_dataprocessing.DataProcessor class. 
 
-The DataProcessor class will first instantiate the WeaviateDatabase class, in GA_weaviatedatabase.py, which contains connection and CRUD functions for the Weaviate vector database.  For anyone new to vector databases, it is a database that is built to contain vectors and sort them by their proximity to other vectors within the same collections <sup id="a7">[7](#f6)</sup>.  
+The DataProcessor class will first instantiate the WeaviateDatabase class, in GA_weaviatedatabase.py, which contains connection and CRUD functions for the Weaviate vector database.  For anyone new to vector databases, it is a database that is built to contain vectors and sort them by their proximity to other vectors within the same collection <sup id="a7">[7](#f6)</sup>.  
 
 The DataProcessor class will then perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)  
 ![InferenceExamples](../images/InferenceExample.png)  
@@ -440,11 +440,11 @@ My time zone is EST in the U.S.
 > [⏎](#a6)
  
 <sup id="f7">7</sup> 
-Weaviate is an open-source vector database, available on GitHub.  I downloaded the github zip file, installed it, then ran it in a Docker container on my Win 10 pc.  I found the setup fairly straightforward.  The code in python to control the database bears no resemblance to SQL code, but I still found that writing the WeaviateDatabase class was easy.  
+Weaviate is an open-source vector database, available on GitHub.  I downloaded the GitHub zip file, installed it, then ran it in a Docker container on my Win 10 pc.  I found the setup fairly straightforward.  The code in python to control the database bears no resemblance to SQL code, but I still found that writing the WeaviateDatabase class was not bad.  
 
-Generally, to use my code, you can start the database, then created a client object in weaviate_connect. Once connected, delete and create a schema in weaviate_delete_and_create_schema.  Later in the code, add 'records' to the database, once at a time, using weaviate_add_record.  Each record contains identifying information, plus a vector.  The database kindly handles the creation of an 'index' that calculates the proximity of one vector to the others in the same collection or 'table' automatically.  Then call the query function, weaviate_find_neighbors, to ask for the nearest vectors to a given vector.  
+Generally, to use my code, you can start the database, then create a client object in weaviate_connect. Once connected, delete and create a schema in weaviate_delete_and_create_schema.  Later in the code, add 'records' to the database, one at a time, using weaviate_add_record.  Each record contains identifying information, plus a vector.  The database kindly handles the creation of an 'index' that calculates the proximity of one vector to the others in the same collection or 'table' automatically.  Then call the query function, weaviate_find_neighbors, to ask for the nearest vectors to a given vector.  
 
-Weaviate seemed pretty accomodating, in that it did not expect me to set up a table with a data type that handles vectors, nor did it expect me to study its many similarity search algorithms and explicitly ask for my favorite.  It felt like the engineers at Weaviate know that developers are hoping to set up and use the database with minimum work, at least at the outset of a project.  
+Weaviate seemed pretty accommodating, in that it did not expect me to set up a table with a data type that handles vectors, nor did it expect me to study its many similarity search algorithms and explicitly ask for my favorite.  It felt like the engineers at Weaviate know that developers are hoping to set up and use the database with minimum work, at least at the outset of a project.  
   
 Here is the structure of GA_weaviatedatabase.py, which contains connections and CRUD functions.  
 
