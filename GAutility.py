@@ -1,12 +1,16 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAutility.py
 #
-# This file contains various functions and classes for the project.
+# This file contains various color objects and functions for the project.
+#
+# color_palette_small       # hand full of colors, in order to control color scheme with
+#                             small data collections.
+# color_palette_large       # many colors for large data collections.
 # load_and_preprocess_image # loads an image, converts to np array, then does resnet preprocess.
 # print_elapsed_time        # report how long training the model took.
 # print_model_details       # print the number of trainable and non-trainable layers.
 # get_color                 # returns normalized RGB values for plots.
-# get_plot_color_objects    returns a colormap for matplotlib & d3blocks, plus a matplotlib legend
+# get_plot_color_objects    # returns a colormap for matplotlib & d3blocks, plus a matplotlib legend
 #
 # To do.
 # (nothing)
@@ -17,6 +21,29 @@ from datetime import datetime
 import matplotlib.patches as mpatches
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input
+
+color_palette_small = [
+    '#008200',  # olive green
+    '#800080',  # dark purple
+    '#0000FF',  # blue blue
+    '#FFAC00'   # marigold
+]
+
+color_palette_small2 = [
+    '#0099FF',  # cerulean
+    '#CC0099',  # magenta
+    '#6643b5',  # purple
+    '#009999'   # teal
+]
+
+color_palette_large = [
+    '#0099FF', '#CC0099', '#00CC80', '#6643b5', '#009999',
+    '#9900CC', '#0000CC', '#000099', '#00CCCC', '#CC00CC',
+    '#FF6600', '#00FF66', '#FF0066', '#6600FF', '#FFCC00',
+    '#3366FF', '#66FF66', '#FF9999', '#9966FF', '#66CCCC',
+    '#FF3333', '#99CC00', '#00CCFF', '#CCFF00', '#003366',
+    '#660066', '#CCCC00', '#FFCC99'
+]
 
 
 # Function to load, resize, and preprocess an image
@@ -63,31 +90,25 @@ def get_color(r, g, b):
     return normalized_rgb
 
 
-def get_plot_color_objects(labels_kmeans, clusters):
+def get_plot_color_objects(entries_to_map, clusters):
 
-    color_palette = [
-        '#0099FF',  # cerulean
-        '#CC0099',  # magenta
-        '#00CC80',  # green
-        '#6643b5',  # purple
-        '#009999',  # teal
-        '#9900CC'  # fuchsia
-    ]
+    dot_colors = []
+    legend_entries = []
 
-    if clusters > len(color_palette):
-        raise ValueError(
-            f"Error in get_colors_and_legend:  only {len(color_palette)} unique colors are defined, but {clusters} clusters were requested.")
+    if clusters > len(color_palette_small):
+        print(f"Error in get_colors_and_legend:  only {len(color_palette_small)} "
+              f"unique colors are defined, but {clusters} clusters were requested.")
+    else:
+        selected_colors = color_palette_small[:clusters]
 
-    selected_colors = color_palette[:clusters]
+        # map cluster labels to colors
+        label_to_color = {i: selected_colors[i] for i in range(clusters)}
+        dot_colors = [label_to_color[label] for label in entries_to_map]
 
-    # map cluster labels to colors
-    label_to_color = {i: selected_colors[i] for i in range(clusters)}
-    colors = [label_to_color[label] for label in labels_kmeans]
+        # color the legend entries to correspond to the dots on the plot.
+        legend_entries = [
+            mpatches.Patch(color=selected_colors[i], label=f'Cluster {i + 1}')
+            for i in range(clusters)
+        ]
 
-    # create custom legend handles
-    legend_handles = [
-        mpatches.Patch(color=selected_colors[i], label=f'Cluster {i + 1}')
-        for i in range(clusters)
-    ]
-
-    return colors, legend_handles
+    return dot_colors, legend_entries

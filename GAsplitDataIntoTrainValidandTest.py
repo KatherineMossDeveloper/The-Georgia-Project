@@ -13,7 +13,7 @@
 # moved to a '0' folder for CEX and a '1' folder for PG.  For example, 70% of the OpenCrystalData CEX
 # folder images will be moved to a GAtrainBinary\0 folder.
 #
-# This folder structure matches the logic later in the GAinference.py code.  If the folders you
+# This folder structure matches the logic later in the GA_visualize.py code.  If the folders you
 # designate do not exist, they will be created.  When the files are divided up into train,
 # validation, and testing, they will be moved, not copied, so that you will not need to erase
 # the original extracted data set.
