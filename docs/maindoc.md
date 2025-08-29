@@ -261,11 +261,11 @@ Above is a plot generated in much the same way, but I put a black dot where an i
 Lastly, the GA_visualize.py code will call the GA_similarityd3blocks.py code to create a D3blocks plot of the vectors, as seen below.  You can click and drag the clusters, so that they are arranged roughly in the pattern created by the other images.
 The data lines up in about the same way despite the fact that they are in different spaces (Cartesian vs. force-directed graph) using different algorithms (kmeans/PCA vs. sklearn's cosine_similarity or, in the case of the Weaviate database, the default HNSW approximate nearest neighbor algorithm.)
                            
-<video src="https://raw.githubusercontent.com/KatherineMossDeveloper/The-Georgia-Project/tree/main/images/similarityD3blocks.mp4"
+<video src="https://raw.githubusercontent.com/KatherineMossDeveloper/The-Georgia-Project/main/images/similarityD3blocks.mp4"
        controls
        playsinline
        muted
-       loop
+       autoplay       
        style="max-width: 100%; height: auto; border-radius: 8px;">
   Sorry, your browser doesn't support embedded videos.
 </video>
