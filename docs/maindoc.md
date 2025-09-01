@@ -210,7 +210,7 @@ Finally, this code is called after the training, at which time it creates the pl
 c.  The inference code.  
 It is time to play.  After you trained the model, GA_visualize.py code will then instantiate the GA_dataprocessing.DataProcessor class. 
 
-The DataProcessor class will first instantiate the WeaviateDatabase class, in GA_weaviatedatabase.py, which contains connection and CRUD functions for the Weaviate vector database.  For anyone new to vector databases, it is a database that is built to contain vectors and sort them by their proximity to other vectors within the same collection <sup id="a7">[7](#f6)</sup>.  
+The DataProcessor class will first instantiate the WeaviateDatabase class, in GA_weaviatedatabase.py, which contains connection and CRUD functions for the Weaviate vector database.  For anyone new to vector databases, it is a database that is built to contain vectors and sort them by their proximity to other vectors within the same collection <sup id="a7">[7](#f7)</sup>.  
 
 The DataProcessor class will then perform inference on any png file that you give it. As an example of an inference run, here is a collection of images, most of which are from the GA dataset, with a few wildcards thrown in.  (I was surprised to see that Tara, The Cat, is in fact phenylglycine.)  
 ![InferenceExamples](../images/InferenceExample.png)  
@@ -462,4 +462,19 @@ Here is the structure of GA_weaviatedatabase.py, which contains connections and 
 
 For more on Weaviate, visit [Weaviate](https://weaviate.io/).  
 For more on Weaviate on GitHub, visit [Weaviate on GitHub](https://github.com/weaviate/weaviate).  
-[⏎](#a7)
+[⏎](#a7)  
+
+<sup id="f8">8</sup> 
+Allow me to explain force-directed graphs (FDG) by comparing them with a 2D scatter plot.   
+
+A scatter plot presents exact, fixed points in space. The space is cartesian, meaning that the X and Y coordinates line up with each point. The value of each point is understood by its position relative to these axes.  
+
+A force-directed graph presents points, or nodes, in space that are not fixed. The space is not cartesian. The axes do not define the points. The value of each point is understood by its position relative to other points that it is connected to, by lines, or edges. The clusters remain generally cohesive because of the combination of attractive and repulsive values that simulation physical forces in the FDG algorithms, like balls floating in a pool.  
+
+Since an FDG is less exacting that a scatter plot, you might ask what the value is. I would argue that since the points are unmoored, they are presented as an animation that the user can change in order to see more. The user can see not just the major relationships, but also the more tenuous ones, based on the, for example, the thickness of the edges. The animation also is beautiful and engaging.  Aethetics count.  
+
+For more on D3Blocks on GitHub, visit [D3Blocks](https://github.com/d3blocks/d3blocks).  
+For more on force-directed graphs, visit [Force directed graph drawing](https://en.wikipedia.org/wiki/Force-directed_graph_drawing).  
+[⏎](#a8)  
+
+
