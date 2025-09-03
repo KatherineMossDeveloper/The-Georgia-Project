@@ -471,7 +471,7 @@ A scatter plot presents exact, fixed points in space. The space is cartesian, me
 
 A force-directed graph presents points, or nodes, in space that are not fixed. The space is not cartesian. The axes do not define the points. The value of each point is understood by its position relative to other points that it is connected to, by lines, or edges. The clusters remain generally cohesive because of the combination of attractive and repulsive values that simulation physical forces in the FDG algorithms, like balls floating in a pool.  
 
-Since an FDG is less exacting that a scatter plot, you might ask what the value is. I would argue that since the points are unmoored, they are presented as an animation that the user can change in order to see more. The user can see not just the major relationships, but also the more tenuous ones, based on the, for example, the thickness of the edges. The animation also is beautiful and engaging.  Aethetics count.  
+Since an FDG is less exacting that a scatter plot, you might ask what the value is. I would argue that since the points are unmoored, they are presented as an animation that the user can change in order to see more. The user can see not just the major relationships, but also the more tenuous ones, based on, for example, the thickness of the edges. The animation also is beautiful and engaging.  Aesthetics matter.  
 
 For more on D3Blocks on GitHub, visit [D3Blocks](https://github.com/d3blocks/d3blocks).  
 For more on force-directed graphs, visit [Force directed graph drawing](https://en.wikipedia.org/wiki/Force-directed_graph_drawing).  
