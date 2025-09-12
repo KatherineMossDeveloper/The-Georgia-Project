@@ -4,10 +4,13 @@
 # class DataPreprocessor
 #     classifications_processing(self, model, image_folder, file_type=".png", mod=1)
 #             loop through image files, get confidence %, create tooltips.
+#     def setup_data(self)
+#     def classifications_processing(self)  
 #     def extract_features(model, img_path)
 #     def kmeans_processing(self, num_clusters=4)
 #             extract features for each image in the folder, perform PCA to
 #             reduce these vectors to 2D, then do kmeans on them.
+#     def add_note(file_path, note)
 #
 # This code will pull png files from a folder and do inference on each one, reporting the
 # classification and confidence to the output window.  The prediction logic below assumes
