@@ -451,16 +451,16 @@ Weaviate seemed pretty accommodating, in that it did not expect me to set up a t
   
 Here is the structure of GA_weaviatedatabase.py, which contains connections and CRUD functions.  
 
- class WeaviateDatabase
-     def weaviate_connect(self)  weaviate-client version 3.24.2.
-     def weaviate_available()
-     def weaviate_delete_and_create_schema()
-     def weaviate_truncate(self)
-     def weaviate_add_record(self, filename, image_vector)
-     def weaviate_find_neighbors(self, image_vector, limit)
-     def weaviate_row_count(self)
-     def weaviate_fetch_record()
-
+ class WeaviateDatabase  
+     def weaviate_connect(self)  weaviate-client version 3.24.2  
+     def weaviate_available()  
+     def weaviate_delete_and_create_schema()  
+     def weaviate_truncate(self)  
+     def weaviate_add_record(self, filename, image_vector)  
+     def weaviate_find_neighbors(self, image_vector, limit)  
+     def weaviate_row_count(self)  
+     def weaviate_fetch_record()  
+  
 
 For more on Weaviate, visit [Weaviate](https://weaviate.io/).  
 For more on Weaviate on GitHub, visit [Weaviate on GitHub](https://github.com/weaviate/weaviate).  
