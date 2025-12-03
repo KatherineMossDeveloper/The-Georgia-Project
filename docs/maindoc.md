@@ -443,7 +443,7 @@ My time zone is EST in the U.S.
 > [⏎](#a6)
  
 <sup id="f7">7</sup> 
-Weaviate is an open-source vector database, available on GitHub.  I downloaded the GitHub zip file, installed it, then ran it in a Docker container on my Win 10 pc.  I found the setup fairly straightforward.  The code in python to control the database bears no resemblance to SQL code, but I still found that writing the WeaviateDatabase class was not bad.  
+Weaviate is an open-source vector database, available on GitHub.  I downloaded the GitHub zip file, installed it, then ran it in a Docker container on my Win 10 pc.  I found the setup fairly straightforward.  The code in python to control the database bears no resemblance to SQL code, but I still found that writing the WeaviateDatabase class was fun.  
 
 Generally, to use my code, you can start the database, then create a client object in weaviate_connect. Once connected, delete and create a schema in weaviate_delete_and_create_schema.  Later in the code, add 'records' to the database, one at a time, using weaviate_add_record.  Each record contains identifying information, plus a vector.  The database kindly handles the creation of an 'index' that calculates the proximity of one vector to the others in the same collection or 'table' automatically.  Then call the query function, weaviate_find_neighbors, to ask for the nearest vectors to a given vector.  
 
@@ -469,11 +469,11 @@ For more on Weaviate on GitHub, visit [Weaviate on GitHub](https://github.com/we
 <sup id="f8">8</sup> 
 Allow me to explain force-directed graphs (FDG) by comparing them with a 2D scatter plot.   
 
-A scatter plot presents exact, fixed points in space. The space is cartesian, meaning that the X and Y coordinates line up with each point. The value of each point is understood by its position relative to these axes.  
+A scatter plot presents exact, fixed points in space. The space is cartesian, meaning that the X and Y coordinates line up with each point. The value of each point is understood by its position relative to these axes and all the other points.  
 
-A force-directed graph presents points, or nodes, in space that are not fixed. The space is not cartesian. The axes do not define the points. The value of each point is understood by its position relative to other points that it is connected to, by lines, or edges. The clusters remain generally cohesive because of the combination of attractive and repulsive values that simulation physical forces in the FDG algorithms, like balls floating in a pool.  
+A force-directed graph presents points, or nodes, in space that are not fixed. The space is not cartesian. There are no axes. The value of each point is understood by its position relative to other points that it is connected to, by lines, or edges. The clusters remain generally cohesive because of values representing two physical forces, attraction and repulsion.  
 
-Since an FDG is less exacting that a scatter plot, you might ask what the value is. I would argue that since the points are unmoored, they are presented as an animation that the user can change in order to see more. The user can see not just the major relationships, but also the more tenuous ones, based on, for example, the thickness of the edges. The animation also is beautiful and engaging.  Aesthetics matter.  
+Since an FDG is less exacting that a scatter plot, you might ask what the value is. I would argue that since the points are unmoored, they are presented as an animation that the user can change in order to see more. The user can see not just the major relationships, but also the more tenuous ones, based on, for example, the thickness of the lines connecting the points, otherwise known as edges. The animation is also beautiful and engaging.  Aesthetics matter.  
 
 For more on D3Blocks on GitHub, visit [D3Blocks](https://github.com/d3blocks/d3blocks).  
 For more on force-directed graphs, visit [Force directed graph drawing](https://en.wikipedia.org/wiki/Force-directed_graph_drawing).  
