@@ -123,15 +123,12 @@ Image by author.
 
 The folder structure is as follows during training, validation, and testing.  PG images are put in the “1” folders, and CEX are put in the “0” folders.  The `GAsplitDataIntoTrainValidandTest.py` code will set up these folders, and the `GAmain.py` code file will refer to these locations during training.  You will, of course, need to modify the code to match the folder structure on your computer.  See the “How to recreate the results” section for more.  
 
-…\GAtrainBinary  
-    \0  
-    \1  
-…\GAvalidBinary  
-    \0  
-    \1  
-…\GAtestBinary  
-    \0  
-    \1  
+…\GAtrainBinary\0  
+…\GAtrainBinary\1  
+…\GAvalidBinary\0  
+…\GAvalidBinary\1  
+…\GAtestBinary\0  
+…\GAtestBinary\1  
 [back to top](#content)  
 
 ## The results.  
