@@ -23,7 +23,7 @@
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The results.
 </a><br>
 <a href="#the-georgia-code-and-deliverables">
-  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The georgia code and deliverables.
+  <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> The Georgia code and deliverables.
 </a><br>
 <a href="#how-to-recreate-the-results">
   <img src="../images/HeroSmall.png" alt="icon" style="vertical-align: middle; width: 20px; height: 20px;"/> How to recreate the results.
