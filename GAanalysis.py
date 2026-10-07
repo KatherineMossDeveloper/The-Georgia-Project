@@ -59,14 +59,14 @@ class AnalysisConfig:
 # This function will create two files for the weights.
 # one in the H5 format and the other in the onnx format.
 def save_model_to_disk(model, prefix_name, deliverables_folder):
-    gc.collect()  # Force garbage collection
+
     timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")  # Create a timestamp.
     filename = f"{prefix_name}weights_{timestamp}"            # Create a unique file name.
 
     # Define full file path
     file_path = os.path.join(deliverables_folder, filename)
 
-    # Save in HDF5 format; ensure the folder with its full path exists
+    # Save in HDF5 format; make sure the folder with its full path exists
     os.makedirs(deliverables_folder, exist_ok=True)
     model.save(file_path + ".h5", save_format='h5')
 
@@ -137,7 +137,7 @@ def test_eval(model, test_gen, deliverables_folder, prefix_name, study_name):
         predictions = model.predict(x_batch)
         y_pred.extend(np.round(predictions))
 
-    report = classification_report(y_true, y_pred, target_names=['PG', 'CEX'])
+    report = classification_report(y_true, y_pred, target_names=['PG', 'CEX'], digits=6)
 
     # send it to the output window
     print("\nFinal Test Set Classification Report:\n", report)

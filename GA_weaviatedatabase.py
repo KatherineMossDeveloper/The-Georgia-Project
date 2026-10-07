@@ -3,10 +3,9 @@
 #
 # class WeaviateDatabase
 #     def weaviate_connect(self)  weaviate-client version 3.24.2.
-#     def weaviate_available()
-#     def weaviate_delete_and_create_schema()
+#     def weaviate_delete_and_create_schema(self)
 #     def weaviate_truncate(self)
-#     def weaviate_add_record(self, filename, image_vector)
+#     def weaviate_add_record(self, filename, image_vector, class_label, confidence_factor)
 #     def weaviate_find_neighbors(self, image_vector, limit)
 #     def weaviate_row_count(self)
 #     def weaviate_fetch_record()
@@ -34,40 +33,26 @@ class WeaviateDatabase:
 
     def weaviate_connect(self):
 
-        try:
-            self.client_connection = weaviate.Client("http://localhost:8080")
+        self.weaviate_connected = False
 
+        try:
+            # Connect to the local Weaviate server.
+            self.client_connection = weaviate.Client(
+                "http://localhost:8080"
+            )
+
+            # Check whether the server is ready.
             if self.client_connection.is_ready():
-                print("Weaviate_connect:  weaviate is ready.")
                 self.weaviate_connected = True
+                print("Weaviate is ready.")
+                print(f"Weaviate client version: {weaviate.__version__}")
             else:
-                print("Weaviate_connect:  weaviate is not ready.")
-                self.weaviate_connected = False
-            return True
-
-        except Exception as e:
-            print(f"Error thrown in GA_dataprocessing.weaviate_connect:  {e}")
-            return False
-
-    def weaviate_available(self):
-
-        try:
-
-            # see if the server is ready
-            if not self.weaviate_connect():
                 print("Weaviate is not ready.")
-                return False
-            else:
-                print(f"weaviate-client_connection version: {weaviate.__version__}")
-
-            # print schema, if available and needed.
-            # schema = self.client_connection.schema.get()
-            # print(json.dumps(schema, indent=2))
-            return True
 
         except Exception as e:
-            print(f"GA_dataprocessing.weaviate_available:  could not connect to Weaviate: {e}")
-            return False
+            print(f"Could not connect to Weaviate: {e}")
+
+        return self.weaviate_connected
 
     def weaviate_delete_and_create_schema(self):
 
@@ -123,7 +108,7 @@ class WeaviateDatabase:
             print(f"Error thrown in GA_dataprocessing.weaviate_truncate:  {e}")
             return False
 
-    def weaviate_add_record(self, filename, class_label, confidence_factor, image_vector):
+    def weaviate_add_record(self, filename, image_vector, class_label, confidence_factor):
 
         try:
             if not self.weaviate_connect():

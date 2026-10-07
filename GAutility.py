@@ -3,22 +3,27 @@
 #
 # This file contains various color objects and functions for the project.
 #
-# color_palette_small       # hand full of colors, in order to control color scheme with
-#                             small data collections.
-# color_palette_large       # many colors for large data collections.
-# load_and_preprocess_image # loads an image, converts to np array, then does resnet preprocess.
-# print_elapsed_time        # report how long training the model took.
-# print_model_details       # print the number of trainable and non-trainable layers.
-# get_color                 # returns normalized RGB values for plots.
-# get_plot_color_objects    # returns a colormap for matplotlib & d3blocks, plus a matplotlib legend
+# color_palette_small        hand full of colors, in order to control color scheme with
+#                            small data collections.
+# color_palette_large        many colors for large data collections.
+# get_model                  creates a ResNet101 model for both training and CAM overlays.
+# load_and_preprocess_image  loads an image, converts to np array, then does resnet preprocess.
+# print_elapsed_time         report how long training the model took.
+# print_model_details        print the number of trainable and non-trainable layers.
+# get_color                  returns normalized RGB values for plots.
+# get_plot_color_objects     returns a colormap for matplotlib & d3blocks, plus a matplotlib legend
+# get_cam_color_scheme
 #
 # To do.
 # (nothing)
 # #############################################################################################
 
 import numpy as np
+import tensorflow as tf
 from datetime import datetime
+import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from matplotlib.colors import ListedColormap
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.applications.resnet50 import preprocess_input
 
@@ -39,8 +44,32 @@ color_palette_large = [
 ]
 
 
+# Function to create a ResNet101 model.
+def get_model(weights=None):
+
+    base_model = tf.keras.applications.ResNet101(
+        weights=weights,
+        include_top=False,
+        input_shape=(224, 224, 3)
+    )
+
+    x = base_model.output
+    x = tf.keras.layers.GlobalAveragePooling2D()(x)
+    x = tf.keras.layers.Dense(512, activation="relu", name="dense")(x)
+    x = tf.keras.layers.BatchNormalization(name="batch_normalization")(x)
+    x = tf.keras.layers.Dropout(0.4, name="dropout")(x)
+    x = tf.keras.layers.Dense(256, activation="relu", name="dense_1")(x)
+    x = tf.keras.layers.Dropout(0.3, name="dropout_1")(x)
+    out = tf.keras.layers.Dense(1, activation="sigmoid", name="dense_2")(x)
+
+    model = tf.keras.Model(inputs=base_model.input, outputs=out)
+
+    return base_model, model
+
+
 # Function to load, resize, and preprocess an image
 def load_and_preprocess_image(img_path, target_size=(224, 224)):
+
     # Load and resize the image to the target size (224, 224)
     img = image.load_img(img_path, target_size=target_size)
 
@@ -50,7 +79,7 @@ def load_and_preprocess_image(img_path, target_size=(224, 224)):
     # Add batch dimension (the model expects a batch of images, not just one)
     image_array = np.expand_dims(image_array, axis=0)  # Shape: [1, 224, 224, 3]
 
-    # Apply ResNet-specific preprocessing.
+    # Apply ResNet-specific preprocessing.  Scaling & mean sub. can make training faster and more stable.
     # scaling:  rescaled from the [0, 255] range (default for 8-bit RGB images) to the range [-1, 1].
     # mean subtraction:  subtract ImageNet average color values.  red, 123.68; green, 116.779; blue, 103.939.
     # Did the same for testing.  See GAmodel.py get_test_data() for details.
@@ -105,3 +134,15 @@ def get_plot_color_objects(entries_to_map, clusters):
         ]
 
     return dot_colors, legend_entries
+
+
+def get_cam_color_scheme(color_scheme):
+
+    # gnuplot color scheme goes from purple to red to yellow; it comes as values between 0 and 1.
+    # so we convert that to values between 0 and 255 because we will apply them to RGB values per pixel.
+    base_image = plt.get_cmap(color_scheme)(np.linspace(0, 1, 256))
+    # convert these values into a custom color map.
+    color_map = ListedColormap(base_image)
+
+    return color_map
+

@@ -1,8 +1,10 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GA_similarityd3blocks.py
 #
-#     def similarityd3blocks_driver(data_class, limit=100)
 #     def visualize(nodes_dict, edges_dict)
+#     def similarity3dblocks_withthedatabase
+#     def similarity3dblocks_withoutdatabase
+#     def similarityd3blocks_driver
 #
 # If there is a Weaviate database...
 # This code will pull records from the Weaviate database (weaviate-client version 3.24.2.),

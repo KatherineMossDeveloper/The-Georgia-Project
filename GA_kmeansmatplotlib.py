@@ -21,18 +21,20 @@ def kmeansmatplotlib_driver(data_class):
 
         # draw the PCA components
         plt.figure(figsize=(10, 8))
-        plt.scatter(data_class.features_reduced[:, 0], data_class.features_reduced[:, 1], c=data_class.colors, s=50)
+        plt.scatter(data_class.analysis_vector_array[:, 0], data_class.analysis_vector_array[:, 1],
+                    c=data_class.colors, s=50)
 
         # Label the plot with filenames (optional)
         for i, file_path in enumerate(data_class.file_paths):
             image_string = f'{os.path.basename(file_path)}'
             # image_string = "."
-            plt.text(data_class.features_reduced[i, 0], data_class.features_reduced[i, 1], image_string,
-                     fontsize=8, color='black')
+            plt.text(data_class.analysis_vector_array[i, 0], data_class.analysis_vector_array[i, 1],
+                     image_string, fontsize=8, color='black')
 
         # Add a legend to explain the colors; draw the centroid X's.
         plt.legend(handles=data_class.legend_entries, loc='upper right')
-        plt.scatter(data_class.centroids_kmeans[:, 0], data_class.centroids_kmeans[:, 1], c='lime', s=300, marker='X', label='Centroids')
+        plt.scatter(data_class.centroids_kmeans[:, 0], data_class.centroids_kmeans[:, 1],
+                    c='lime', s=300, marker='X', label='Centroids')
 
         # Add the axes labels.
         plt.xlabel(f'PC1 ({data_class.pca.explained_variance_ratio_[0] * 100:.1f}% variance)')

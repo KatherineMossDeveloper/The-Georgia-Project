@@ -1,11 +1,13 @@
 # The Georgia project on https://github.com/KatherineMossDeveloper/The-Georgia-Project/tree/main
 # GAsplitDataIntoTrainValidandTest.py
 #
-# This code splits this dataset,
+# This code splits this dataset...
 #     https://www.kaggle.com/datasets/opencrystaldata/cephalexin-reactive-crystallization?resource=download
 #
-# into train (70%), validation (25%) and test (5%), per the paper,
+# ...into train (70%), validation (25%) and test (5%), per the paper,
 #     https://www.sciencedirect.com/org/science/article/abs/pii/S1083616021010896
+#
+#  def split_and_move_files
 #
 # This code splits the OpenCrystalData dataset that you downloaded and extracted into 70% training data,
 # 25% validation data, and 5% test data, because that is the way that it is divided up in the paper.
@@ -25,7 +27,7 @@
 import os
 import shutil
 
-folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.  
+folder_prefix = r"X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData"  # edit this before running the code.
 
 # Define source folders, pointing to the location of the download of the dataset mentioned above.
 source_pg = folder_prefix + r"\archive\cropped\cropped\pg"

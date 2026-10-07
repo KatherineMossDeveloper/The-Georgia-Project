@@ -8,10 +8,11 @@
 # Note that the model in GAmodel is resnet101, but the preprocess_input is from resnet50 because   
 # the pre-processing is identical, and keras did not create one for the resnet101.
 #
-# check_generator           # write the data object details to screen, in order to check them.
-# get_training_data         # prepare the training data and report classes.
-# get_validation_data       # prepare the validation data.
-# get_test_data             # prepare the test data.
+# class DataObjectGeneration
+#   get_training_data         # prepare the training data and report classes.
+#   get_validation_data       # prepare the validation data.
+#   get_test_data             # prepare the test data.
+#   check_generator           # write the data object details to screen, in order to check them.
 #
 # To do.
 # (nothing)
@@ -55,14 +56,14 @@ class DataObjectGeneration:
         # Load training data
         # create the image transforms for the images.
         train_datagen = ImageDataGenerator(
-            preprocessing_function=preprocess_input,
-            rotation_range=30,
-            width_shift_range=0.2,
-            height_shift_range=0.2,
-            zoom_range=0.3,
-            horizontal_flip=True,
-            vertical_flip=True,
-            fill_mode='nearest'
+            preprocessing_function=preprocess_input,  # ResNet preprocessing: RGB → BGR, subtract ImageNet means
+            rotation_range=30,                        # rotate up to 30 degrees
+            width_shift_range=0.2,                    # shift horizontally up to 20%
+            height_shift_range=0.2,                   # shift images vertically up to 20%
+            zoom_range=0.3,                           # zoom images in or out up to 30%
+            horizontal_flip=True,                     # flip images left-to-right
+            vertical_flip=True,                       # flip images top-to-bottom
+            fill_mode='nearest'                       # fill pixels w/nearest pixel color values
         )
         train_generator = train_datagen.flow_from_directory(
             train_dir,
@@ -70,7 +71,8 @@ class DataObjectGeneration:
             batch_size=self.batch_size,
             class_mode='binary',
             seed=self.random_seed,
-            shuffle=True
+            shuffle=True,
+            interpolation="bicubic"
         )
         self.check_generator(train_generator, "Train Generator")
 
@@ -92,7 +94,8 @@ class DataObjectGeneration:
             batch_size=self.batch_size,
             class_mode='binary',
             seed=self.random_seed,
-            shuffle=False
+            shuffle=False,
+            interpolation="bicubic"
         )
         self.check_generator(val_generator, "Validation Generator")
 
@@ -112,7 +115,8 @@ class DataObjectGeneration:
             batch_size=1,
             class_mode="binary",
             seed=self.random_seed,
-            shuffle=False
+            shuffle=False,
+            interpolation="bicubic"
         )
         self.check_generator(test_generator, "Test Generator")
 

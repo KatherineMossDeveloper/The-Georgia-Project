@@ -46,11 +46,11 @@ from GAmodel import ModelTrainer
 
 folder_prefix = r"your_drive_letter_and_folder"  # edit this before running the code.
 
-prefix = "GA"                # prefixed letters for the deliverables file to identify them.
-name = "GA_study"            # the identifying title of graphs, etc.
-deliverables_folder = folder_prefix + r"\GAdeliverables"  # result files after training will be here. 
-use_cpu = True               # Set this to False if running on the GPU
-really_training = True       # Set this to False if debugging.
+name = "GA_study"      # the identifying title of graphs, etc.
+prefix = "GA"          # prefixed letters for the deliverables file to identify them.
+deliverables_folder = folder_prefix + r"\GAdeliverables"  # deliverables will be here.
+use_cpu = True         # Set this to False if running on the GPU
+really_training = True # Set this to False if debugging.
 
 if really_training:
     # we are training.
@@ -66,8 +66,8 @@ else:
     test_directory = folder_prefix + r"\GAtestBinaryDEBUG"
 
 # set up parameters for the Model class that we may want to change.
-batch_size = 64
-image_size = (224, 224)
+batch_size = 64                  # number of images learnt per epoch.
+image_size = (224, 224)          # image size expected by ResNet101
 random_seed = 42                 # using a random seed in the hopes of creating more reproducible metrics.
 learning_rate = 1E-1             # learning rate
 loaded_weights = "imagenet"      # Keras built-in weights file.

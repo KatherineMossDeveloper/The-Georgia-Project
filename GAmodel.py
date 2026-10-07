@@ -3,6 +3,13 @@
 #
 # This file, GAmodel.py, gathers datasets, trains, and calls for analysis.
 #
+# class ModelTrainer
+#    def preliminaries(self)
+#    def train(self)
+#    def def create_model(self):(self)
+#    def report(self, model, test_generator, metrics_logger_callback)
+#    def run(self)
+#
 # GAmain instantiates the class ModelTrainer, which calls preliminaries function.
 # GAmain then calls the class's run function.
 # The run function determine whether a CPU or GPU will be used.
@@ -17,14 +24,11 @@
 import numpy as np
 import tensorflow as tf
 
-from tensorflow.keras.applications import ResNet101
-from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Dropout, BatchNormalization
-from tensorflow.keras.models import Model
-
-from GAcallbacks import standard_early_stopping, ClassWiseMetricsCallback, MetricsLoggerCallback, CustomEarlyStoppingF1Callback
-from GAanalysis import AnalysisConfig
-from GAutility import print_model_details
+from GAutility import print_model_details, get_model
 from GAdata import DataObjectGeneration
+from GAanalysis import AnalysisConfig
+from GAcallbacks import (standard_early_stopping, ClassWiseMetricsCallback,
+                         MetricsLoggerCallback, CustomEarlyStoppingF1Callback)
 
 
 class ModelTrainer:
@@ -63,7 +67,10 @@ class ModelTrainer:
         test_generator = data_generator.get_test_data(self.test_dir)                    # prepare the test data.
 
         # Create the resnet model, load the weights, and designate trainable layers.
-        base_model, x = self.create_model()
+        base_model, model = self.create_model()
+        print("before model summary for Training")
+        model.summary()
+        print("after model summary for Training")
 
         # set up the callbacks.
         early_stopping_callback = standard_early_stopping
@@ -71,12 +78,8 @@ class ModelTrainer:
         custom_early_stopping_callback = CustomEarlyStoppingF1Callback(val_generator=val_generator, batch_size=self.batch, patience=0, f1_threshold=0.997)
         metrics_logger_callback = MetricsLoggerCallback()
 
-        # create the model.
-        model = Model(inputs=base_model.input, outputs=x)
-        learning = self.learning_rate
-        sgd_optimizer = tf.keras.optimizers.SGD(learning_rate=learning, momentum=0.9, nesterov=False)
-        # note that validation accuracy ("val_accuracy") is automatically tracked by Keras.
-        model.compile(optimizer=sgd_optimizer, loss='binary_crossentropy', metrics=['accuracy'])
+        # compile.
+        model.compile(loss='binary_crossentropy', metrics=['accuracy'])
         print_model_details(model)
 
         # train the model
@@ -86,48 +89,28 @@ class ModelTrainer:
             validation_data=val_generator,
             validation_steps=val_generator.samples // self.batch,
             epochs=self.epochs,
-            callbacks=[early_stopping_callback, class_wise_metrics_callback, custom_early_stopping_callback, metrics_logger_callback]
-        )
+            callbacks=[early_stopping_callback, class_wise_metrics_callback,
+                       custom_early_stopping_callback, metrics_logger_callback])
 
         self.report(model, test_generator, metrics_logger_callback)
 
         return metrics_logger_callback
 
     def create_model(self):
-        # Load pre-built weights, if any are requested.
-        if self.weights == "":
-            base_model = ResNet101(weights=None, include_top=False, input_shape=(224, 224, 3))
-            print(f"---> using no weights {self.weights}")
 
-        elif self.builtin_weights == "y":
-            base_model = ResNet101(weights=self.weights, include_top=False, input_shape=(224, 224, 3))
-            print(f"---> using built-in weights {self.weights}")
+        base_model, model = get_model(self.weights)
 
-        else:
-            base_model = ResNet101(weights=None, include_top=False, input_shape=(224, 224, 3))
-            base_model.load_weights(self.weights, by_name=True, skip_mismatch=True)
-            print(f"---> using custom local weights {self.weights}")
-
-        x = base_model.output
-        x = GlobalAveragePooling2D()(x)       # Converts feature maps to a vector
-        x = Dense(512, activation='relu')(x)  # Reduced size
-        x = BatchNormalization()(x)           # Normalizes activations
-        x = Dropout(0.4)(x)                   # Prevents overfitting
-        x = Dense(256, activation='relu')(x)  # Smaller Dense layer
-        x = Dropout(0.3)(x)                   # Another dropout (optional)
-        x = Dense(1, activation='sigmoid')(x)  # Output for binary classification
-        print(f"The model is created. ")
-
-        # Freeze the first layers; unfreeze the last % of layers
+        # Freeze the first layers; unfreeze the last 10%
         total_layers = len(base_model.layers)
-        num_trainable = total_layers // 10  # 10% of layers to be trainable
+        num_trainable = total_layers // 10
+
         for layer in base_model.layers[:total_layers - num_trainable]:
             layer.trainable = False
         for layer in base_model.layers[-num_trainable:]:
             layer.trainable = True
-        print(f'The number of model layers that are now trainable {num_trainable}')
+        print(f'The number of model layers that are now trainable ' f'{num_trainable}')
 
-        return base_model, x
+        return base_model, model
 
     def report(self, model, test_generator, metrics_logger_callback):
         print(f"Ending training.  Deliverables will be saved in {self.deliverables_dir}.")

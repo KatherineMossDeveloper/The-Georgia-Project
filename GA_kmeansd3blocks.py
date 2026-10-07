@@ -34,8 +34,8 @@ def kmeansd3blocks_driver(data_class):
 
         # Create scatter plot and save it to the filepath.
         d3.scatter(
-            data_class.features_reduced[:, 0],
-            data_class.features_reduced[:, 1],
+            data_class.analysis_vector_array[:, 0],
+            data_class.analysis_vector_array[:, 1],
             size=15,
             color=data_class.colors,
             stroke='#000000',
