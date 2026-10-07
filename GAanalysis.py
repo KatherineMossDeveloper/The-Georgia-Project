@@ -33,7 +33,7 @@ background_color = get_color(210, 220, 230)  # light blue-gray
 plot_color = get_color(250, 250, 250)        # off-white
 
 
-# This class will set hold the shared variables for all the deliverables
+# This class will set up the shared variables for all the deliverables
 # which are generated after the training is completed in GAmodel.py.  The
 # generate_deliverables function will call 4 other functions that save the
 # model to disk, create plots and text files to capture the metrics when testing
