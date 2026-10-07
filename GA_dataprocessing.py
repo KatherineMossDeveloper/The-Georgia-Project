@@ -2,15 +2,14 @@
 # GA_dataprocessing.py
 #
 # class DataPreprocessor
-#     classifications_processing(self, model, image_folder, file_type=".png", mod=1)
+#     def setup_data(self):
+#     def classifications_processing(self, model, image_folder, file_type=".png", mod=1)
 #             loop through image files, get confidence %, create tooltips.
-#     def setup_data(self)
-#     def classifications_processing(self)  
 #     def extract_features(model, img_path)
 #     def kmeans_processing(self, num_clusters=4)
 #             extract features for each image in the folder, perform PCA to
 #             reduce these vectors to 2D, then do kmeans on them.
-#     def add_note(file_path, note)
+#    def add_note(self, file_path, note)
 #
 # This code will pull png files from a folder and do inference on each one, reporting the
 # classification and confidence to the output window.  The prediction logic below assumes
@@ -48,14 +47,15 @@ class DataProcessor:
         self.mod = mod
         self.file_paths = []
         self.file_names = []
+        self.confidence_dict = {}
         self.tooltips = []
         self.features = []
         self.colors = []
         self.legend_entries = []
-        self.features_reduced = []
+        self.analysis_vector_array = []
         self.normalized_files = []
         self.centroids_kmeans = []
-        self.vectors = {}  # dictionary for vectors and their ids
+        self.database_vector_dict = {}  # dictionary for vectors and their ids
         self.weaviate_instance = None
         self.weaviate_connected = False
         self.pca = None
@@ -72,7 +72,6 @@ class DataProcessor:
                                                       class_vectorizer="none")
             self.weaviate_connected = self.weaviate_instance.weaviate_connect()
             print(f'connected? {self.weaviate_instance.weaviate_connected}')
-            print(f'version?   {self.weaviate_instance.weaviate_available()}')
 
             # The classifier model.
             # -predict labels
@@ -116,8 +115,11 @@ class DataProcessor:
                     # Perform inference on the image
                     prediction = self.classifier_model.predict(img_array, verbose=0 )
 
-                    # Create confidence percentage
+                    # Get the confidence and save it to an array for later.
                     confidence = prediction[0][0]
+                    self.confidence_dict[filename] = confidence
+
+                    # Create confidence percentage
                     confidence_percent = int(round(confidence * 100))
                     confidence_percent = confidence_percent if confidence_percent >= 50 else (100 - confidence_percent)
 
@@ -143,27 +145,29 @@ class DataProcessor:
     @staticmethod
     def extract_features(model, img_path):
 
-        features_flat = []
-        vector = []
+        analysis_vector = []
+        database_vector = []
 
         try:
 
             # Load and preprocess the image
+            # Apply ResNet-specific preprocessing.  Scaling & mean sub. can make training faster and more stable.
+            # scaling:  rescaled from the [0, 255] range (default for 8-bit RGB images) to the range [-1, 1].
+            # mean subtraction:  subtract ImageNet average color values.  red, 123.68; green, 116.779; blue, 103.939.
+            # For more, see https://www.tensorflow.org/api_docs/python/tf/keras/applications/resnet/preprocess_input
             img_array = load_and_preprocess_image(img_path)
-
-            # Create a vector of features (patterns, textures) using the pre-trained ResNet50 model
+            # Create a vector of features (patterns, textures)
+            # using the pre-trained ResNet50 model
             features = model.predict(img_array)
-
-            # Convert the features to a numpy list of float 32 values for storage in the db.
-            vector = features.flatten().astype(np.float32).tolist()
-
-            # Flatten the features (from 3D to 1D) which are no longer in pixel format.
-            features_flat = features.flatten()
+            # Convert the features to a python list of float 32 values for storage in Weaviate.
+            database_vector = features.flatten().astype(np.float32).tolist()
+            # NumPy array for PCA & K-means
+            analysis_vector = features.flatten()
 
         except Exception as e:
             print(f"An error occurred in GA_dataprocessing.extract_features: {e}")
 
-        return features_flat, vector
+        return analysis_vector, database_vector
 
     # Function to perform K-Means clustering
     def kmeans_processing(self, num_clusters=4):
@@ -181,36 +185,39 @@ class DataProcessor:
             for filename in self.file_names:
                 if filename.endswith('.png'):
                     img_path = os.path.join(self.image_folder, filename)
-                    features_flat, vector = self.extract_features(self.feature_model, img_path)
-                    self.features_reduced.append(features_flat)
+                    analysis_vector, database_vector = self.extract_features(self.feature_model, img_path)
                     label = os.path.basename(filename)[:3]
 
-                    # store the vectors in the vectors list in this class,
-                    # for later use.
-                    self.vectors[filename] = features_flat
+                    # store the analysis vector for PCA and Kmeans later.
+                    self.analysis_vector_array.append(analysis_vector)
+
+                    # store the database vector & put it in Weaviate later.
+                    self.database_vector_dict[filename] = analysis_vector
 
                     # if the database is available, store the vectors there also,
                     # for demonstration purposes.
                     if self.weaviate_connected:
-                        self.weaviate_instance.weaviate_add_record(filename=filename, image_vector=vector,
-                                                                   class_label=label, confidence_factor=1)
+                        self.weaviate_instance.weaviate_add_record(filename=filename,
+                                                                   image_vector=database_vector,
+                                                                   class_label=label,
+                                                                   confidence_factor=self.confidence_dict[filename])
 
             # check vectors stored here.
-            print(type(list(self.vectors.values())[0]))
-            print(len(self.vectors))
-            print(len(list(self.vectors.values())[0]))
+            # print(type(list(self.database_vector_dict.values())[0]))
+            # print(len(self.database_vector_dict))
+            # print(len(list(self.database_vector_dict.values())[0]))
 
             # Convert features list to numpy array
-            features_array = np.array(self.features_reduced)
+            features_array = np.array(self.analysis_vector_array)
 
             # Reduce dimensionality
             self.pca: PCA = PCA(n_components=2)  # 2 components for a 2D plot.
-            self.features_reduced = self.pca.fit_transform(features_array)
+            self.analysis_vector_array = self.pca.fit_transform(features_array)
 
             # Apply K-Means clustering
             sklearn_kmeans_clustering: KMeans = KMeans(n_clusters=num_clusters, random_state=42,
                                                        n_init=10, max_iter=10000)
-            sklearn_kmeans_clustering.fit(self.features_reduced)
+            sklearn_kmeans_clustering.fit(self.analysis_vector_array)
 
             # Get cluster labels ([2 0 3 0...)
             labels_kmeans = sklearn_kmeans_clustering.labels_
