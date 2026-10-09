@@ -35,7 +35,7 @@ from GA_similarityd3blocks import similarityd3blocks_driver
 from GA_camoverlays import camoverlays_driver
 
 # step 0.  set up the path to your image folder and weights file
-folder_prefix = Path("Y:/The-Georgia-Project-1.7.0")  # edit this before running the code.
+folder_prefix = Path("your_drive_letter_and_folder")  # edit this before running the code.
 
 # for the weights file...
 weights_file = folder_prefix / "images_testing/GAweights.h5"
