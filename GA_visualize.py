@@ -21,7 +21,7 @@
 # To do.
 # Edit the folder_prefix variable to point to the Georgia Project code on your pc.
 # Do the same for the classification activation folders, if needed.
-# Save the weights file downloaded from the Georgia Project on GitHub to the \inference
+# Save the weights file downloaded from the Georgia Project on GitHub to the \images_testing
 # folder, or you can use the weights file that you created after training the model.
 # If you created you own weights file, its name will include a date and time stamp,
 # so change the weights_file variable accordingly.
