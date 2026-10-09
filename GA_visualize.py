@@ -21,7 +21,7 @@
 # To do.
 # Edit the folder_prefix variable to point to the Georgia Project code on your pc.
 # Do the same for the classification activation folders, if needed.
-# Save the weights file downloaded from the Georgia Project on GitHub to the \inference
+# Save the weights file downloaded from the Georgia Project on GitHub to the \image_testing 
 # folder, or you can use the weights file that you created after training the model.
 # If you created you own weights file, its name will include a date and time stamp,
 # so change the weights_file variable accordingly.
@@ -38,7 +38,7 @@ from GA_camoverlays import camoverlays_driver
 folder_prefix = Path("your_drive_letter_and_folder")  # edit this before running the code.
 
 # for the weights file...
-weights_file = folder_prefix / "images_testing/GAweights.h5"
+weights_file = folder_prefix / "images_testing/GAweights.h5" # edit this if needed. 
 
 # for a curated subset of images...
 image_folder = folder_prefix / "images_testing"
