@@ -290,20 +290,24 @@ def camoverlays_driver(base_image_dir,
 
     try:
         # 0) Set up the folder paths.
+        print("0")
         base_dir = base_image_dir
-        ORIG_DIR = original_images_dir          # BASE_DIR / "images_testing"
-        ORIG_224_DIR = original_images_224_dir  # BASE_DIR / "images_orig224"
-        JUST_CAM_DIR = cam_images_dir           # BASE_DIR / "images_just_CAM"
-        DST_DIR = cam_overlay_images_dir        # BASE_DIR / "images_overlay_CAM"
-        IMG_SIZE = image_size
+        orig_dir = original_images_dir          # base_dir / "images_testing"
+        orig_224_dir = original_images_224_dir  # base_dir / "images_orig224"
+        just_cam_dir = cam_images_dir           # base_dir / "images_just_CAM"
+        dst_dir = cam_overlay_images_dir        # base_dir / "images_overlay_CAM"
+        img_size = image_size
+        print("1")
 
         # 1) Generate images from the originals to dimensions used by the model during training.
-        generate_images_orig224(source_folder=ORIG_DIR, output_folder=ORIG_224_DIR)
+        generate_images_orig224(source_folder=orig_dir, output_folder=orig_224_dir)
+        print("2")
 
         # 2) Create a ResNet101 model and load the weights.
         _, model = get_model(weights=None)  # get the model, skip the backbone 1st parameter.
-        weights_folder = base_dir / "images_testing/GAweights_2026-09-23_18-57-34.h5"
+        weights_folder = base_dir / "images_testing/GAweights.h5"
         model.load_weights(weights_folder, by_name=True, skip_mismatch=False)
+        print("3")
 
         # 3) Select a layer from the model.
         # LAYERS = ["conv3_block4_out"]      # final CAM is 28x28; grid of dots
@@ -312,20 +316,20 @@ def camoverlays_driver(base_image_dir,
         # LAYERS = ["conv3_block4_out","conv4_block23_out","conv5_block2_out"] # never mind.
 
         # 4) Loop through the original images (with new dimensions) and create CAM overlays.
-        for img_path in sorted(ORIG_224_DIR.iterdir()):
+        for img_path in sorted(orig_224_dir.iterdir()):
             if not img_path.is_file():
                 continue
             if img_path.suffix.lower() != ".png":  # make sure that we only process image files.
                 continue
 
             out_name = img_path.stem + ".png"
-            out_path_justcam = JUST_CAM_DIR / out_name  # the cam image has the same name as the original, but different directory.
-            out_path_camoverlay = DST_DIR / out_name    # the cam overlay has the same name as the original, but different directory.
+            out_path_justcam = just_cam_dir / out_name  # the cam image has the same name as the original, but different directory.
+            out_path_camoverlay = dst_dir / out_name    # the cam overlay has the same name as the original, but different directory.
             print("inside CAMintermediateLayer ", img_path)
 
             cam_image, cam_array, cam_overlay_image, explained_class = run_layercam(model,
                                                                                     img_path,
-                                                                                    img_size=IMG_SIZE,
+                                                                                    img_size=img_size,
                                                                                     layer_names=LAYERS)
 
             # Save the CAM image and the CAM overlay image; copy over existing files.
