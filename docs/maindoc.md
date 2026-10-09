@@ -215,7 +215,7 @@ Above is an illustration of the output from the GAinference.predict_driver code,
 
 Note that the weights file is in the same folder, as the code expects.  A weights file is created at the end of the training. The computer's date and time stamp are part of the name, so that previously created weights files are not overwritten.  Therefore, your weights files will have a different name than the one shown here, of course.  
 
-You can also download the GAweights file from the GitHub Georgia Project website.  There are two formats available.  The weights files are in HDF5, the default in Tensorflow, and ONNX, the cross-platform format.  Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.6.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.6.0/GAweights.onnx) to the \inference folder where you downloaded the Georgia Project code on your PC.  
+You can also download the GAweights file from the GitHub Georgia Project website.  There are two formats available.  The weights files are in HDF5, the default in Tensorflow, and ONNX, the cross-platform format.  Download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.6.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.6.0/GAweights.onnx) to the \images_testing folder where you downloaded the Georgia Project code on your PC.  
 
 |image               |prediction                           |
 |--------------------|-------------------------------------|
@@ -354,11 +354,11 @@ Step 6. view results.
    - All results files generated will be in your deliverables folder that you designated in the `GAmain.py` code file.  
 
 Step 7. play with it.  
-   - Lastly, there is a code file, `GA_visualize.py`, that will perform inference on any png file that you give it.  Edit `folder_prefix` to point to the location where you extracted the code earlier (not the data).  The code will then point to the \inference folder, which contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
+   - Lastly, there is a code file, `GA_visualize.py`, that will perform inference on any png file that you give it.  Edit `folder_prefix` to point to the location where you extracted the code earlier (not the data).  The code will then point to the \images_testing folder, which contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
 
-The GA_visualize.py code will then perform kmeans, using PCA, with four centroids.  The code is set up to find the \kmeans directory in the location where you extracted the code earlier; i.e., the \inference folder is beside the \kmeans folder.  
+The GA_visualize.py code will then perform kmeans, using PCA, with four centroids.  The code is set up to find the \kmeans directory in the location where you extracted the code earlier; i.e., the \images_testing folder is beside the \kmeans folder.  
 
-   - Setting up the weights file.  There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub.  Click here to download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.onnx). Either way, save it to the existing \inference folder in the code folder on your pc.  Note that there is a `weights_file` variable in the `GA_visualize.py` code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
+   - Setting up the weights file.  There are two options with the weights file.  You can use the weights file that you created in Step 5, or you can use the weights file from the Georgia Project on GitHub.  Click here to download the [HDF5 weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.h5) or the [ONNX weights file](https://github.com/KatherineMossDeveloper/The-Georgia-Project/releases/download/v1.5.0/GAweights.onnx). Either way, save it to the existing \images_testing folder in the code folder on your pc.  Note that there is a `weights_file` variable in the `GA_visualize.py` code.  By default, it is expecting the weights file to be called "GAweights.h5".  Edit that as needed.  
 
    - Run `GA_visualize.py`  The labeling and confidence factors will appear in the output window.  
 
