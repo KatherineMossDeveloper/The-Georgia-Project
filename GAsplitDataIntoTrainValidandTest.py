@@ -27,7 +27,7 @@
 import os
 import shutil
 
-folder_prefix = r"X:\MLresearch\CrystalStudy\Project_GA\GithubTestingData"  # edit this before running the code.
+folder_prefix = r"your_drive_letter_and_folder"   # edit this before running the code.
 
 # Define source folders, pointing to the location of the download of the dataset mentioned above.
 source_pg = folder_prefix + r"\archive\cropped\cropped\pg"
