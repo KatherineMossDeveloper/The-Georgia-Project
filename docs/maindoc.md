@@ -354,7 +354,7 @@ Step 6. view results.
    - All results files generated will be in your deliverables folder that you designated in the `GAmain.py` code file.  
 
 Step 7. play with it.  
-   - Lastly, there is a code file, `GA_visualize.py`, that will perform inference on any png file that you give it.  Edit `folder_prefix` to point to the location where you extracted the code earlier (not the data).  The code will then point to the \images_testing folder, which contains a few images from the project, plus a few stray images.  You could add your own png files there too.  
+   - Lastly, there is a code file, `GA_visualize.py`, that will perform inference on any png file that you give it.  Edit `folder_prefix` to point to the location where you extracted the code earlier (not the data).  The code will then point to the \images_testing folder, which contains a few images from the project, plus a few stray images.  You could add your own png files there too.  Remember to copy a weights file there.  You can use the one you downloaded from the GitHub Georgia Project site, or use the one you created.    
 
 The GA_visualize.py code will then perform kmeans, using PCA, with four centroids.  The code is set up to find the \kmeans directory in the location where you extracted the code earlier; i.e., the \images_testing folder is beside the \kmeans folder.  
 
