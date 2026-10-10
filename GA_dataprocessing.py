@@ -11,11 +11,6 @@
 #     def kmeans_processing(self, num_clusters=4)
 #             extract features for each image in the folder, perform PCA to
 #             reduce these vectors to 2D, then do kmeans on them.
-<<<<<<< HEAD
-#    def add_note(self, file_path, note)
-=======
-#     def add_note(file_path, note)
->>>>>>> 989f11c8d9db27841385973351efea18f1ad4833
 #
 # This code will pull png files from a folder and do inference on each one, reporting the
 # classification and confidence to the output window.  The prediction logic below assumes
