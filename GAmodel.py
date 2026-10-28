@@ -26,7 +26,7 @@ import tensorflow as tf
 
 from GAutility import print_model_details, get_model
 from GAdata import DataObjectGeneration
-from GAanalysis import AnalysisConfig
+from GAanalysis import AnalysisRunner
 from GAcallbacks import (standard_early_stopping, ClassWiseMetricsCallback,
                          MetricsLoggerCallback, CustomEarlyStoppingF1Callback)
 
@@ -60,25 +60,21 @@ class ModelTrainer:
         return
 
     def train(self):
-        # Load train, valid, and test data, define their ImageDataGenerators, create the image transforms for the images.
-        data_generator = DataObjectGeneration(self.target_size, self.batch, self.seed)  # variables shared for the image objects.
-        train_generator = data_generator.get_training_data(self.train_dir)              # prepare the training data.
-        val_generator = data_generator.get_validation_data(self.val_dir)                # prepare the validation data.
-        test_generator = data_generator.get_test_data(self.test_dir)                    # prepare the test data.
 
-        # Create the resnet model, load the weights, and designate trainable layers.
-        base_model, model = self.create_model()
-        print("before model summary for Training")
-        model.summary()
-        print("after model summary for Training")
+        # create the data generators.
+        train_generator, val_generator, test_generator = self.create_data_generators()
+
+        # set up a ResNet101 model.
+        base_model, complete_model = get_model(self.weights)
+
+        # make some of the ResNet101 model's layers trainable.
+        model = self.make_layers_trainable(complete_model)
 
         # set up the callbacks.
-        early_stopping_callback = standard_early_stopping
-        class_wise_metrics_callback = ClassWiseMetricsCallback(val_generator=val_generator, batch_size=self.batch, report_frequency=1)
-        custom_early_stopping_callback = CustomEarlyStoppingF1Callback(val_generator=val_generator, batch_size=self.batch, patience=0, f1_threshold=0.997)
-        metrics_logger_callback = MetricsLoggerCallback()
+        (early_stopping_callback, class_wise_metrics_callback,
+         custom_early_stopping_callback, metrics_logger_callback) = self.create_callbacks(val_generator)
 
-        # compile.
+        # configure a couple of things for the model.
         model.compile(loss='binary_crossentropy', metrics=['accuracy'])
         print_model_details(model)
 
@@ -92,13 +88,23 @@ class ModelTrainer:
             callbacks=[early_stopping_callback, class_wise_metrics_callback,
                        custom_early_stopping_callback, metrics_logger_callback])
 
+        # show how the model performed.
         self.report(model, test_generator, metrics_logger_callback)
 
         return metrics_logger_callback
 
-    def create_model(self):
+    def create_data_generators(self):
 
-        base_model, model = get_model(self.weights)
+        # Load train, valid, and test data, define their ImageDataGenerators, create the image transforms for the images.
+        data_generator = DataObjectGeneration(self.target_size, self.batch, self.seed)  # variables shared for the image objects.
+        train_generator = data_generator.get_training_data(self.train_dir)              # prepare the training data.
+        val_generator = data_generator.get_validation_data(self.val_dir)                # prepare the validation data.
+        test_generator = data_generator.get_test_data(self.test_dir)                    # prepare the test data.
+
+        return train_generator, val_generator, test_generator
+
+    @staticmethod
+    def make_layers_trainable(base_model):
 
         # Freeze the first layers; unfreeze the last 10%
         total_layers = len(base_model.layers)
@@ -110,17 +116,29 @@ class ModelTrainer:
             layer.trainable = True
         print(f'The number of model layers that are now trainable ' f'{num_trainable}')
 
-        return base_model, model
+        return base_model
+
+    def create_callbacks(self, val_generator):
+
+        early_stopping_callback = standard_early_stopping
+        class_wise_metrics_callback = ClassWiseMetricsCallback(val_generator=val_generator, batch_size=self.batch, report_frequency=1)
+        custom_early_stopping_callback = CustomEarlyStoppingF1Callback(val_generator=val_generator, batch_size=self.batch, patience=0, f1_threshold=0.997)
+        metrics_logger_callback = MetricsLoggerCallback()
+
+        return (early_stopping_callback, class_wise_metrics_callback,
+                custom_early_stopping_callback, metrics_logger_callback)
 
     def report(self, model, test_generator, metrics_logger_callback):
+
         print(f"Ending training.  Deliverables will be saved in {self.deliverables_dir}.")
-        analysis = AnalysisConfig(name=self.study_name, prefix=self.prefixed_letters,
+        analysis = AnalysisRunner(name=self.study_name, prefix=self.prefixed_letters,
                                   folder=self.deliverables_dir, classes=['PG', 'CEX'])
         analysis.generate_deliverables(model, test_generator, metrics_logger_callback)
 
     def run(self):
-        #  credit to Geeks for Geeks for this logic, copied here May of 2025.  For more, see their 
-        #  article "How to Run TensorFlow on CPU" here https://www.geeksforgeeks.org/how-to-run-tensorflow-on-cpu/. 
+        #  credit to Geeks for Geeks for this logic, copied here May 2025.
+        #  For more, see their article "How to Run TensorFlow on CPU" here...
+        #       https://www.geeksforgeeks.org/how-to-run-tensorflow-on-cpu/.
         #  scenario 1  use_cpu = true, and there is no GPU.
         #  scenario 2  use_cpu = true, even though there is a GPU.
         #  scenario 3  use_cpu = false, but there is no GPU.

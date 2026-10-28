@@ -65,6 +65,7 @@ class DataObjectGeneration:
             vertical_flip=True,                       # flip images top-to-bottom
             fill_mode='nearest'                       # fill pixels w/nearest pixel color values
         )
+
         train_generator = train_datagen.flow_from_directory(
             train_dir,
             target_size=self.target_size,

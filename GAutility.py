@@ -64,6 +64,10 @@ def get_model(weights=None):
 
     model = tf.keras.Model(inputs=base_model.input, outputs=out)
 
+    print("before model summary for Training")
+    model.summary()
+    print("after model summary for Training")
+
     return base_model, model
 
 
